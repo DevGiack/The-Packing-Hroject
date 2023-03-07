@@ -1,0 +1,26 @@
+.connect-wallet-button {
+        height: 38px;
+        width: 160px;
+        font-size: 14px;
+        border: none;
+        border-radius: 19px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        background-color: #ff8906;
+        color: #FFFFFE;    
+      }
+
+.connect-wallet-button:hover {
+        background: #f25f4c;
+        transition: 1s;
+}
+
+.address-button {
+        height: 38px;
+        width: 160px;
+        font-size: 14px;
+        border: none;
+        border-radius: 19px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        background-color: #ff8906;
+        color: #FFFFFE;
+      }

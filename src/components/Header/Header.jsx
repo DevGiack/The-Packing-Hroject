@@ -1,10 +1,10 @@
 import './Header.css';
-import connect from '../../utils/connect'
+import ConnectWalletButton from '../ConnectWalletButton/ConnectWalletButton';
 
 const Header = () => (
     <div className="main-header">
         <div className='connect'>
-            <button onClick={connect}>Connect</button>
+            <ConnectWalletButton />
         </div>
        
     </div>
