@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100vh;
+}
+
+.App {
+margin-left: 10%;
+margin-right: 10%;
+}
+  
