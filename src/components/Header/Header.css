@@ -1,27 +1,27 @@
-.main-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border: 1px solid #686868;
-  height: 75px;
-  /* max-height: 4.5rem; */
-}
-
-.content {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  border: 1px solid #6a7ed6;
-  height: 700px;
-  /* max-height: 4.5rem; */
-}
-
-.footer {
+.header-container {
     display: flex;
-  justify-content: left;
-  align-items: center;
-  border: 1px solid #6a7ed6;
-  height: 60px;
-  /* max-height: 4.5rem; */
+    align-items: center;
+    justify-content: space-around;
+    height: 60px;
+    padding-top: 10px;
 }
 
+.logo {
+    width: 375px;
+    height: auto;
+}
+
+.header-content {
+    display: flex;
+    padding-top: 10px;
+    color: #fffffe;
+    font-size: 16px;
+  }
+  
+  .link {
+  margin-right: 40px;
+  font-family: 'Helvetica';
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,43 @@
+{
+  "name": "THE PACKING HROJECT",
+  "description": "THE FIRST TPH NFT COLLECTION",
+  "image": "TPH_034.jpg",
+  "attributes": [
+    {
+      "trait_type": "GENRE",
+      "value": "MEN TYPE 1"
+    },
+    {
+      "trait_type": "LANGUAGE",
+      "value": "REACT"
+    },
+    {
+      "trait_type": "EXPRESSION",
+      "value": "N°2"
+    },
+    {
+      "trait_type": "GLASSES",
+      "value": "NO GLASSES"
+    },
+    {
+      "trait_type": "LISERE TPH",
+      "value": "CLASSIC"
+    },
+    {
+      "trait_type": "STICKER",
+      "value": "REACT"
+    },
+    {
+      "trait_type": "ARTICLE",
+      "value": "HEADPHONES"
+    },
+    {
+      "trait_type": "BACKGROUND COLOR",
+      "value": "PASTEL BEIGE"
+    },
+    {
+      "trait_type": "COMPUTER",
+      "value": "BLACK"
+    }
+  ]
+}
