@@ -1,0 +1,43 @@
+{
+  "name": "THE PACKING HROJECT",
+  "description": "THE FIRST TPH NFT COLLECTION",
+  "image": "TPH_005.jpg",
+  "attributes": [
+    {
+      "trait_type": "GENRE",
+      "value": "WOMEN TYPE 1"
+    },
+    {
+      "trait_type": "LANGUAGE",
+      "value": "RUBY ON RAILS"
+    },
+    {
+      "trait_type": "EXPRESSION",
+      "value": "N°8"
+    },
+    {
+      "trait_type": "GLASSES",
+      "value": "N°2"
+    },
+    {
+      "trait_type": "LISERE TPH",
+      "value": "CLASSIC"
+    },
+    {
+      "trait_type": "STICKER",
+      "value": "LINUX"
+    },
+    {
+      "trait_type": "ARTICLE",
+      "value": "CHRISTMAS HAT"
+    },
+    {
+      "trait_type": "BACKGROUND COLOR",
+      "value": "YELLOW"
+    },
+    {
+      "trait_type": "COMPUTER",
+      "value": "BLACK"
+    }
+  ]
+}
