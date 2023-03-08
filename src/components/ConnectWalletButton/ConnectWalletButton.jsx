@@ -1,15 +1,37 @@
 import "./ConnectWalletButton.css";
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { ethers } from "ethers";
-import Cookies from "js-cookie";
+import { useAtom } from "jotai";
+import { UserAddressAtom } from "../atom/UserWalletAddress";
+import CryptoJS from "crypto-js";
 
 const ConnectWalletButton = () => {
-    const [walletAddress, setWalletAddress] = useState("");
+    const [walletAddress, setWalletAddress] = useAtom(UserAddressAtom);
+
+    // La clé de chiffrement
+    const secretKey = "secret-key";
+
+    // Chiffre les données avant de les stocker dans le localStorage
+    function setLocalStorageItem(key, value) {
+        const ciphertext = CryptoJS.AES.encrypt(value, secretKey).toString();
+        localStorage.setItem(key, ciphertext);
+    }
+
+    // Déchiffre les données stockées dans le localStorage
+    function getLocalStorageItem(key) {
+        const ciphertext = localStorage.getItem(key);
+        if (ciphertext) {
+            const bytes = CryptoJS.AES.decrypt(ciphertext, secretKey);
+            const plaintext = bytes.toString(CryptoJS.enc.Utf8);
+            return plaintext;
+        }
+        return null;
+    }
 
     async function requestAccount() {
         console.log("Requesting account...");
 
-        // ❌ Vérifie si Meta Mask est présent dans le navigateur
+        // ❌ Vérifie si MetaMask est présent dans le navigateur
         if (window.ethereum) {
             console.log("detected");
 
@@ -18,8 +40,8 @@ const ConnectWalletButton = () => {
                     method: "eth_requestAccounts",
                 });
                 const address = accounts[0];
-                setWalletAddress(address);
-                Cookies.set("walletAddress", address, { expires: 7 }); // Stocker l'adresse dans un cookie
+                setLocalStorageItem("userAddress", address); // Stocke l'adresse dans le localStorage
+                setWalletAddress(address); // Mets à jour le state global
             } catch (error) {
                 console.log("Error connecting...");
             }
@@ -27,6 +49,13 @@ const ConnectWalletButton = () => {
             alert("Meta Mask not detected");
         }
     }
+
+    useEffect(() => {
+        const address = getLocalStorageItem("userAddress");
+        if (address) {
+            setWalletAddress(address);
+        }
+    }, [setWalletAddress]);
 
     // Create a provider to interact with a smart contract
     async function connectWallet() {
@@ -47,13 +76,6 @@ const ConnectWalletButton = () => {
             CONNECT WALLET
         </button>
     );
-
-    useEffect(() => {
-        const storedAddress = Cookies.get("walletAddress");
-        if (storedAddress && storedAddress !== walletAddress) {
-            setWalletAddress(storedAddress);
-        }
-    }, []); // Récupérer la valeur du cookie à chaque chargement de page
 
     return (
         <div className="App">

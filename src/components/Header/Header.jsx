@@ -1,9 +1,17 @@
 import "./Header.css";
 import ConnectWalletButton from "../ConnectWalletButton/ConnectWalletButton";
 import logo from "../../assets/images/LOGO-TPH.png";
+import DisconnectWalletButton from '../DisconnectWalletButton/DisconnectWalletButton'
 
-const Header = () => (
-    <div className="header-container">
+import { UserAddressAtom } from '../atom/UserWalletAddress'
+import { useAtom } from 'jotai';
+
+const Header = () => {
+
+    const [userAddress] = useAtom(UserAddressAtom);
+
+    return (
+        <div className="header-container">
             <img className="logo" src={logo} />
         <div className="header-content">
             <h3 className="link">Home</h3>
@@ -13,9 +21,13 @@ const Header = () => (
             <h3 className="link">FAQ</h3>
         </div>
         <div className="button-connect">
+
             <ConnectWalletButton />
+            <DisconnectWalletButton/>
+            <p style={{ color: 'white' }}>{userAddress}</p>
         </div>
     </div>
-);
+    );
+};
 
 export default Header;
