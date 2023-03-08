@@ -1,0 +1,43 @@
+{
+  "name": "THE PACKING HROJECT",
+  "description": "THE FIRST TPH NFT COLLECTION",
+  "image": "TPH_069.jpg",
+  "attributes": [
+    {
+      "trait_type": "GENRE",
+      "value": "WOMEN TYPE 2"
+    },
+    {
+      "trait_type": "LANGUAGE",
+      "value": "HTML/CSS SPECIAL FOLLOWER EDITION"
+    },
+    {
+      "trait_type": "EXPRESSION",
+      "value": "N°1"
+    },
+    {
+      "trait_type": "GLASSES",
+      "value": "NO GLASSES"
+    },
+    {
+      "trait_type": "LISERE TPH",
+      "value": "SPECIAL CUP OF TEA"
+    },
+    {
+      "trait_type": "STICKER",
+      "value": "CUP OF TEA"
+    },
+    {
+      "trait_type": "ARTICLE",
+      "value": "SOCIAL SMARTPHONE"
+    },
+    {
+      "trait_type": "BACKGROUND COLOR",
+      "value": "SPECIAL CUP OF TEA"
+    },
+    {
+      "trait_type": "COMPUTER",
+      "value": "SILVER"
+    }
+  ]
+}

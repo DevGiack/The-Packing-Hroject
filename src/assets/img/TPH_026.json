@@ -1,0 +1,43 @@
+{
+  "name": "THE PACKING HROJECT",
+  "description": "THE FIRST TPH NFT COLLECTION",
+  "image": "TPH_026.jpg",
+  "attributes": [
+    {
+      "trait_type": "GENRE",
+      "value": "MEN TYPE 1"
+    },
+    {
+      "trait_type": "LANGUAGE",
+      "value": "RUBY ON RAILS"
+    },
+    {
+      "trait_type": "EXPRESSION",
+      "value": "CAPTAIN MELON"
+    },
+    {
+      "trait_type": "GLASSES",
+      "value": "NO GLASSES"
+    },
+    {
+      "trait_type": "LISERE TPH",
+      "value": "SPECIAL CAPTAIN MELON"
+    },
+    {
+      "trait_type": "STICKER",
+      "value": "CAPTAIN MELON"
+    },
+    {
+      "trait_type": "ARTICLE",
+      "value": "CAPTAIN'S CAP"
+    },
+    {
+      "trait_type": "BACKGROUND COLOR",
+      "value": "SPECIAL CAPTAIN MELON"
+    },
+    {
+      "trait_type": "COMPUTER",
+      "value": "BLACK"
+    }
+  ]
+}
