@@ -21,6 +21,7 @@ const Header = () => {
             <h3 className="link">FAQ</h3>
         </div>
         <div className="button-connect">
+
             <ConnectWalletButton />
             <DisconnectWalletButton/>
             <p style={{ color: 'white' }}>{userAddress}</p>
