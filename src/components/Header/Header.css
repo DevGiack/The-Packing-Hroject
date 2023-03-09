@@ -4,6 +4,7 @@
     justify-content: space-around;
     height: 60px;
     padding-top: 10px;
+    border-bottom: 1px solid gray ;
 }
 
 .logo {

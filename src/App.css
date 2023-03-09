@@ -5,7 +5,9 @@ body {
   height: 100vh;
   background: rgb(15,14,23);
   background: linear-gradient(90deg, rgba(15,14,23,1) 0%, rgba(47,47,79,1) 50%, rgba(15,14,23,1) 100%);
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
