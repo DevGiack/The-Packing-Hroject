@@ -8,7 +8,7 @@
         background-color: #ff8906;
         color: #FFFFFE;
         cursor: pointer;
-      }
+}
 
 .connect-wallet-button:hover {
         background: #f25f4c;
@@ -25,5 +25,15 @@
         background-color: #ff8906;
         color: #FFFFFE;
         margin-left: 10px;
+        margin-right: 10px;
         cursor: pointer;
+      }
+
+      .button-icons {
+        display: flex;
+        align-items: center;
+      }
+
+      #user {
+        font-size: 1.5em;
       }

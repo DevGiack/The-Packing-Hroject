@@ -1,0 +1,9 @@
+.disconnect {
+        cursor: pointer;
+        font-size: 1.7em;
+}
+
+.disconnect:hover {
+        color: #ff1e00;
+        transition: 1s;
+}

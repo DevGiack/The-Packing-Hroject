@@ -1,12 +1,13 @@
 import "./ConnectWalletButton.css";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import { ethers } from "ethers";
 import { useAtom } from "jotai";
 import { UserAddressAtom } from "../atom/UserWalletAddress";
 import CryptoJS from "crypto-js";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUser} from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faPowerOff } from "@fortawesome/free-solid-svg-icons";
+import DisconnectWalletButton from "../DisconnectWalletButton/DisconnectWalletButton";
+import { Link } from "react-router-dom";
 
 const ConnectWalletButton = () => {
     const [walletAddress, setWalletAddress] = useAtom(UserAddressAtom);
@@ -71,14 +72,23 @@ const ConnectWalletButton = () => {
 
     // Afficher le bouton CONNECT WALLET ou l'adresse ETH de l'utilisateur
     const buttonOrAddress = walletAddress ? (
-        <>
-        <Link to="/profil">
-        <FontAwesomeIcon icon={faUser} color="#fffffe" />
-        <button className="address-button">
-            {`${walletAddress.slice(0, 6)}....${walletAddress.slice(-4)}`}
-        </button>
-        </Link>
-        </>
+        <div className="button-icons">
+            <Link to="/profil">
+                <FontAwesomeIcon 
+                icon={faUser}
+                color="#fffffe" 
+                id="user"
+                />
+                </Link>
+                <Link to="/profil">
+                <button className="address-button">
+                    {`${walletAddress.slice(0, 6)}....${walletAddress.slice(
+                        -4
+                    )}`}
+                </button>
+            </Link>
+            <DisconnectWalletButton />
+        </div>
     ) : (
         <button className="connect-wallet-button" onClick={requestAccount}>
             CONNECT WALLET
