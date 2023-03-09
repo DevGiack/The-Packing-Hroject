@@ -4,6 +4,9 @@ import { ethers } from "ethers";
 import { useAtom } from "jotai";
 import { UserAddressAtom } from "../atom/UserWalletAddress";
 import CryptoJS from "crypto-js";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faUser} from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
 const ConnectWalletButton = () => {
     const [walletAddress, setWalletAddress] = useAtom(UserAddressAtom);
@@ -68,9 +71,14 @@ const ConnectWalletButton = () => {
 
     // Afficher le bouton CONNECT WALLET ou l'adresse ETH de l'utilisateur
     const buttonOrAddress = walletAddress ? (
+        <>
+        <Link to="/profil">
+        <FontAwesomeIcon icon={faUser} color="#fffffe" />
         <button className="address-button">
             {`${walletAddress.slice(0, 6)}....${walletAddress.slice(-4)}`}
         </button>
+        </Link>
+        </>
     ) : (
         <button className="connect-wallet-button" onClick={requestAccount}>
             CONNECT WALLET
