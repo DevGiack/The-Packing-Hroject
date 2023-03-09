@@ -1,29 +1,30 @@
-.global {
+.global-intro {
   display: flex;
   flex-direction: column;
-  width: 1150px;
+  align-items: center;
+  width: 100%;
   height: 800px;
-  margin-top: 3em;
+  margin-top: 5em;
 }
 
-.part_1 {
+.part_1-intro {
   display: flex;
   flex-direction: row;
-  width: 1200px;
+  width: 1150px;
   height: 550px;
 }
 
-.part_1A, .part_1B {
+.part_1A-intro, .part_1B-intro {
   width: 600px;
   height: 550px;
 }
 
-.part_1B {
+.part_1B-intro {
   margin-left: -3em;
   margin-top: 1em;
 }
 
-.part_2 {
+.part_2-intro {
   display: flex;
   flex-direction: row;
   width: 1150px;

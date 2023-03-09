@@ -3,18 +3,18 @@ import "./Intro.css"
 export const Intro = () => {
 
 return (
-  <div className="global">
-    <div className="part_1">
-      <div className="part_1A">
+  <div className="global-intro">
+    <div className="part_1-intro">
+      <div className="part_1A-intro">
         <h1>The Packing Hroject NFT Collection</h1>
         <p>That's the fucking NFT collection, please Mint & buy all you can put ! lopsus item panawe canim anubis dela feta salakis obonléde brebis as a little text before the mint button in da mother focker in master class.</p>
         <button className="mint_button">Mint Now &nbsp; &#62;</button>
       </div>
-      <div className="part_1B">
+      <div className="part_1B-intro">
         <img src="../src/assets/images/PACK_1.png" id="pack1" alt="pack1_NFT" />
       </div> 
     </div>
-    <div className="part_2">
+    <div className="part_2-intro">
       <div className="stat_box">
         <h2>50</h2><p>Total Items</p>
       </div>
