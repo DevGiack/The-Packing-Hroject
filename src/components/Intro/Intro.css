@@ -54,8 +54,8 @@ h2 {
 }
 
 .mint_button {
-  height: 35px;
-  width: 165px;
+  height: 2em;
+  width: 8em;
   font-size: 1.4em;
   border: none;
   border-radius: 19px;
