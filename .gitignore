@@ -24,6 +24,7 @@ dist-ssr
 *.sw?
 
 .env
+pnpm-lock.yaml
 
 # Hardhat files
 cache
