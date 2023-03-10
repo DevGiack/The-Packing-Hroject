@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
   height: 800px;
-  margin-top: 5em;
+  margin-top: 6em;
 }
 
 .part_1-intro {
@@ -17,6 +17,13 @@
 .part_1A-intro, .part_1B-intro {
   width: 600px;
   height: 550px;
+}
+
+.part_1A-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3em;
 }
 
 .part_1B-intro {
@@ -33,8 +40,13 @@
   align-items: center;
 }
 
-h1 {
-  font-size: 3.5em;
+#title-intro {
+  font-size: 3.7em;
+  font-weight: bolder;
+}
+
+#text-intro {
+  font-size: 1.2em;
 }
 
 h2 {
@@ -42,8 +54,8 @@ h2 {
 }
 
 .mint_button {
-  height: 35px;
-  width: 165px;
+  height: 2em;
+  width: 8em;
   font-size: 1.4em;
   border: none;
   border-radius: 19px;
@@ -62,7 +74,7 @@ h2 {
   width: 270px;
   height: 150px;
   border-radius: 2em;
-  background-color: rgba(11, 11, 32, 0.555);
+  background-color: rgba(11, 11, 33, 0.85);
   color: white;
 }
 
