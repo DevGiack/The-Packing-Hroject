@@ -28,6 +28,7 @@
     margin-bottom: 1rem;
     min-width: 14rem;
     max-width: 14rem;
+    max-height: 37rem;
     justify-content: center;
   }
 
@@ -35,8 +36,17 @@
     color: #ff8906;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.3rem;
-    text-align: center
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top: 3%;
   }
+
+  p.card-txt {
+    margin-bottom: 2%;
+    margin-top: 2%;
+  }
+
+
   
   .card-img-top {
     width:100%;
