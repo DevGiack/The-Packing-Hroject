@@ -7,6 +7,9 @@
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     border-bottom: 1px solid gray ;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(90deg, rgba(15,14,23,1) 0%, rgba(47,47,79,1) 50%, rgba(15,14,23,1) 100%);
 }
 
 .logo {
@@ -14,17 +17,17 @@
     height: auto;
 }
 
-.header-content {
-    display: flex;
-    padding-top: 10px;
-    color: #fffffe;
-    font-size: 16px;
-  }
-  
-.link {
-    margin-right: 40px;
+.header-content a {
+    margin-right: 3em;
+    border-bottom: 2px solid transparent;
     font-family: 'Helvetica';
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
+    text-decoration: none;
+    color: #fffffe;
 }
+  
+.header-content a.active {
+    border-bottom-color: #ff8906;
+  }
