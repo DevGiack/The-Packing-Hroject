@@ -7,10 +7,21 @@ export const Home = () => {
 
   return (
     <>
+    <div id="home">
       <Intro />
+      </div>
+      <div id="about">
       <About />
+      </div>
+      <div id="roadmap">
+        
+      </div>
+      <div id="team">
       <Team />
+      </div>
+      <div id="faq">
       <Faq />
+      </div>
     </>
   )
 }

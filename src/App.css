@@ -14,7 +14,9 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-/*** BLOC TITLE ***/
+#home, #about, #roadmap, #team, #faq  {
+ padding-top: 1em;
+}
 
 .bloc-title {
   display: flex;
