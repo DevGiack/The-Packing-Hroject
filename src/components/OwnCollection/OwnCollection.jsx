@@ -18,7 +18,9 @@ let tokenId = '';
 let OPFloor = '';
 
 const OwnCollection = () => {
-  return (<div className="OwnCollection">
+  return (
+  <div className="OwnCollection">
+    <div className="bloc-cards">
     {
       nftsForOwner.ownedNfts.map((x) => {
           x.tokenId ? x.tokenId.length > 6 ? tokenId = `${x.tokenId.slice(0, 6)}...` : tokenId = x.tokenId : tokenId = 'undefined';
@@ -29,21 +31,26 @@ const OwnCollection = () => {
           const id = uuidv1();
           return (
             <div key={id} className="card">
-            <div><p className="card-text cardtxt font-weight-bold"># {tokenId}</p></div>
-            <img src={imageUrl} className="card-img-top" alt="..."></img>
-            <div className="card-body">
-            <p className="card-text font-weight-bold">{contractName}</p>
-            <p className="card-text">{NFTTitle}</p>
-            <p className="card-text cardtxt font-weight-bold">{OPFloor} ETH</p>
-            <div className="card-links">
-            <button id="details_button">Details</button>
-            </div>
-            </div>
+              <div className="card-body">
+                <span className="card-id"># {tokenId}</span>
+                <img src="./src/assets/images/mini_collection/NFT_MYSTERY.jpg" className="card-img" alt="..."></img>
+                <span>{contractName}</span>
+                <span>{NFTTitle}</span>
+                <span className="cardtxt">{OPFloor} ETH</span>
+                <div className="card-button-link">
+                  <button id="details_button">Details</button>
+                </div>
+              </div>
             </div>
           );
         })
     }
-    </div>);
+    </div>
+  </div>
+  );
 };
 
 export default OwnCollection;
+
+// sauvegarde de la bonne commande pour l'image :
+/* <img src={imageUrl} className="card-img" alt="..."></img> */
