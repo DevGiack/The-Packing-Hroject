@@ -1,0 +1,69 @@
+.global-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 800px;
+  margin-top: 2em;
+}
+
+.part_1-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1150px;
+  height: 250px;
+}
+
+#big-title {
+  font-size: 8em;
+  color: rgba(255, 255, 255, 0.151);
+}
+
+#title {
+  font-size: 2.5em;
+  font-weight: bolder;
+  margin-top: -2.5em;
+}
+
+#title-border {
+  width: 5em;
+  border-top: 3px solid #ff8906;
+}
+
+.part_2-team {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1150px;
+  height: 370px;
+}
+
+.card {
+  width: 270px;
+  height: 370px;
+  border-radius: 2em;
+  background-color: rgb(11, 11, 22);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.photo-background {
+  margin-top: 15px;
+  width: 240px;
+  height: 260px;
+  border-radius: 1.5em;
+  background: linear-gradient(to bottom,  #2c2c2c,  #dddddd, #dddddd, #2c2c2c);
+}
+
+.Name {
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+
+.Fonction {
+  color: rgba(255, 255, 255, 0.5) ;
+  font-size: 1.1em;
+}
