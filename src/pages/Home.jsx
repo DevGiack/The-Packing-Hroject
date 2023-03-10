@@ -20,7 +20,7 @@ export const Home = () => {
       <Team />
       </div>
       <div id="faq">
-
+      <Faq />
       </div>
     </>
   )
