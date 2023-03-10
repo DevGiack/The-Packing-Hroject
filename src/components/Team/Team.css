@@ -3,35 +3,11 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 800px;
+  height: 30em;
   margin-top: 2em;
 }
 
-.part_1-team {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 1150px;
-  height: 250px;
-}
-
-#big-title {
-  font-size: 8em;
-  color: rgba(255, 255, 255, 0.151);
-}
-
-#title {
-  font-size: 2.5em;
-  font-weight: bolder;
-  margin-top: -2.5em;
-}
-
-#title-border {
-  width: 5em;
-  border-top: 3px solid #ff8906;
-}
-
-.part_2-team {
+.bloc-team {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -58,12 +34,12 @@
   background: linear-gradient(to bottom,  #2c2c2c,  #dddddd, #dddddd, #2c2c2c);
 }
 
-.Name {
+.name {
   font-weight: bolder;
   font-size: 1.2em;
 }
 
-.Fonction {
+.fonction {
   color: rgba(255, 255, 255, 0.5) ;
   font-size: 1.1em;
 }
