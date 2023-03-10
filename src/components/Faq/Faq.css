@@ -38,6 +38,7 @@ summary {
   width: 650px;
   font-size: 1.2em;
   font-weight: bold;
+  cursor: pointer;
 }
 
 details {
