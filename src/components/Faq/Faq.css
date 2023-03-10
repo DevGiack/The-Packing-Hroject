@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 38em;
+  height: 40em;
 }
 
 .bloc-faq {
@@ -15,10 +15,10 @@
 
 .blocA-faq {
   width: 650px;
-  height: 550px;
+  height: auto;
   display: flex;
   flex-direction: column;
-  gap: 3em;
+  gap: 2.4em;
 }
 
 .blocB-faq {
@@ -33,18 +33,22 @@
   height: max-content;
 }
 
-
-.questions {
-  display: flex;
-  flex-direction: column;
+summary {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   width: 650px;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: bold;
+  cursor: pointer;
+}
+
+details {
+  padding-bottom: 0.6em;
   border-bottom: 1px solid rgb(71, 71, 71);
 }
 
-.responses {
-  font-size: 0.8em;
-  font-weight: lighter;
+details p {
+  margin-left: 1.4em;
+  font-size: 1.05em;
   color: rgb(161, 161, 161);
+  margin-bottom: 0;
 }

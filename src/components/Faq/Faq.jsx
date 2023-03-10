@@ -12,13 +12,30 @@ export const Faq = () => {
       <div className="global-faq">
         <div className="bloc-faq">
           <div className="blocA-faq">
-            <div className="questions"><span>What is The Packing Hroject NFT ?</span>
-            <span className="responses">Lupsus reveloum veritas about the packing hroject mother fucker</span></div>
-            <div className="questions"><span>How can i buy this NFT ?</span></div>
-            <div className="questions"><span>Where can i view my NFTs ?</span></div>
-            <div className="questions"><span>How we can buy and invest NFT ?</span></div>
-            <div className="questions"><span>Where can i buy and sell NFTs ?</span></div>
-            <div className="questions"><span>Where does my NFT go after i purchase ?</span></div>
+          <details>
+            <summary>What is The Packing Hroject NFT ?</summary>
+            <p>Lupsus reveloum The Packing Hroject NFT veritatis !</p>
+          </details>
+          <details>
+            <summary>How can i buy this NFT ?</summary>
+            <p>Lupsus reveloum The Packing Hroject NFT buy method veritatis !</p>
+          </details>
+          <details>
+            <summary>Where can i view my NFTs ?</summary>
+            <p>Lupsus reveloum The Packing Hroject NFT view veritatis !</p>
+          </details>
+          <details>
+            <summary>How we can buy and invest NFT ?</summary>
+            <p>Lupsus reveloum The Packing Hroject NFT invest veritatis !</p>
+          </details>
+          <details>
+            <summary>Where can i buy and sell NFTs ?</summary>
+            <p>Lupsus reveloum The Packing Hroject NFT buy and selling veritatis !</p>
+          </details>
+          <details>
+            <summary>Where does my NFT go after i purchase ?</summary>
+            <p>Lupsus reveloum The Packing Hroject NFT purchase veritatis !</p>
+          </details>
           </div>
           <div className="blocB-faq">
             <img src="../src/assets/images/FAQ.png" alt="pack2_NFT" />
