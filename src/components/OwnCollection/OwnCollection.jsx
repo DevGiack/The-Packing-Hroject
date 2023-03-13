@@ -19,7 +19,13 @@ let OPFloor = '';
 
 const OwnCollection = () => {
   return (
+  <>
   <div id="OwnCollection">
+    <div className="bloc-title">
+      <span id="big-title">MY PROFILE</span>
+      <span id="little-title">My NFT's</span>
+      <span id="title-border"></span>
+    </div>
     <div className="bloc-cards">
     {
       nftsForOwner.ownedNfts.map((x) => {
@@ -47,6 +53,7 @@ const OwnCollection = () => {
     }
     </div>
   </div>
+  </>
   );
 };
 
