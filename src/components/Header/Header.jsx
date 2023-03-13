@@ -1,5 +1,6 @@
 import "./Header.css"
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import ConnectWalletButton from "../ConnectWalletButton/ConnectWalletButton"
 import logo from "../../assets/images/LOGO-TPH.png"
 
@@ -11,7 +12,9 @@ export const Header = () => {
       };
 return (
     <div className="header-container">
+      <Link to="/profil">
         <img className="logo" src={logo} />
+        </Link>
         <div className="header-content">
         <a
   className={`link ${activeLink === "#home" ? "active" : ""}`}
