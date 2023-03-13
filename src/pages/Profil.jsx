@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import OwnCollection from '../components/OwnCollection/OwnCollection';
 
 export const Profil = () => {
@@ -12,6 +12,12 @@ export const Profil = () => {
       navigate("/"); // rediriger vers la page de connexion
     }
   }, [navigate]);
+
+  const { profil } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [profil]);
 
   return (
     <>
