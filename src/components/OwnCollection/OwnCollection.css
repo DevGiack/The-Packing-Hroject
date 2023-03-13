@@ -1,5 +1,5 @@
-.OwnCollection {
-  margin-top: 4em;
+#OwnCollection {
+  padding-top: 8em;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -63,7 +63,6 @@
 
 .card-button-link button {
   border-radius: 8px;
-  z-index: 1;
   position: relative;
   font-size: inherit;
   font-family: inherit;
@@ -80,7 +79,6 @@
 
 .card-button-link button::after {
   content: '';
-  z-index: -1;
   background-color: #ff8906;
   position: absolute;
   top: -50%;
