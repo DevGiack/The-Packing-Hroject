@@ -10,7 +10,7 @@ const settings = {
   network: Network.ETH_MAINNET,
 };
 const alchemy = new Alchemy(settings);
-const nftsForOwner = await alchemy.nft.getNftsForOwner('0x1Fa8a823bbaEAa87bd9aaF0eCb451d1b165254d4');
+const nftsForOwner = await alchemy.nft.getNftsForOwner('0x3a27dd7008dc7F0903193388C3f613C9064C8ca0');
 let contractName = '';
 let NFTTitle = '';
 let imageUrl = '';
