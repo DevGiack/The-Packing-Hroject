@@ -20,31 +20,31 @@ return (
         <div className="header-content">
         <a
           className={`link ${activeLink === "#home" ? "active" : ""}`}
-          href="#home"
+          href="/#home"
           onClick={handleClick}
         >Home
         </a>
         <a
           className={`link ${activeLink === "#about" ? "active" : ""}`}
-          href="#about"
+          href="/#about"
           onClick={handleClick}
         >About
         </a>
         <a
           className={`link ${activeLink === "#show" ? "active" : ""}`}
-          href="#show"
+          href="/#show"
           onClick={handleClick}
         >Collection
         </a>
         <a
           className={`link ${activeLink === "#team" ? "active" : ""}`}
-          href="#team"
+          href="/#team"
           onClick={handleClick}
         >Team
         </a>
         <a
           className={`link ${activeLink === "#faq" ? "active" : ""}`}
-          href="#faq"
+          href="/#faq"
           onClick={handleClick}
         >FAQ
         </a>
