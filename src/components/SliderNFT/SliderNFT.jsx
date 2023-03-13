@@ -8,7 +8,7 @@ const SliderNFT =() => {
     for (let i = 1; i < 32; i++) {
       slideA.push(
         <div className="slide-A">
-          <img src={`../src/assets/images/mini_collection/TPH_0${i}.jpg`} height="250" width="250" alt="mini" />
+          <img src={`../src/assets/images/mini_collection/TPH_0${i}.jpg`} height="250" width="250" alt={`mini_${i}`} />
         </div>
       );
     }
@@ -16,14 +16,14 @@ const SliderNFT =() => {
     for (let i = 31; i < 51; i++) {
       slideB.push(
         <div className="slide-B">
-          <img src={`../src/assets/images/mini_collection/TPH_0${i}.jpg`} height="250" width="250" alt="mini" />
+          <img src={`../src/assets/images/mini_collection/TPH_0${i}.jpg`} height="250" width="250" alt={`mini_${i}`} />
         </div>
       );
     }
     for (let i = 1; i < 7; i++) {
         slideB.push(
           <div className="slide-B">
-            <img src={`../src/assets/images/mini_collection/TPH_0${i}.jpg`} height="250" width="250" alt="mini" />
+            <img src={`../src/assets/images/mini_collection/TPH_0${i}.jpg`} height="250" width="250" alt={`mini_${i}`} />
           </div>
         );
       }

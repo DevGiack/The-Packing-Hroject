@@ -19,7 +19,7 @@ let OPFloor = '';
 
 const OwnCollection = () => {
   return (
-  <div className="OwnCollection">
+  <div id="OwnCollection">
     <div className="bloc-cards">
     {
       nftsForOwner.ownedNfts.map((x) => {
