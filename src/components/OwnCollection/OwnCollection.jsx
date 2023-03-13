@@ -39,7 +39,7 @@ const OwnCollection = () => {
             <div key={id} className="card">
               <div className="card-body">
                 <span className="card-id"># {tokenId}</span>
-                <img src="./src/assets/images/mini_collection/NFT_MYSTERY.jpg" className="card-img" alt="..."></img>
+                <img src="../src/assets/images/mini_collection/NFT_MYSTERY.jpg" className="card-img" alt="..."></img>
                 <span>{contractName}</span>
                 <span>{NFTTitle}</span>
                 <span className="cardtxt">{OPFloor} ETH</span>
