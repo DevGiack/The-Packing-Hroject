@@ -7,7 +7,7 @@ import CryptoJS from "crypto-js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faPowerOff } from "@fortawesome/free-solid-svg-icons";
 import DisconnectWalletButton from "../DisconnectWalletButton/DisconnectWalletButton";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const ConnectWalletButton = () => {
     const [walletAddress, setWalletAddress] = useAtom(UserAddressAtom);
@@ -82,14 +82,14 @@ const ConnectWalletButton = () => {
     // Afficher le bouton CONNECT WALLET ou l'adresse ETH de l'utilisateur
     const buttonOrAddress = walletAddress ? (
         <div className="button-icons">
-            <Link to="/profil">
+            <Link to="/profil/#OwnCollection">
                 <FontAwesomeIcon 
                 icon={faUser}
                 color="#fffffe" 
                 id="user"
                 />
                 </Link>
-                <Link to="/profil">
+                <Link to="/profil/#OwnCollection">
                 <button className="address-button">
                     {`${walletAddress.slice(0, 6)}....${walletAddress.slice(
                         -4
