@@ -1,3 +1,4 @@
+import SliderNFT from "../SliderNFT/SliderNFT"
 import "./Show.css"
 
 export const Show = () => {
@@ -9,6 +10,7 @@ export const Show = () => {
         <span id="little-title">Our Collections</span>
         <span id="title-border"></span>
       </div>
+      <SliderNFT/>
     </>
   )
 }

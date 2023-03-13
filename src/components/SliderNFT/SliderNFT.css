@@ -1,3 +1,8 @@
+.slider-A, .slider-B {
+    position: relative;
+    z-index: -1;
+  }
+
 /* Styles pour le premier slider */
 .slider-A {
 	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
