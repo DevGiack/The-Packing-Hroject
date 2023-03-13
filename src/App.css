@@ -14,16 +14,13 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-#home, #about, #roadmap, #team, #faq  {
- padding-top: 1em;
-}
-
 .bloc-title {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 14em;
+  padding-top: 7em;
 }
 
 #big-title {
