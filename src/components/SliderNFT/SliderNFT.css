@@ -1,5 +1,5 @@
-/* Styles pour le premier slider */
-.slider-A {
+.slider-A, 
+.slider-B {
 	height: 250px;
 	margin: auto;
 	overflow: hidden;
@@ -8,102 +8,30 @@
 	margin-bottom: 2em;
 }
 
-/* Création des bandes blanches à gauche et à droite */
-.slider-A::before,
-.slider-A::after {
-	content: "";
-	height: 100px;
-	position: absolute;
-	width: 200px;
-}
-
-.slider-A::after {
-	right: 0;
-	top: 0;
-	transform: rotateZ(180deg);
-}
-
-.slider-A::before {
-	left: 0;
-	top: 0;
-}
-
-/* Éléments à slider */
 .slide-track-A {
-	animation: scroll-right 40s linear infinite;
+	animation: scroll-right 80s linear infinite;
 	display: flex;
-	width: calc(250px * 14);
 }
 
-.slide-A {
-	height: 100px;
-	width: 250px;
-	margin-right: 40px;
-	margin-left: 40px;
-}
-
-/* Définition de l'animation pour le premier slider */
-@keyframes scroll-right {
-	0% {
-		transform: translateX(0);
-	}
-
-	100% {
-		transform: translateX(calc(-250px * 7));
-	}
-}
-
-/* Styles pour le deuxième slider */
-.slider-B {
-	height: 250px;
-	margin: auto;
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-	margin-bottom: 5em;
-}
-
-/* Création des bandes blanches à gauche et à droite */
-.slider-B::before,
-.slider-B::after {
-	content: "";
-	height: 100px;
-	position: absolute;
-	width: 200px;
-}
-
-.slider-B::after {
-	right: 0;
-	top: 0;
-	transform: rotateZ(180deg);
-}
-
-.slider-B::before {
-	left: 0;
-	top: 0;
-}
-
-/* Éléments à slider */
 .slide-track-B {
-	animation: scroll-left 40s linear infinite;
+	animation: scroll-left 80s linear infinite;
 	display: flex;
-	width: calc(250px * 14);
 }
 
+.slide-A, 
 .slide-B {
-	height: 100px;
-	width: 250px;
-	margin-right: 40px;
-	margin-left: 40px;
+	margin-right: 1em;
+	margin-left: 1em;
 }
 
-/* Définition de l'animation pour le deuxième slider */
-@keyframes scroll-left {
-	0% {
-		transform: translateX(calc(-250px * 7));
-	}
+/* anim first slider */
+@keyframes scroll-right {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-190px * 20)); }
+}
 
-	100% {
-		transform: translateX(0);
-	}
+/* anim second slider */
+@keyframes scroll-left {
+	0% { transform: translateX(calc(-190px * 20)); }
+	100% { transform: translateX(0); }
 }
