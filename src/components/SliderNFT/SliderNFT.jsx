@@ -6,77 +6,77 @@ import nft1 from '../../assets/images/mini_collection/TPH_001.jpg'
 const SliderNFT =() => {
     return (
     <>
-    <div class="slider-A">
-        <div class="slide-track-A">
-            <div class="slide-A">
+    <div className="slider-A">
+        <div className="slide-track-A">
+            <div className="slide-A">
                 <img src={nft1} height="250" width="250" alt="" />
             </div>
-            <div class="slide-A">
+            <div className="slide-A">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-A">
+            <div className="slide-A">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-A">
+            <div className="slide-A">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-A">
+            <div className="slide-A">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-A">
+            <div className="slide-A">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-A">
+            <div className="slide-A">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-A">
+            <div className="slide-A">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-A">
+            <div className="slide-A">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-A">
+            <div className="slide-A">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-A">
+            <div className="slide-A">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
         </div>
     </div>
 
-    <div class="slider-B">
-        <div class="slide-track-B">
-            <div class="slide-B">
+    <div className="slider-B">
+        <div className="slide-track-B">
+            <div className="slide-B">
                 <img src={nft1} height="250" width="250" alt="" />
             </div>
-            <div class="slide-B">
+            <div className="slide-B">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-B">
+            <div className="slide-B">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-B">
+            <div className="slide-B">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-B">
+            <div className="slide-B">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-B">
+            <div className="slide-B">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-B">
+            <div className="slide-B">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-B">
+            <div className="slide-B">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-B">
+            <div className="slide-B">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-B">
+            <div className="slide-B">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
-            <div class="slide-B">
+            <div className="slide-B">
                 <img src={nft} height="250" width="250" alt="" />
             </div>
         </div>
