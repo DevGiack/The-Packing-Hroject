@@ -59,6 +59,15 @@ const ConnectWalletButton = () => {
         if (address) {
             setWalletAddress(address);
         }
+
+        // Surveiller les changements de compte dans MetaMask
+        if (window.ethereum) {
+            window.ethereum.on('accountsChanged', (accounts) => {
+              const address = accounts[0];
+              setLocalStorageItem("userAddress", address);
+              setWalletAddress(address);
+            });
+        }
     }, [setWalletAddress]);
 
     // Create a provider to interact with a smart contract
