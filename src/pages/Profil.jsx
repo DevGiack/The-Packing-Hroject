@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
-import OwnCollection from '../components/OwnCollection/OwnCollection';
+import { OwnCollection } from '../components/OwnCollection/OwnCollection';
 
 export const Profil = () => {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ export const Profil = () => {
 
   return (
     <>
-    <OwnCollection />
-  </>
+      <OwnCollection />
+    </>
   )
 }

@@ -1,9 +1,6 @@
-import React from 'react';
-import './OwnCollection.css';
+import './MintCollection.css';
 import { Network, Alchemy } from 'alchemy-sdk';
 import { v1 as uuidv1 } from 'uuid';
-import { atom, useAtom } from 'jotai';
-import { UserAddressAtom } from "../atom/UserWalletAddress";
 
 const settings = {
   apiKey: import.meta.env.VITE_MORALIS_API_KEY,
@@ -17,13 +14,13 @@ let imageUrl = '';
 let tokenId = '';
 let OPFloor = '';
 
-export const OwnCollection = () => {
+export const MintCollection = () => {
   return (
   <>
-  <div id="OwnCollection">
+  <div id="MintCollection">
     <div className="bloc-title">
-      <span id="big-title">MY PROFILE</span>
-      <span id="little-title">My NFT's</span>
+      <span id="big-title">MINT COLLECTION</span>
+      <span id="little-title">The NFTs</span>
       <span id="title-border"></span>
     </div>
     <div className="bloc-cards">
@@ -44,7 +41,7 @@ export const OwnCollection = () => {
                 <span>{NFTTitle}</span>
                 <span className="cardtxt">{OPFloor} ETH</span>
                 <div className="card-button-link">
-                  <button id="details_button">Details</button>
+                  <button id="details_button">Mint</button>
                 </div>
               </div>
             </div>
@@ -56,6 +53,3 @@ export const OwnCollection = () => {
   </>
   );
 };
-
-// sauvegarde de la bonne commande pour l'image :
-/* <img src={imageUrl} className="card-img" alt="..."></img> */
