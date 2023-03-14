@@ -21,8 +21,9 @@
 .header-content a {
     margin-right: 3em;
     border-bottom: 2px solid transparent;
+    font-size: 1.1em;
     font-family: 'Helvetica';
-    font-weight: 500;
+    font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
@@ -32,6 +33,6 @@
 .link.active {
     text-decoration: underline;
     color: #ff8906;
-  }
+}
 
   

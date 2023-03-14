@@ -6,7 +6,7 @@ import { UserAddressAtom } from "../atom/UserWalletAddress";
 import CryptoJS from "crypto-js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faPowerOff } from "@fortawesome/free-solid-svg-icons";
-import DisconnectWalletButton from "../DisconnectWalletButton/DisconnectWalletButton";
+import { DisconnectWalletButton } from "../DisconnectWalletButton/DisconnectWalletButton";
 import { Link, useLocation } from "react-router-dom";
 
 const ConnectWalletButton = () => {
@@ -85,11 +85,11 @@ const ConnectWalletButton = () => {
             <Link to="/profil/#OwnCollection">
                 <FontAwesomeIcon 
                 icon={faUser}
-                color="#fffffe" 
+                color="rgb(224, 224, 224)" 
                 id="user"
                 />
-                </Link>
-                <Link to="/profil/#OwnCollection">
+            </Link>
+            <Link to="/profil/#OwnCollection">
                 <button className="address-button">
                     {`${walletAddress.slice(0, 6)}....${walletAddress.slice(
                         -4
