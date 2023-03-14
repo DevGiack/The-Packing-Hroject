@@ -1,4 +1,6 @@
 import "./Faq.css"
+import faq from "../../assets/images/FAQ.png"
+
 
 export const Faq = () => {
 
@@ -38,7 +40,8 @@ export const Faq = () => {
           </details>
           </div>
           <div className="blocB-faq">
-            <img src="../src/assets/images/FAQ.png" alt="pack2_NFT" />
+          <img alt="FAQ" src={faq} />
+
           </div> 
         </div>
       </div>
