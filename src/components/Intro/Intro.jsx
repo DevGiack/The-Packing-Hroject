@@ -8,7 +8,7 @@ export const Intro = () => {
       <div className="bloc1-intro">
         <div className="bloc1A-intro">
           <span id="title-intro">The Packing Hroject NFT Collection</span>
-          <span id="text-intro">That's the fucking NFT collection, please Mint & buy all you can put ! lopsus item panawe canim anubis dela feta salakis obonléde brebis as a little text before the mint button in da mother focker in master class.</span>
+          <span id="text-intro">These NFTs were made with love, that's why we collect all your attention about them. Any resemblance to certain students of a certain school is obviously fortuitous and the result of chance. This is an Amazing NFT Collection, please... Mint & Buy all you can !!</span>
           <button className="mint_button">Mint Now &nbsp; &#62;</button>
         </div>
         <div className="bloc1B-intro">
