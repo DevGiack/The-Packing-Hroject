@@ -5,10 +5,9 @@ import { UserAddressAtom } from "../atom/UserWalletAddress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faPowerOff } from "@fortawesome/free-solid-svg-icons";
 
-const DisconnectWalletButton = () => {
+export const DisconnectWalletButton = () => {
     const [walletAddress, setWalletAddress] = useAtom(UserAddressAtom);
     const navigate = useNavigate();
-
 
     const handleDisconnectWallet = () => {
         localStorage.removeItem("userAddress"); // Supprime l'adresse du localStorage
@@ -19,11 +18,9 @@ const DisconnectWalletButton = () => {
     return (
         <FontAwesomeIcon
             icon={faPowerOff}
-            color="#e53170"
+            color="rgb(196, 0, 0);"
             onClick={handleDisconnectWallet}
             className="disconnect"
         />
     );
 };
-
-export default DisconnectWalletButton;

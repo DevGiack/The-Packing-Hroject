@@ -1,39 +1,43 @@
 .connect-wallet-button {
-        height: 35px;
-        width: 165px;
-        font-size: 16px;
-        border: none;
-        border-radius: 19px;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        background-color: #ff8906;
-        color: #FFFFFE;
-        cursor: pointer;
+  height: 2.2em;
+  width: 11em;
+  font-size: 1em;
+  font-weight: bolder;
+  border: none;
+  border-radius: 19px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  background-color: #ff8906;
+  color: rgb(250, 230, 180);
+  cursor: pointer;
 }
 
-.connect-wallet-button:hover {
-        background: #f25f4c;
-        transition: 1s;
+.connect-wallet-button:hover,
+.address-button:hover {
+  background: #fa7426;
+  color: white;
+  transition: 1s;
 }
 
 .address-button {
-        height: 35px;
-        width: 140px;
-        font-size: 16px;
-        border: none;
-        border-radius: 19px;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        background-color: #ff8906;
-        color: #FFFFFE;
-        margin-left: 10px;
-        margin-right: 10px;
-        cursor: pointer;
-      }
+  height: 2.2em;
+  width: 10em;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 19px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  background-color: #ff8906;
+  color: rgb(250, 230, 180);
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
 
-      .button-icons {
-        display: flex;
-        align-items: center;
-      }
+.button-icons {
+  display: flex;
+  align-items: center;
+}
 
-      #user {
-        font-size: 1.5em;
-      }
+#user {
+  font-size: 1.5em;
+}
