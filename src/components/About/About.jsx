@@ -1,4 +1,6 @@
 import "./About.css"
+import about from "../../assets/images/PACK_2.png"
+
 
 export const About = () => {
 
@@ -12,7 +14,7 @@ export const About = () => {
       <div className="global-about">
         <div className="bloc-about">
           <div className="blocA-about">
-            <img src="../src/assets/images/PACK_2.png" alt="pack2_NFT" />
+            <img src={about} alt="pack2_NFT" />
           </div>
           <div className="blocB-about">
             <span id="title-about">Welcome to The Packing Hroject Art Studio</span>
