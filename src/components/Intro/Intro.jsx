@@ -1,4 +1,5 @@
 import "./Intro.css"
+import pack1 from "../../assets/images/PACK_1.png"
 
 export const Intro = () => {
 
@@ -11,7 +12,7 @@ export const Intro = () => {
           <button className="mint_button">Mint Now &nbsp; &#62;</button>
         </div>
         <div className="bloc1B-intro">
-          <img src="../src/assets/images/PACK_1.png" id="pack1" alt="pack1_NFT" />
+          <img id="pack1" alt="pack1_NFT" src={pack1} />
         </div> 
       </div>
       <div className="bloc2-intro">
