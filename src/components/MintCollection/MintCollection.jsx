@@ -1,6 +1,7 @@
 import './MintCollection.css';
 import { Network, Alchemy } from 'alchemy-sdk';
 import { v1 as uuidv1 } from 'uuid';
+import mystery from "../../assets/images/NFT_MYSTERY.jpg";
 
 const settings = {
   apiKey: import.meta.env.VITE_MORALIS_API_KEY,
@@ -36,7 +37,7 @@ export const MintCollection = () => {
             <div key={id} className="card">
               <div className="card-body">
                 <span className="card-id"># {tokenId}</span>
-                <img src="../src/assets/images/mini_collection/NFT_MYSTERY.jpg" className="card-img" alt="..."></img>
+                <img src={mystery} className="card-img" alt="..."></img>
                 <span>{contractName}</span>
                 <span>{NFTTitle}</span>
                 <span className="cardtxt">{OPFloor} ETH</span>
