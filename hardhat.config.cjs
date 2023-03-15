@@ -12,7 +12,7 @@ const MUMBAI_ACCOUNTS = [process.env.MUMBAI_ACCOUNT];
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.8",
+  solidity: "0.8.9",
   networks: {
     hardhat: {},
     mumbai: {
