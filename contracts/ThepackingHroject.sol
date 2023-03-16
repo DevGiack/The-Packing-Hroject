@@ -2,16 +2,21 @@
 pragma solidity ^0.8.9;
 
 import "../node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
+import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "../node_modules/@openzeppelin/contracts/security/Pausable.sol";
+import "../node_modules/@openzeppelin/contracts/access/AccessControl.sol";
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 
-contract TPH is ERC721, Ownable {
-    using Counters for Counters.Counter;
-    Counters.Counter private _tokenIdCounter;
-    using Strings for uint256;
+contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
     mapping (uint256 => string) private _tokenURIs;
+    bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
+    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+    uint256 idCounter = 1;
 
-constructor() ERC721("ThePackingHroject", "TPH") {
+    constructor() ERC721("TPH", "TPH") {
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(PAUSER_ROLE, msg.sender);
+        _grantRole(MINTER_ROLE, msg.sender);
     _tokenURIs[1] = "QmVMZ4v2cfhY53Er2Pf4yYBuT7NzBWLnSK3J2sQMjKJbAx";
     _tokenURIs[2] = "QmYarKZsKUGgPxCTosyBLxLHAMU7gbvobrvPr4SuFqi68o";
     _tokenURIs[3] = "QmdSdvpAw7cedjvnnPAGcsG7AdzPxYHNqxK6CWqW1Kc6se";
@@ -62,41 +67,60 @@ constructor() ERC721("ThePackingHroject", "TPH") {
     _tokenURIs[48] = "QmRuPkr1HnxAhcmpwDvfX7bidFKG1M5a4gNDBwqMHozPC6";
     _tokenURIs[49] = "QmVZDmgX5FJG3oirfhyVB4NRvwyFTF481h3aGhaCKCX8qY";
     _tokenURIs[50] = "QmUjfJBgkFBB5fnaHA2cnCDoURJ88JUGbvo3S46HQ8wa9H";
-}
+    }
+
+    function getId() public returns(uint256 counter) {
+        counter = idCounter;
+        idCounter += 1;
+    } 
 
     function _baseURI() internal pure override returns (string memory) {
         return "ipfs://";
     }
 
+    function pause() public onlyRole(PAUSER_ROLE) {
+        _pause();
+    }
 
-    function safeMint(address to) public onlyOwner {
-        uint256 tokenId = _tokenIdCounter.current();
-        _tokenIdCounter.increment();
+    function unpause() public onlyRole(PAUSER_ROLE) {
+        _unpause();
+    }
+
+    function safeMint(address to) public onlyRole(MINTER_ROLE) {
+        uint256 tokenId = getId();        
         _safeMint(to, tokenId);
+        _setTokenURI(tokenId, _tokenURIs[tokenId]);
     }
 
-    function getCounter() public view returns (uint256) {
-        return _tokenIdCounter.current();
+    function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)
+        internal
+        whenNotPaused
+        override
+    {
+        super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }
-
 
     // The following functions are overrides required by Solidity.
 
-        function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
-            require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
+    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
+        super._burn(tokenId);
+    }
 
-            string memory _tokenURI = _tokenURIs[tokenId];
-            string memory base = _baseURI();
-            
-            // If there is no base URI, return the token URI.
-            if (bytes(base).length == 0) {
-                return _tokenURI;
-            }
-            // If both are set, concatenate the baseURI and tokenURI (via abi.encodePacked).
-            if (bytes(_tokenURI).length > 0) {
-                return string(abi.encodePacked(base, _tokenURI));
-            }
-            // If there is a baseURI but no tokenURI, concatenate the tokenID to the baseURI.
-            return string(abi.encodePacked(base, tokenId.toString()));
-        }
+    function tokenURI(uint256 tokenId)
+        public
+        view
+        override(ERC721, ERC721URIStorage)
+        returns (string memory)
+    {
+        return super.tokenURI(tokenId);
+    }
+
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        override(ERC721, AccessControl)
+        returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
+    }
 }
