@@ -18,8 +18,8 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 14em;
-  padding-top: 7em;
+  height: 12em;
+  padding-top: 5em;
 }
 
 #big-title {
