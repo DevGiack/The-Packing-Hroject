@@ -60,7 +60,7 @@ export const SliderNFT =() => {
     for (let i = start; i <= end; i++) {
       slide.push(
         <div className= {nameClass}>
-          <img src= {list[i]} height="210" width="210" alt={`NFT_${i}`} />;
+          <img src= {list[i]} height="200" width="200" alt={`NFT_${i}`} />;
         </div>);
     }
   }
