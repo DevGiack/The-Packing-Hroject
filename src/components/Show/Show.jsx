@@ -1,4 +1,4 @@
-import SliderNFT from "../SliderNFT/SliderNFT"
+import { SliderNFT } from "../SliderNFT/SliderNFT"
 import "./Show.css"
 
 export const Show = () => {
