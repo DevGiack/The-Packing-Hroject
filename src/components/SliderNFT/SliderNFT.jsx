@@ -6,7 +6,7 @@ export const SliderNFT =() => {
   let slideA = [];
   let slideB = [];
 
-  for (let i = 1; i < 32; i++) {
+  for (let i = 0; i < 31; i++) {
     slideA.push(
       <div className="slide-A">
         <img src={imagesList[i]} height="250" width="250" alt={`mini_${i}`} />
@@ -14,21 +14,13 @@ export const SliderNFT =() => {
     );
   }
 
-  for (let i = 31; i < 51; i++) {
+  for (let i = 30; i < 56; i++) {
     slideB.push(
       <div className="slide-B">
         <img src={imagesList[i]} height="250" width="250" alt={`mini_${i}`} />
       </div>
     );
   }
-  
-  for (let i = 1; i < 7; i++) {
-      slideB.push(
-        <div className="slide-B">
-          <img src={imagesList[i]} height="250" width="250" alt={`mini_${i}`} />
-        </div>
-      );
-    }
 
   slideB = slideB.reverse();
 
