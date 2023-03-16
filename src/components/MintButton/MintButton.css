@@ -1,15 +1,16 @@
 :root {
 	--bg: #0f0e17;
 	--primary: #ff8906;
-	--solid: #fff;
+	--solid: rgba(235, 235, 235, 0.9);
 	--btn-w: 10em;
 	--dot-w: calc(var(--btn-w)*.2);
 	--tr-X: calc(var(--btn-w) - var(--dot-w));
 }
+
 *:before, *:after {box-sizing: border-box;}
 
 .btn {
-        position: relative;
+  position: relative;
 	margin: 0 auto;
 	width: var(--btn-w);
 	color: var(--primary);
@@ -20,8 +21,9 @@
 	font-size: 1.3em;
 	line-height: 2em;
 	cursor: pointer;	
-        box-sizing: border-box;
+  box-sizing: border-box;
 }
+
 .dot {
 	content: '';
 	position: absolute;
@@ -32,6 +34,7 @@
 	transition: all 300ms ease;
 	display: none;
 }
+
 .dot:after {
 	content: '';
 	position: absolute;
@@ -43,13 +46,15 @@
 	border-radius: 1em;
 	border: .25em solid var(--solid);
 	box-shadow: 0 0 .7em var(--solid),
-				0 0 2em var(--primary);
+							0 0 2em var(--primary);
 }
+
 .btn:hover .dot,
 .btn:focus .dot {
 	animation: atom 2s infinite linear;
 	display: block;
 }
+
 @keyframes atom {
 	0% {transform: translateX(0) rotate(0);}
 	30%{transform: translateX(var(--tr-X)) rotate(0);}
