@@ -14,7 +14,6 @@ const MUMBAI_ACCOUNTS = [process.env.MUMBAI_ACCOUNT];
 module.exports = {
   solidity: "0.8.9",
   networks: {
-    hardhat: {},
     mumbai: {
       url: MUMBAI_RPC_URL,
       accounts: MUMBAI_ACCOUNTS,

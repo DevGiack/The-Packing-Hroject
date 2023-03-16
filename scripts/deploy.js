@@ -12,23 +12,18 @@ async function main() {
   const tph = await tphFactory.deploy()
   await tph.deployed()
   console.log(`Deployed contract to: ${tph.address}`)
-  // what happens when we deploy to our hardhat network?
-  if (network.config.chainId === 5 && process.env.ETHERSCAN_API_KEY) {
-    console.log("Waiting for block confirmations...")
-    await tph.deployTransaction.wait(6)
-    await verify(tph.address, [])
-  }
 
-  const mint = await tph.safeMint("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266");
-  let test = await tph.getCounter();
-  console.log(`mint du NFT #${test}`);
-//  let owner = await tph.ownerOf("1");
-//  console.log(`owner: ${owner}`);
-  const mint2 = await tph.safeMint("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266");
-  let test2 = await tph.getCounter();
-  console.log(`${test2}`);
-//  let owner2 = await tph.ownerOf("2");
-//  console.log(`owner: ${owner2}`);
+
+  const mint = async () => {
+    const mint1 = await tph.safeMint("0xb3faf97A9A9f6C0a54C6ddFDC4a188E702a45205")
+    console.log(mint1)
+    const mint2 = await tph.safeMint("0xb3faf97A9A9f6C0a54C6ddFDC4a188E702a45205")
+    console.log(mint2)
+    const mint3 = await tph.safeMint("0xb3faf97A9A9f6C0a54C6ddFDC4a188E702a45205")
+    console.log(mint3)
+  } 
+
+  await mint()
 }
 
 // async function verify(contractAddress, args) {
