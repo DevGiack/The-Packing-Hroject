@@ -1,6 +1,7 @@
 :root {
 	--bg: #0f0e17;
 	--primary: #ff8906;
+	--text: rgb(250, 192, 84);
 	--solid: rgba(235, 235, 235, 0.9);
 	--btn-w: 10em;
 	--dot-w: calc(var(--btn-w)*.2);
@@ -13,7 +14,7 @@
   position: relative;
 	margin: 0 auto;
 	width: var(--btn-w);
-	color: var(--primary);
+	color: var(--text);
 	border: .15em solid var(--primary);
 	border-radius: 5em;
 	text-transform: uppercase;
