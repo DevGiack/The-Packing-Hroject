@@ -32,18 +32,6 @@
   font-weight: bolder;
 }
 
-.discord_button {
-  height: 2em;
-  width: 10em;
-  font-size: 1.4em;
-  border: none;
-  border-radius: 2em;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  background-color: #ff8906;
-  color: #FFFFFE;
-  cursor: pointer;
-}
-
 #text1 {
   font-size: 1.5em;
   font-weight: bold;
