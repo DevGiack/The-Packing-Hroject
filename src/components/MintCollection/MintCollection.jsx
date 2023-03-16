@@ -48,7 +48,6 @@ export const MintCollection = () => {
     }, 0)
   }());
   
-
   return (
   <>
   <div id="MintCollection">
@@ -59,7 +58,7 @@ export const MintCollection = () => {
     </div>
 
     <div class="containerTimer">
-      <h1 id="headline">Start mint in :</h1>
+      <h1 id="headline">Start Mint in :</h1>
       <div id="countdown">
         <p>
           <li className="li-Timer"><span id="days"></span>days</li>
