@@ -1,11 +1,17 @@
-h1, h2 {
-        color: #a7a9be ;
-        font-family: 'Helvetica';
+.bloc {
+  text-align: center;
+  margin-right: 25%;
+  margin-left: 25%;
+  margin-bottom: 5%;
 }
 
-.bloc {
-        margin-top: 7em;
-        text-align: center;
-        margin-right: 25%;
-        margin-left: 25%;
+h2 {
+  color: #a7a9be ;
+  font-family: 'Helvetica';
+  margin-top: 1em;
+}
+
+.paragraph {
+  margin-top: -2em;
+  color: #a5a6aa;
 }
