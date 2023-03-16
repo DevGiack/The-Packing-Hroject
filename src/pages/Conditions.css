@@ -1,0 +1,11 @@
+h1, h2 {
+        color: #a7a9be ;
+        font-family: 'Helvetica';
+}
+
+.bloc {
+        margin-top: 7em;
+        text-align: center;
+        margin-right: 25%;
+        margin-left: 25%;
+}
