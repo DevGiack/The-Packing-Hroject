@@ -1,25 +1,23 @@
 .footer {
-        margin-top: em;
-        font-family: 'Helvetica';
-        font-size: 0.9em;
-        text-align: center;
+  font-family: 'Helvetica';
+  font-size: 0.9em;
+  text-align: center;
 }
 
 .footer-link {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        font-weight: bold;
-        font-size: 0.8em;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-weight: bold;
+  font-size: 0.8em;
 }
 
 p {
-        margin-right:  20px;
-        text-decoration: none;
-        color: #fffffe;
+  margin-right:  20px;
+  text-decoration: none;
+  color: #fffffe;
 }
 
 a {
-        text-decoration: none;
+  text-decoration: none;
 }
-
