@@ -1,3 +1,5 @@
+
+import { v1 as uuidv1 } from 'uuid';
 import NFT1 from "../../assets/images/mini_collection/TPH_01.jpg";
 import NFT2 from "../../assets/images/mini_collection/TPH_02.jpg";
 import NFT3 from "../../assets/images/mini_collection/TPH_03.jpg";
@@ -58,8 +60,9 @@ export const SliderNFT =() => {
 
   const imgTab = (slide, nameClass, start, end) => {
     for (let i = start; i <= end; i++) {
+      const id = uuidv1();
       slide.push(
-        <div className= {nameClass}>
+        <div key={id} className= {nameClass}>
           <img src= {list[i]} height="200" width="200" alt={`NFT_${i}`} />;
         </div>);
     }
@@ -75,7 +78,7 @@ export const SliderNFT =() => {
   imgTab(slideC,"slide-L",1,6);
 
   slideB = slideB.reverse();
-
+  
   return (
     <>
       <div className="slider-L">
