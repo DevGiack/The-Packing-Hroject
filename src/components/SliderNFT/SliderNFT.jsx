@@ -53,11 +53,14 @@ import "./SliderNFT.css";
 
 export const SliderNFT =() => {
 
+  const list = [ null, NFT1, NFT2, NFT3, NFT4, NFT5, NFT6, NFT7, NFT8, NFT9, NFT10, NFT11, NFT12, NFT13, NFT14, NFT15, NFT16, NFT17, NFT18, NFT19, NFT20, NFT21, NFT22, NFT23, NFT24,
+    NFT25, NFT26, NFT27, NFT28, NFT29, NFT30, NFT31, NFT32, NFT33, NFT34, NFT35, NFT36, NFT37, NFT38, NFT39, NFT40, NFT41, NFT42, NFT43, NFT44, NFT45, NFT46, NFT47, NFT48, NFT49, NFT50];
+
   const imgTab = (slide, nameClass, start, end) => {
     for (let i = start; i <= end; i++) {
       slide.push(
         <div className= {nameClass}>
-          <img src= {`../src/assets/images/mini_collection/TPH_0${i}.jpg`} height="200" width="200" alt={`NFT_${i}`} />;
+          <img src= {list[i]} height="210" width="210" alt={`NFT_${i}`} />;
         </div>);
     }
   }
