@@ -1,6 +1,7 @@
 import "./Intro.css"
 import pack1 from "../../assets/images/PACK_1.png"
 import { Link } from "react-router-dom"
+import { MintButton } from "../MintButton/MintButton"
 
 export const Intro = () => {
 
@@ -11,7 +12,7 @@ export const Intro = () => {
           <span id="title-intro">The Packing Hroject NFT Collection</span>
           <span id="text-intro">These NFTs were made with love, that's why we collect all your attention about them. Any resemblance to certain students of a certain school is obviously fortuitous and the result of chance. This is an Amazing NFT Collection, please... Mint & Buy all you can !!</span>
           <Link to="/mint">
-            <button className="mint_button">Mint Now &nbsp; &#62;</button>
+            <MintButton />
           </Link>
         </div>
         <div className="bloc1B-intro">

@@ -1,6 +1,7 @@
 import "./About.css"
 import about from "../../assets/images/PACK_2.png"
-
+import { Link } from "react-router-dom"
+import { MintButton } from "../MintButton/MintButton"
 
 export const About = () => {
 
@@ -20,7 +21,9 @@ export const About = () => {
             <span id="title-about">Welcome to The Packing Hroject Art Studio</span>
             <span id="text1">The Packing Hroject Art Studio is a private collection of NFT's unique digital collectibles. These images are the products of hard work and the fruit of an overflowing imagination.</span>
             <span id="text2">The tedious production of these works of art is the result of hundreds of hours of artistic work. We hope you like this particular collection and make you want to participate in its success.</span>
-            <button className="discord_button">Join Our Discord &nbsp; &#62;</button>
+            <Link to="/mint">
+            <MintButton />
+          </Link>
           </div> 
         </div>
       </div>
