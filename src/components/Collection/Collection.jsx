@@ -90,7 +90,7 @@ export const Collection =(list) => {
       const id = uuidv1();
       slide.push(
         <div key={id} className= {nameClass}>
-          <img src={NFT1} height="200" width="200" alt={`NFT_${i}`} />;
+          <img src={mistery} height="200" width="200" alt={`NFT_${i}`} />;
         </div>);
     }
   }
