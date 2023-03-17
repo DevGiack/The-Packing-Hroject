@@ -87,11 +87,11 @@ export const Collection =(list) => {
   
   const imgTab = (slide, nameClass, start, end) => {
     for (let i = start; i <= end; i++) {
-      const id = uuidv1();
+      const id = uuidv1()
       slide.push(
         <div key={id} className= {nameClass}>
-          <img src={mistery} height="200" width="200" alt={`NFT_${i}`} />;
-        </div>);
+          <img src={mistery} height="200" width="200" alt={`NFT_${i}`} />
+        </div>)
     }
   }
 

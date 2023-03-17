@@ -1,6 +1,6 @@
 #MintCollection {
   width: 100%;
-  min-height: 96vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
