@@ -1,0 +1,38 @@
+.sliderL, 
+.sliderR {
+	height: 200px;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	margin-bottom: 1.2em;
+}
+
+.slidetrackL {
+	animation: scrollright 2s ease 1;
+	display: flex;
+	justify-content: center;
+}
+
+.slidetrackR {
+	animation: scrollleft 2s ease 1;
+	display: flex;
+	justify-content: center;
+}
+
+.slideL, 
+.slideR {
+	margin-right: 0.6em;
+	margin-left: 0.6em;
+}
+
+@keyframes scrollright {
+	0% { transform: translateX(-100%); }
+	100% { transform: translateX(0); }
+}
+
+/* anim second slider */
+@keyframes scrollleft {
+	0% { transform: translateX(100%); }
+	100% { transform: translateX(0); }
+}
