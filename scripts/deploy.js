@@ -15,83 +15,83 @@ async function main() {
 
     const mint = async () => {
         const mint1 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint1)
         const mint2 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint2)
         const mint3 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint3)
         const mint4 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint4)
         const mint5 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint5)
         const mint6 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint6)
         const mint7 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint7)
         const mint8 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint8)
         const mint9 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint9)
         const mint10 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint10)
         const mint11 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint11)
         const mint12 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint12)
         const mint13 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint13)
         const mint14 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint14)
         const mint15 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint15)
         const mint16 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint16)
         const mint17 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint17)
         const mint18 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint18)
         const mint19 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint19)
         const mint20 = await tph.safeMint(
-            "0x1C3F2d005280854d9c798EbF448c2FC2650Bf20a"
+            "0xb78D40C04a5e5176FA32260945939BB075C34696"
         )
         console.log(mint20)
     }

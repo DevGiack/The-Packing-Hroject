@@ -9,13 +9,13 @@
 }
 
 .slidetrackL {
-	animation: scrollright 2s ease 1;
+	animation: scrollright 1.5s ease 1;
 	display: flex;
 	justify-content: center;
 }
 
 .slidetrackR {
-	animation: scrollleft 2s ease 1;
+	animation: scrollleft 1.5s ease 1;
 	display: flex;
 	justify-content: center;
 }
