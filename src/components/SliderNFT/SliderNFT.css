@@ -31,7 +31,7 @@
 }
 
 /* anim second slider */
-@keyframes scrolll-eft {
-	0% { transform: translateX(100%); }
-	100% { transform: translateX(0); }
+@keyframes scroll-left {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-100%); }
 }
