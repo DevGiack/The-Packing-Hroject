@@ -22,7 +22,8 @@
 .bloc1A-intro {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  padding-right: 50px;
   gap: 3em;
 }
 
