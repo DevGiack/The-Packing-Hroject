@@ -21,7 +21,7 @@ let tokenId = '';
 let OPFloor = '';
 
 export const OwnCollection = () => {
-  console.log(nftsForOwner.ownedNfts)
+//  console.log(nftsForOwner.ownedNfts)
   return (
   <>
   <div id="OwnCollection">

@@ -9,16 +9,10 @@ export const MintCollection = () => {
       hour = minute * 60,
       day = hour * 24;
     
-    let countDownDate = localStorage.getItem('countDownDate');
-    if (!countDownDate) {
-      countDownDate = Date.now() + (14 * day); // 14 jours en millisecondes
-      localStorage.setItem('countDownDate', countDownDate);
-    }
-    
     const x = setInterval(function () {
-      const now = new Date().getTime(),
-        distance = countDownDate - now;
-    
+      const countDownDate = new Date(2023, 2, 24, 23, 59, 59).getTime();
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
       document.getElementById("days").innerText = Math.floor(distance / day),
       document.getElementById("hours").innerText = Math.floor((distance % day) / hour),
       document.getElementById("minutes").innerText = Math.floor((distance % hour) / minute),
@@ -29,7 +23,6 @@ export const MintCollection = () => {
         document.getElementById("headline").innerText = "Mint is live !";
         document.getElementById("countdown").style.display = "none";
         clearInterval(x);
-        localStorage.removeItem('countDownDate');
       }
     }, 0)
   }());
@@ -43,8 +36,8 @@ export const MintCollection = () => {
       <span id="title-border"></span>
     </div>
 
-    <div class="containerTimer">
-      <h1 id="headline">Start Mint in :</h1>
+    <div className="containerTimer">
+      <h1 id="headline">Minting will be live in :</h1>
       <div id="countdown">
         <p>
           <li className="li-Timer"><span id="days"></span>days</li>
@@ -53,11 +46,14 @@ export const MintCollection = () => {
           <li className="li-Timer"><span id="seconds"></span>Seconds</li>
         </p>
         <hr id="hr-MintPage"/>
-      </div>
-    </div>
-</div>
 
-<Collection />
+      </div>
+      <div className="typewriter">
+  <h1>which one will be yours ?</h1>
+</div>
+    </div>
+    <Collection />
+</div>
   </>
   );
 };

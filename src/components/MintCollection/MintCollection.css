@@ -21,7 +21,6 @@
 }
 
 .containerTimer {
-  margin-top: 3em;
   color: rgb(224, 224, 224);;
   text-align: center;
 }
@@ -44,7 +43,7 @@
 }
 
 #headline{
-  margin-bottom: 0;
+  color: #ff8906;
 }
 
 @media all and (max-width: 768px) {
@@ -59,4 +58,33 @@
   li span {
     font-size: calc(3.375rem * var(--smaller));
   }
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter {
+  display:flex;
+  justify-content: center;
+}
+
+.typewriter h1 {
+  color: #ff8906;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid blanchedalmond; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin-bottom: 1em;
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 5s steps(20, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: blanchedalmond; }
 }
