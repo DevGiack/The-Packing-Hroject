@@ -33,12 +33,9 @@ const ConnectWalletButton = () => {
     }
 
     async function requestAccount() {
-        console.log("Requesting account...");
 
         // ❌ Vérifie si MetaMask est présent dans le navigateur
         if (window.ethereum) {
-            console.log("detected");
-
             try {
                 const accounts = await window.ethereum.request({
                     method: "eth_requestAccounts",
@@ -47,7 +44,7 @@ const ConnectWalletButton = () => {
                 setLocalStorageItem("userAddress", address); // Stocke l'adresse dans le localStorage
                 setWalletAddress(address); // Mets à jour le state global
             } catch (error) {
-                console.log("Error connecting...");
+
             }
         } else {
             alert("Meta Mask not detected");

@@ -9,10 +9,12 @@ const network = {"80001": "polygon-mumbai",
 
 const settings = {
   apiKey: import.meta.env.VITE_MORALIS_API_KEY,
-  network: network[window.ethereum.networkVersion],
+  network: network[0],
 };
 const alchemy = new Alchemy(settings);
-const nftsForOwner = await alchemy.nft.getNftsForOwner(window.ethereum.selectedAddress);
+let nftsForOwner = []
+window.ethereum ? window.ethereum.selectedAddress ? nftsForOwner = await alchemy.nft.getNftsForOwner(window.ethereum.selectedAddress) : nftsForOwner =[] : nftsForOwner = []
+
 
 let contractName = '';
 let NFTTitle = '';
@@ -21,7 +23,6 @@ let tokenId = '';
 let OPFloor = '';
 
 export const Details = () => {
-//  console.log(nftsForOwner.ownedNfts)
   return (
   <>
 <div className="img_details">

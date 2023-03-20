@@ -8,12 +8,14 @@ const network = {"80001": "polygon-mumbai",
 "137": "polygon-mainnet", "1": "eth-mainnet"
 }
 
-const settings = {
-  apiKey: import.meta.env.VITE_MORALIS_API_KEY,
-  network: network[window.ethereum.networkVersion],
-};
-const alchemy = new Alchemy(settings);
-const nftsForOwner = await alchemy.nft.getNftsForOwner(window.ethereum.selectedAddress);
+  const settings = {
+    apiKey: import.meta.env.VITE_MORALIS_API_KEY,
+    network: network["80001"],
+  };
+  const alchemy = new Alchemy(settings);
+
+  let nftsForOwner = []
+  window.ethereum ? window.ethereum.selectedAddress ? nftsForOwner = await alchemy.nft.getNftsForOwner(window.ethereum.selectedAddress) : nftsForOwner =[] : nftsForOwner = []
 
 let contractName = '';
 let NFTTitle = '';
@@ -22,7 +24,6 @@ let tokenId = '';
 let OPFloor = '';
 
 export const OwnCollection = () => {
-//  console.log(nftsForOwner.ownedNfts)
   return (
   <>
   <div id="OwnCollection">
