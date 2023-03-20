@@ -1,27 +1,24 @@
-import React from 'react';
-import { useEffect } from "react";
-import { useNavigate, useLocation } from 'react-router-dom';
-import { OwnCollection } from '../components/OwnCollection/OwnCollection';
+import React from "react"
+import { useEffect } from "react"
+import { useNavigate, useLocation } from "react-router-dom"
+import { OwnCollection } from "../components/OwnCollection/OwnCollection"
 
 export const Profil = () => {
-  const navigate = useNavigate();
-  
-  useEffect(() => {
-    const userAddress = localStorage.getItem("userAddress");
-    // if (!userAddress) {
-    //   navigate("/"); // rediriger vers la page de connexion
-    // }
-  }, [navigate]);
+    const navigate = useNavigate()
 
-  const { profil } = useLocation();
+    useEffect(() => {
+        const userAddress = localStorage.getItem("userAddress")
+    }, [navigate])
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [profil]);
+    const { profil } = useLocation()
 
-  return (
-    <>
-      <OwnCollection />
-    </>
-  )
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [profil])
+
+    return (
+        <>
+            <OwnCollection />
+        </>
+    )
 }
