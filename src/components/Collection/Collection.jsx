@@ -53,6 +53,7 @@ import NFT47 from "../../assets/images/mini_collection/TPH_047.jpg";
 import NFT48 from "../../assets/images/mini_collection/TPH_048.jpg";
 import NFT49 from "../../assets/images/mini_collection/TPH_049.jpg";
 import NFT50 from "../../assets/images/mini_collection/TPH_050.jpg";
+import console from 'console';
 
 const randomized = [17,20,18,3,1,19,23,21,8,2,5,7,4,6,9,22,11,24,30,10,29,12,31,13,14,16,26,15,25,32,27,28,40,39,50,49,44,42,41,43,45,47,38,48,46,36,37,33,34,35]
 
@@ -71,7 +72,7 @@ const alchemy = new Alchemy(settings);
 // 0xee510D0B3F41C113c7A61F3AfF3D04dE43Bc3049
 
 const getList = async () => {
-  const collection = await alchemy.nft.getNftsForContract(import.meta.env.VITE_CONTRACT_ADRESS)
+  const collection = await alchemy.nft.getNftsForContract("0xee510D0B3F41C113c7A61F3AfF3D04dE43Bc3049")
   const list_nft = [NFT1, NFT2, NFT3, NFT4, NFT5, NFT6, NFT7, NFT8, NFT9, NFT10, NFT11, NFT12, NFT13, NFT14, NFT15, NFT16, NFT17, NFT18, NFT19, NFT20, NFT21, NFT22, NFT23, NFT24,NFT25, NFT26, NFT27, NFT28, NFT29, NFT30, NFT31, NFT32, NFT33, NFT34, NFT35, NFT36, NFT37, NFT38, NFT39, NFT40, NFT41, NFT42, NFT43, NFT44, NFT45, NFT46, NFT47, NFT48, NFT49, NFT50]
   const list_1 = list_nft.slice(0, collection.nfts.length)
   const list_2 = Array(50 - collection.nfts.length).fill(mistery)
@@ -80,7 +81,7 @@ const getList = async () => {
 }
 
 const getTooltipList = async () => {
-  const collection = await alchemy.nft.getNftsForContract(import.meta.env.VITE_CONTRACT_ADRESS)
+  const collection = await alchemy.nft.getNftsForContract("0xee510D0B3F41C113c7A61F3AfF3D04dE43Bc3049")
   const traitList = randomized.map((x, i) => {
     return collection.nfts.length >= i ? collection.nfts[i] ? collection.nfts[i].rawMetadata.attributes : "???" : "???";
   });
