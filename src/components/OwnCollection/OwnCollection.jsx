@@ -2,6 +2,7 @@ import React from 'react';
 import './OwnCollection.css';
 import { Network, Alchemy } from 'alchemy-sdk';
 import { v1 as uuidv1 } from 'uuid';
+import { Link } from "react-router-dom";
 
 const network = {"80001": "polygon-mumbai",
 "137": "polygon-mainnet", "1": "eth-mainnet"
@@ -47,7 +48,9 @@ export const OwnCollection = () => {
                 <span>{NFTTitle}</span>
                 <span><b>member {tokenId}/50</b></span>
                 <div className="card-button-link">
+                <Link to="/details">
                   <button id="details_button">Details</button>
+                  </Link>
                 </div>
               </div>
             </div>

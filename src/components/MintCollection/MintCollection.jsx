@@ -1,5 +1,6 @@
 import './MintCollection.css';
 import { Collection } from "../Collection/Collection";
+import React, { useState, useEffect } from 'react';
 
 export const MintCollection = () => {
 
@@ -9,13 +10,14 @@ export const MintCollection = () => {
       hour = minute * 60,
       day = hour * 24;
     
-    const x = setInterval(function () {
+      useEffect(() => {  
+      const x = setInterval(function () {
       const countDownDate = new Date(2023, 2, 24, 23, 59, 59).getTime();
       const now = new Date().getTime();
       const distance = countDownDate - now;
-      document.getElementById("days").innerText = Math.floor(distance / day),
-      document.getElementById("hours").innerText = Math.floor((distance % day) / hour),
-      document.getElementById("minutes").innerText = Math.floor((distance % hour) / minute),
+      document.getElementById("days").innerText = Math.floor(distance / day);
+      document.getElementById("hours").innerText = Math.floor((distance % day) / hour);
+      document.getElementById("minutes").innerText = Math.floor((distance % hour) / minute);
       document.getElementById("seconds").innerText = Math.floor((distance % minute) / second);
     
       //do something later when date is reached
@@ -24,7 +26,9 @@ export const MintCollection = () => {
         document.getElementById("countdown").style.display = "none";
         clearInterval(x);
       }
-    }, 0)
+    }, 0);
+    return () => clearInterval(x);
+  }, []);
   }());
   
   return (

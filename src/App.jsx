@@ -3,6 +3,7 @@ import { Home } from "./pages/Home";
 import { Profil } from "./pages/Profil";
 import { Error } from "./pages/Error";
 import { Mint } from "./pages/Mint";
+import { Details } from "./pages/Details";
 import { Privacy } from "./pages/Privacy";
 import { Terms } from "./pages/Terms";
 import { Security } from "./pages/Security";
@@ -22,6 +23,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/security" element={<Security />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/details" element={<Details />} />
       </Routes>
       <Footer />
     </>

@@ -8,9 +8,9 @@ export const Profil = () => {
   
   useEffect(() => {
     const userAddress = localStorage.getItem("userAddress");
-    if (!userAddress) {
-      navigate("/"); // rediriger vers la page de connexion
-    }
+    // if (!userAddress) {
+    //   navigate("/"); // rediriger vers la page de connexion
+    // }
   }, [navigate]);
 
   const { profil } = useLocation();

@@ -38,3 +38,26 @@ body {
   width: 5em;
   border-top: 3px solid #ff8906;
 }
+
+.img_details {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  justify-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 10%;
+}
+
+.metadata_details {
+width: 100%;
+background-color: black;
+color: #ff8906;
+text-align: center;
+padding: 5px 0;
+border-radius: 6px;
+white-space: pre;
+margin-top: 5%;
+margin-bottom: 5%;
+max-width: 50%;
+}
