@@ -83,7 +83,7 @@ const ConnectWalletButton = () => {
                     id="user"
                 />
             </Link>
-            <Link to="/profil/#OwnCollection">
+            <Link to="/profil">
                 <button className="address-button">
                     {`${walletAddress.slice(0, 6)}....${walletAddress.slice(-4)}`}
                 </button>
