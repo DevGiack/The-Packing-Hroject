@@ -55,9 +55,11 @@ import NFT49 from "../../assets/images/mini_collection/TPH_049.webp"
 import NFT50 from "../../assets/images/mini_collection/TPH_050.webp"
 
 const randomized = [
-    17, 20, 18, 3, 1, 19, 23, 21, 8, 2, 5, 7, 4, 6, 9, 22, 11, 24, 30, 10, 29,
-    12, 31, 13, 14, 16, 26, 15, 25, 32, 27, 28, 40, 39, 50, 49, 44, 42, 41, 43,
-    45, 47, 38, 48, 46, 36, 37, 33, 34, 35,
+    17, 20, 18, 37, 1, 19, 23, 5, 48, 32,
+    21, 7, 40, 16, 9, 42, 11, 24, 30, 10,
+    43, 45, 31, 39, 14, 6, 26, 15, 25, 2,
+    27, 4, 35, 13, 50, 49, 44, 22, 41, 29,
+    12, 47, 38, 46, 8, 36, 33, 3, 34, 28
 ]
 
 const network = {
@@ -130,28 +132,44 @@ const list = await getList()
 
 export const Collection =() => {
 
-  const howManyGenre = (value) => { return value ? statistiques.GENRE[0][value] : "??";}
-  const howManyLanguage = (value) => { return value ? statistiques.LANGUAGE[0][value] : "??";}
-  const howManyExpression = (value) => { return value ? statistiques.EXPRESSION[0][value] : "??";}
-  const howManyGlasses = (value) => { return value ? statistiques.GLASSES[0][value] : "??";}
-  const howManyLisereTph = (value) => { return value ? statistiques.LISERE_TPH[0][value] : "??";}
-  const howManySticker = (value) => { return value ? statistiques.STICKER[0][value] : "??";}
-  const howManyArticle = (value) => { return value ? statistiques.ARTICLE[0][value] : "??";}
-  const howManyBackgroundColor = (value) => { return value ? statistiques.BACKGROUND_COLOR[0][value] : "??";}
-  const howManyComputer = (value) => { return value ? statistiques.COMPUTER[0][value] : "??";}
+  const howManyGenre = (value) => { return value ? statistiques.GENRE[0][value]*2 : "??";}
+  const howManyLanguage = (value) => { return value ? statistiques.LANGUAGE[0][value]*2 : "??";}
+  const howManyExpression = (value) => { return value ? statistiques.EXPRESSION[0][value]*2 : "??";}
+  const howManyGlasses = (value) => { return value ? statistiques.GLASSES[0][value]*2 : "??";}
+  const howManyLisereTph = (value) => { return value ? statistiques.LISERE_TPH[0][value]*2 : "??";}
+  const howManySticker = (value) => { return value ? statistiques.STICKER[0][value]*2 : "??";}
+  const howManyArticle = (value) => { return value ? statistiques.ARTICLE[0][value]*2 : "??";}
+  const howManyBackgroundColor = (value) => { return value ? statistiques.BACKGROUND_COLOR[0][value]*2 : "??";}
+  const howManyComputer = (value) => { return value ? statistiques.COMPUTER[0][value]*2 : "??";}
 
   const getTooltipContent = (attributes) => {
+  
     return (
       <>
-        {attributes.map(({ label, value, count }) => (
-          <div key={label}>
-            <span className="attribut">{label} : &nbsp; </span>
-            <span className="value">{value}&nbsp; &nbsp;</span>
-            <span className="rareness">{count}</span>
-            <span className="pourcent">/50</span>
-            <br />
-          </div>
-        ))}
+        {attributes.map(({ label, value, count }) => {
+
+          const rarityClass = 
+            count === 2 ? "orange" : 
+            count >= 2  && count <= 8 ? "purple" : 
+            count >= 10 && count <= 18 ? "blue" : 
+            count >= 20 && count <= 36 ? "green" : 
+            count > 36 ? "gray" :
+            "";
+
+          return (
+            <div key={label}>
+              <span className="attribut">{label} : &nbsp; </span>
+              <span className="value">{value}&nbsp; &nbsp;</span>
+              { value !== "???" && (
+                <>
+                  <span className={rarityClass}>{count}</span>
+                  <span className="pourcent"> %</span>
+                </>
+              )}
+              <br />
+            </div>
+          );
+        })}
       </>
     );
   }
