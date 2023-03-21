@@ -15,6 +15,13 @@ export const DisconnectWalletButton = () => {
         navigate("/") // Redirige vers la page d'accueil
     }
 
+    setInterval(function() {
+        localStorage.clear("userAddress");
+        navigate("/");
+      }, 3600000); // Efface le Local Storage, redirige vers la page d'accueil toutes les 3 heures
+      
+
+
     return (
         <FontAwesomeIcon
             icon={faPowerOff}
