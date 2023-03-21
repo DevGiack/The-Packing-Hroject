@@ -1,4 +1,4 @@
-export const stats = {
+export const statistiques = {
   GENRE : [{
     "MEN TYPE 1" : 18,
     "MEN TYPE 2" : 14,
@@ -13,6 +13,8 @@ export const stats = {
     "HTML/CSS SPECIAL SOCIAL" : 1,
     "RUBY ON RAILS" : 13,
     "JAVASCRIPT" : 12,
+    "REACT" : 12,
+    "REACT JS" : 12,
     "BINARY" : 1
   }],
   EXPRESSION : [{
@@ -47,7 +49,7 @@ export const stats = {
     "SPECIAL HARRY POTTER" : 1,
     "SPECIAL BRITANNY" : 1,
     "SPECIAL MISSING" : 1,
-    "SPECIAL GREEN" : 1
+    "SPECIAL GREEN EDITION" : 1
   }],
   STICKER : [{
     "REACT" : 4,
@@ -57,10 +59,10 @@ export const stats = {
     "STACK OVERFLOW" : 4,
     "IA SKULL" : 4,
     "CODING KING" : 3,
-    "GIT HUB" : 5,
+    "GITHUB" : 5,
     "NINJA FULLSTACK" : 5,
     "STAFF" : 3,
-    "SNAKOOZ" : 1,
+    "GREEEN SNAKE" : 1,
     "DOBBY" : 1,
     "CAPTAIN MELON" : 1,
     "POOP" : 1,
@@ -93,6 +95,7 @@ export const stats = {
     "PASTEL BEIGE" : 9,
     "BROWN" : 5,
     "BLUE" : 7,
+    "BLEU" : 7,
     "PURPLE" : 4,
     "GREEN" : 6,
     "PURPLE RED" : 4,
@@ -105,11 +108,11 @@ export const stats = {
     "SPECIAL BOSS" : 1
   }],
   COMPUTER : [{
-    "DARK" : 25, // voir si rectif du .Json ou de l'image avec Alexis ?
+    "DARK" : 25,
     "BLACK" : 25,
     "SILVER" : 18,
     "PEARLY" : 5,
-    "GREEN" : 1,
+    "SPECIAL GREEN EDITION" : 1,
     "GOLD" : 1
   }]
 }

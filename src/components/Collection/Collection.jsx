@@ -1,6 +1,7 @@
 import { v1 as uuidv1 } from "uuid"
 import { Alchemy } from "alchemy-sdk"
 import "./Collection.css"
+import { statistiques } from "../../statistiques/statistiques"
 import mistery from "../../assets/images/mini_collection/NFT_MYSTERY.webp"
 import NFT1 from "../../assets/images/mini_collection/TPH_01.webp"
 import NFT2 from "../../assets/images/mini_collection/TPH_02.webp"
@@ -129,6 +130,16 @@ const list = await getList()
 
 export const Collection =() => {
 
+  const howManyGenre = (value) => { return value ? statistiques.GENRE[0][value] : "??";}
+  const howManyLanguage = (value) => { return value ? statistiques.LANGUAGE[0][value] : "??";}
+  const howManyExpression = (value) => { return value ? statistiques.EXPRESSION[0][value] : "??";}
+  const howManyGlasses = (value) => { return value ? statistiques.GLASSES[0][value] : "??";}
+  const howManyLisereTph = (value) => { return value ? statistiques.LISERE_TPH[0][value] : "??";}
+  const howManySticker = (value) => { return value ? statistiques.STICKER[0][value] : "??";}
+  const howManyArticle = (value) => { return value ? statistiques.ARTICLE[0][value] : "??";}
+  const howManyBackgroundColor = (value) => { return value ? statistiques.BACKGROUND_COLOR[0][value] : "??";}
+  const howManyComputer = (value) => { return value ? statistiques.COMPUTER[0][value] : "??";}
+
   const imgTab = (slide, nameClass, start, end) => {
     for (let i = start; i <= end; i++) {
       const img = list[randomized[i-1]-1]
@@ -138,98 +149,108 @@ export const Collection =() => {
         <div key={id} className={nameClass}>
           <img src={img} height="200" width="200" alt={`NFT_${i}`} />
           <span className="tooltiptext">
-            <span className='attribut'>GENRE : &nbsp;</span>
-            <span className='value'>{meta[randomized[i-1]-1].GENRE ? meta[randomized[i-1]-1].GENRE : "???"}</span><br></br>
-            <span className='attribut'>LANGUAGE : &nbsp;</span>
-            <span className='value'>{meta[randomized[i-1]-1].LANGUAGE ? meta[randomized[i-1]-1].LANGUAGE : "???"}</span><br></br>
-            <span className='attribut'>EXPRESSION : &nbsp;</span>
-            <span className='value'>{meta[randomized[i-1]-1].EXPRESSION ? meta[randomized[i-1]-1].EXPRESSION : "???"}</span><br></br>
-            <span className='attribut'>GLASSES : &nbsp;</span>
-            <span className='value'>{meta[randomized[i-1]-1].GLASSES ? meta[randomized[i-1]-1].GLASSES : "???"}</span><br></br>
-            <span className='attribut'>LISERE_TPH : &nbsp;</span>
-            <span className='value'>{meta[randomized[i-1]-1].LISERE_TPH ? meta[randomized[i-1]-1].LISERE_TPH : "???"}</span><br></br>
-            <span className='attribut'>STICKER : &nbsp;</span>
-            <span className='value'>{meta[randomized[i-1]-1].STICKER ? meta[randomized[i-1]-1].STICKER : "???"}</span><br></br>
-            <span className='attribut'>ARTICLE : &nbsp;</span>
-            <span className='value'>{meta[randomized[i-1]-1].ARTICLE ? meta[randomized[i-1]-1].ARTICLE : "???"}</span><br></br>
-            <span className='attribut'>BACKGROUND_COLOR : &nbsp;</span>
-            <span className='value'>{meta[randomized[i-1]-1].BACKGROUND_COLOR ? meta[randomized[i-1]-1].BACKGROUND_COLOR : "???"}</span><br></br>
-            <span className='attribut'>COMPUTER : &nbsp;</span>
-            <span className='value'>{meta[randomized[i-1]-1].COMPUTER ? meta[randomized[i-1]-1].COMPUTER : "???"}</span>
+            <span className='attribut'>GENRE : &nbsp; </span>
+            <span className='value'>{meta[randomized[i-1]-1].GENRE ? meta[randomized[i-1]-1].GENRE : "???"}&nbsp; &nbsp;</span>
+            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyGenre(meta[randomized[i-1]-1].GENRE) : "??"}</span><span className="pourcent">/50</span><br></br>
+            <span className='attribut'>LANGUAGE : &nbsp; </span>
+            <span className='value'>{meta[randomized[i-1]-1].LANGUAGE ? meta[randomized[i-1]-1].LANGUAGE : "???"}&nbsp; &nbsp;</span>
+            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyLanguage(meta[randomized[i-1]-1].LANGUAGE) : "??"}</span><span className="pourcent">/50</span><br></br>
+            <span className='attribut'>EXPRESSION : &nbsp; </span>
+            <span className='value'>{meta[randomized[i-1]-1].EXPRESSION ? meta[randomized[i-1]-1].EXPRESSION : "???"}&nbsp; &nbsp;</span>
+            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyExpression(meta[randomized[i-1]-1].EXPRESSION) : "??"}</span><span className="pourcent">/50</span><br></br>
+            <span className='attribut'>GLASSES : &nbsp; </span>
+            <span className='value'>{meta[randomized[i-1]-1].GLASSES ? meta[randomized[i-1]-1].GLASSES : "???"}&nbsp; &nbsp;</span>
+            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyGlasses(meta[randomized[i-1]-1].GLASSES) : "??"}</span><span className="pourcent">/50</span><br></br>
+            <span className='attribut'>LISERE_TPH : &nbsp; </span>
+            <span className='value'>{meta[randomized[i-1]-1].LISERE_TPH ? meta[randomized[i-1]-1].LISERE_TPH : "???"}&nbsp; &nbsp;</span>
+            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyLisereTph(meta[randomized[i-1]-1].LISERE_TPH) : "??"}</span><span className="pourcent">/50</span><br></br>
+            <span className='attribut'>STICKER : &nbsp; </span>
+            <span className='value'>{meta[randomized[i-1]-1].STICKER ? meta[randomized[i-1]-1].STICKER : "???"}&nbsp; &nbsp;</span>
+            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManySticker(meta[randomized[i-1]-1].STICKER) : "??"}</span><span className="pourcent">/50</span><br></br>
+            <span className='attribut'>ARTICLE : &nbsp; </span>
+            <span className='value'>{meta[randomized[i-1]-1].ARTICLE ? meta[randomized[i-1]-1].ARTICLE : "???"}&nbsp; &nbsp;</span>
+            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyArticle(meta[randomized[i-1]-1].ARTICLE) : "??"}</span><span className="pourcent">/50</span><br></br>
+            <span className='attribut'>BG_COLOR : &nbsp; </span>
+            <span className='value'>{meta[randomized[i-1]-1].BACKGROUND_COLOR ? meta[randomized[i-1]-1].BACKGROUND_COLOR : "???"}&nbsp; &nbsp;</span>
+            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyBackgroundColor(meta[randomized[i-1]-1].BACKGROUND_COLOR) : "??"}</span><span className="pourcent">/50</span><br></br>
+            <span className='attribut'>COMPUTER : &nbsp; </span>
+            <span className='value'>{meta[randomized[i-1]-1].COMPUTER ? meta[randomized[i-1]-1].COMPUTER : "???"}&nbsp; &nbsp;</span>
+            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyComputer(meta[randomized[i-1]-1].COMPUTER) : "??"}</span><span className="pourcent">/50</span>
           </span>
-        </div>)
+        </div>
+      )
     }
   }
 
-    let slideA = []
-    let slideB = []
-    let slideC = []
-    let slideD = []
-    let slideE = []
-    let slideF = []
-    let slideG = []
-    let slideH = []
-    let slideI = []
-    let slideJ = []
+  let slideA = []
+  let slideB = []
+  let slideC = []
+  let slideD = []
+  let slideE = []
+  let slideF = []
+  let slideG = []
+  let slideH = []
+  let slideI = []
+  let slideJ = []
 
-    imgTab(slideA, "slideL tooltip", 1, 5)
-    imgTab(slideB, "slideR tooltip", 6, 10)
-    imgTab(slideC, "slideL tooltip", 11, 15)
-    imgTab(slideD, "slideR tooltip", 16, 20)
-    imgTab(slideE, "slideL tooltip", 21, 25)
-    imgTab(slideF, "slideR tooltip", 26, 30)
-    imgTab(slideG, "slideL tooltip", 31, 35)
-    imgTab(slideH, "slideR tooltip", 36, 40)
-    imgTab(slideI, "slideL tooltip", 41, 45)
-    imgTab(slideJ, "slideR tooltip", 46, 50)
+  imgTab(slideA, "slideL tooltip", 1, 5)
+  imgTab(slideB, "slideR tooltip", 6, 10)
+  imgTab(slideC, "slideL tooltip", 11, 15)
+  imgTab(slideD, "slideR tooltip", 16, 20)
+  imgTab(slideE, "slideL tooltip", 21, 25)
+  imgTab(slideF, "slideR tooltip", 26, 30)
+  imgTab(slideG, "slideL tooltip", 31, 35)
+  imgTab(slideH, "slideR tooltip", 36, 40)
+  imgTab(slideI, "slideL tooltip", 41, 45)
+  imgTab(slideJ, "slideR tooltip", 46, 50)
 
-    slideB = slideB.reverse()
-    slideD = slideD.reverse()
-    slideF = slideF.reverse()
-    slideH = slideH.reverse()
-    slideJ = slideJ.reverse()
+  slideB = slideB.reverse()
+  slideD = slideD.reverse()
+  slideF = slideF.reverse()
+  slideH = slideH.reverse()
+  slideJ = slideJ.reverse()
 
-    return (
-        <>
-            <div className="sliderL">
-                <div className="slidetrackL">{slideA}</div>
-            </div>
+  return (
+      <>
+          <div className="sliderL">
+              <div className="slidetrackL">{slideA}</div>
+          </div>
 
-            <div className="sliderR">
-                <div className="slidetrackR">{slideB}</div>
-            </div>
+          <div className="sliderR">
+              <div className="slidetrackR">{slideB}</div>
+          </div>
 
-            <div className="sliderL">
-                <div className="slidetrackL">{slideC}</div>
-            </div>
+          <div className="sliderL">
+              <div className="slidetrackL">{slideC}</div>
+          </div>
 
-            <div className="sliderR">
-                <div className="slidetrackR">{slideD}</div>
-            </div>
+          <div className="sliderR">
+              <div className="slidetrackR">{slideD}</div>
+          </div>
 
-            <div className="sliderL">
-                <div className="slidetrackL">{slideE}</div>
-            </div>
+          <div className="sliderL">
+              <div className="slidetrackL">{slideE}</div>
+          </div>
 
-            <div className="sliderR">
-                <div className="slidetrackR">{slideF}</div>
-            </div>
+          <div className="sliderR">
+              <div className="slidetrackR">{slideF}</div>
+          </div>
 
-            <div className="sliderL">
-                <div className="slidetrackL">{slideG}</div>
-            </div>
+          <div className="sliderL">
+              <div className="slidetrackL">{slideG}</div>
+          </div>
 
-            <div className="sliderR">
-                <div className="slidetrackR">{slideH}</div>
-            </div>
+          <div className="sliderR">
+              <div className="slidetrackR">{slideH}</div>
+          </div>
 
-            <div className="sliderL">
-                <div className="slidetrackL">{slideI}</div>
-            </div>
+          <div className="sliderL">
+              <div className="slidetrackL">{slideI}</div>
+          </div>
 
-            <div className="sliderR">
-                <div className="slidetrackR">{slideJ}</div>
-            </div>
-        </>
-    )
+          <div className="sliderR">
+              <div className="slidetrackR">{slideJ}</div>
+          </div>
+      </>
+  )
 }
