@@ -27,21 +27,21 @@ export const Intro = () => {
                 </div>
             </div>
             <div className="bloc2-intro">
-                <div className="stat_box">
-                    <h2>50</h2>
-                    <p>Total Items</p>
+                <div className="stat-box">
+                    <span className="box-val">50</span>
+                    <span className="box-text">Total Items</span>
                 </div>
-                <div className="stat_box">
-                    <h2>48</h2>
-                    <p>Total Owners</p>
+                <div className="stat-box">
+                    <span className="box-val">48</span>
+                    <span className="box-text">Total Owners</span>
                 </div>
-                <div className="stat_box">
-                    <h2>0.25</h2>
-                    <p>Floor Price (ETH)</p>
+                <div className="stat-box">
+                    <span className="box-val">0.25</span>
+                    <span className="box-text">Floor Price (ETH)</span>
                 </div>
-                <div className="stat_box">
-                    <h2>12K</h2>
-                    <p>Volume Traded</p>
+                <div className="stat-box">
+                    <span className="box-val">12K</span>
+                    <span className="box-text">Volume Traded</span>
                 </div>
             </div>
         </div>

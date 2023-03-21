@@ -5,18 +5,18 @@ import "./Footer.css"
 export const Footer = () => {
   return (
     <div className='footer'>
-        <p>Copyright © 2023 TPH - All Right Reserved.</p>
-        <div className='footer-link'>
+      <span className='footer-text'>Copyright © 2023 TPH - All Right Reserved.</span>
+      <div className='footer-link'>
         <Link to="/security">
-        <p>Security</p>
+          <span className='footer-link-text'>Security</span>
         </Link>
         <Link to="/terms">
-        <p>Terms</p>
+          <span className='footer-link-text'>Terms</span>
         </Link>
         <Link to="/privacy">
-        <p>Privacy</p>
+          <span className='footer-link-text'>Privacy</span>
         </Link>
-        </div>
+      </div>
     </div>
   )
 }

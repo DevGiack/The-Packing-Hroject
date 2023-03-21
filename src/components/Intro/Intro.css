@@ -22,7 +22,7 @@
 .bloc1A-intro {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 3em;
 }
 
@@ -34,8 +34,8 @@
 .bloc2-intro {
   display: flex;
   flex-direction: row;
-  width: 1150px;
-  height: 250px;
+  width: 72em;
+  height: 15em;
   justify-content: space-between;
   align-items: center;
 }
@@ -47,25 +47,30 @@
 
 #text-intro {
   font-size: 1.2em;
-}
-
-h2 {
-  font-size: 2.6em;
+  max-width: 26em;
 }
 
 #pack1 {
   height: 520px;
 }
 
-.stat_box {
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  width: 270px;
-  height: 150px;
+  width: 16em;
+  height: 8em;
   border-radius: 2em;
-  background-color: rgba(11, 11, 33, 0.85);
-  color: white;
+  background-color: rgba(11, 11, 33, 0.9);
 }
 
-.stat_box p {
-  margin-top: -1.5em;
+.box-text {
+  color: rgb(250, 192, 84);;
+}
+
+.box-val {
+  font-size: 3em;
+  font-weight: bold;
+  color: rgb(212, 212, 212);
 }

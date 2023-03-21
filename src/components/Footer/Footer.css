@@ -1,19 +1,26 @@
 .footer {
   font-family: 'Helvetica';
-  font-size: 0.9em;
+  font-size: 0.95em;
   text-align: center;
+  width: 100%;
 }
 
 .footer-link {
   display: flex;
   justify-content: center;
-  width: 100%;
   font-weight: bold;
-  font-size: 0.8em;
+  font-size: 0.85em;
+  margin-top: 1em;
+  padding-bottom: 1em;
 }
 
-p {
-  margin-right:  20px;
+.footer-text {
+  color: #fffffe;
+}
+
+.footer-link-text {
+  margin-right:  1em;
+  margin-left: 1em;
   text-decoration: none;
   color: #fffffe;
 }
