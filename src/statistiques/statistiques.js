@@ -5,16 +5,15 @@ export const statistiques = {
     "WOMEN TYPE 1" : 9,
     "WOMEN TYPE 2" : 6,
     "MEN TYPE 1 HAIRLESS" : 1,
-    "MISSING" : 1,
+    "ABSENT" : 1,
     "INSPECTEUR GADGET" : 1
   }],
   LANGUAGE : [{
     "HTML/CSS" : 11,
-    "HTML/CSS SPECIAL SOCIAL" : 1,
+    "HTML/CSS SPECIAL FOLLOWER EDITION" : 1,
     "RUBY ON RAILS" : 13,
     "JAVASCRIPT" : 12,
     "REACT" : 12,
-    "REACT JS" : 12,
     "BINARY" : 1
   }],
   EXPRESSION : [{
@@ -28,27 +27,28 @@ export const statistiques = {
     "N°8" : 5,
     "N°9" : 3,
     "NO EXPRESSION" : 2,
-    "SPECIAL CAPTAIN MELON" : 1,
+    "CAPTAIN MELON" : 1,
     "INSPECTEUR GAGDET" : 1
   }],
   GLASSES : [{
     "N°1 SUNGLASSES" : 5,
     "N°2" : 8,
-    "N°3" : 6,
+    "N°3" : 5,
+    "N°3 SPECIAL GOLD EDITION" : 1,
     "N°4" : 5,
-    "N°5 SKI" : 2,
+    "N°5 SKI EDITION" : 2,
     "NO GLASSES" : 24
   }],
   LISERE_TPH : [{
     "CLASSIC" : 37,
     "SPECIAL STAFF" : 4,
     "SPECIAL CUP OF TEA" : 1,
-    "SPECIAL BOSS" : 1,
+    "SPECIAL GOLD EDITION" : 1,
     "SPECIAL INSPECTEUR GADGET" : 1,
     "SPECIAL CAPTAIN MELON" : 1,
     "SPECIAL HARRY POTTER" : 1,
-    "SPECIAL BRITANNY" : 1,
-    "SPECIAL MISSING" : 1,
+    "SPECIAL BRITTANY" : 1,
+    "SPECIAL ABSENT" : 1,
     "SPECIAL GREEN EDITION" : 1
   }],
   STICKER : [{
@@ -62,7 +62,7 @@ export const statistiques = {
     "GITHUB" : 5,
     "NINJA FULLSTACK" : 5,
     "STAFF" : 3,
-    "GREEEN SNAKE" : 1,
+    "GREEN SNAKE" : 1,
     "DOBBY" : 1,
     "CAPTAIN MELON" : 1,
     "POOP" : 1,
@@ -95,24 +95,22 @@ export const statistiques = {
     "PASTEL BEIGE" : 9,
     "BROWN" : 5,
     "BLUE" : 7,
-    "BLEU" : 7,
     "PURPLE" : 4,
     "GREEN" : 6,
     "PURPLE RED" : 4,
     "YELLOW" : 6,
-    "GRAY" : 3,
+    "GRAY STAFF" : 3,
     "SPECIAL CUP OF TEA" : 1,
     "SPECIAL CAPTAIN MELON" : 1,
     "SPECIAL HARRY POTTER" : 1,
     "SPECIAL BRITTANY" : 1,
-    "SPECIAL BOSS" : 1
+    "SPECIAL GOLD EDITION" : 1
   }],
   COMPUTER : [{
-    "DARK" : 25,
     "BLACK" : 25,
     "SILVER" : 18,
     "PEARLY" : 5,
     "SPECIAL GREEN EDITION" : 1,
-    "GOLD" : 1
+    "SPECIAL GOLD EDITION" : 1
   }]
 }
