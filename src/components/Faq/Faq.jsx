@@ -1,5 +1,5 @@
 import "./Faq.css"
-import faq from "../../assets/images/FAQ.png"
+import faq from "../../assets/images/FAQ.webp"
 
 export const Faq = () => {
     return (

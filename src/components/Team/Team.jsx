@@ -1,8 +1,8 @@
 import "./Team.css"
-import yann from "../../assets/images/team/Yann.png"
-import jack from "../../assets/images/team/Jaccomo.png"
-import lucas from "../../assets/images/team/Lucas.png"
-import alexis from "../../assets/images/team/Alexis.png"
+import yann from "../../assets/images/team/Yann.webp"
+import jack from "../../assets/images/team/Jaccomo.webp"
+import lucas from "../../assets/images/team/Lucas.webp"
+import alexis from "../../assets/images/team/Alexis.webp"
 
 export const Team = () => {
     return (

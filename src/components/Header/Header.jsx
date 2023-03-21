@@ -2,7 +2,7 @@ import "./Header.css"
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import ConnectWalletButton from "../ConnectWalletButton/ConnectWalletButton"
-import logo from "../../assets/images/LOGO-TPH.png"
+import logo from "../../assets/images/LOGO-TPH.webp"
 
 export const Header = () => {
     const [activeLink, setActiveLink] = useState(null)
