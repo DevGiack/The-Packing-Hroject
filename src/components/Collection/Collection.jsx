@@ -130,28 +130,38 @@ const list = await getList()
 
 export const Collection =() => {
 
-  const howManyGenre = (value) => { return value ? statistiques.GENRE[0][value] : "??";}
-  const howManyLanguage = (value) => { return value ? statistiques.LANGUAGE[0][value] : "??";}
-  const howManyExpression = (value) => { return value ? statistiques.EXPRESSION[0][value] : "??";}
-  const howManyGlasses = (value) => { return value ? statistiques.GLASSES[0][value] : "??";}
-  const howManyLisereTph = (value) => { return value ? statistiques.LISERE_TPH[0][value] : "??";}
-  const howManySticker = (value) => { return value ? statistiques.STICKER[0][value] : "??";}
-  const howManyArticle = (value) => { return value ? statistiques.ARTICLE[0][value] : "??";}
-  const howManyBackgroundColor = (value) => { return value ? statistiques.BACKGROUND_COLOR[0][value] : "??";}
-  const howManyComputer = (value) => { return value ? statistiques.COMPUTER[0][value] : "??";}
+  const howManyGenre = (value) => { return value ? statistiques.GENRE[0][value]*2 : "??";}
+  const howManyLanguage = (value) => { return value ? statistiques.LANGUAGE[0][value]*2 : "??";}
+  const howManyExpression = (value) => { return value ? statistiques.EXPRESSION[0][value]*2 : "??";}
+  const howManyGlasses = (value) => { return value ? statistiques.GLASSES[0][value]*2 : "??";}
+  const howManyLisereTph = (value) => { return value ? statistiques.LISERE_TPH[0][value]*2 : "??";}
+  const howManySticker = (value) => { return value ? statistiques.STICKER[0][value]*2 : "??";}
+  const howManyArticle = (value) => { return value ? statistiques.ARTICLE[0][value]*2 : "??";}
+  const howManyBackgroundColor = (value) => { return value ? statistiques.BACKGROUND_COLOR[0][value]*2 : "??";}
+  const howManyComputer = (value) => { return value ? statistiques.COMPUTER[0][value]*2 : "??";}
 
   const getTooltipContent = (attributes) => {
+  
     return (
       <>
-        {attributes.map(({ label, value, count }) => (
-          <div key={label}>
-            <span className="attribut">{label} : &nbsp; </span>
-            <span className="value">{value}&nbsp; &nbsp;</span>
-            <span className="rareness">{count}</span>
-            <span className="pourcent">/50</span>
-            <br />
-          </div>
-        ))}
+        {attributes.map(({ label, value, count }) => {
+
+          const rarityClass = count === 2 ? "unique" : count === 4 || count === 6 ? "few" : count > 6 ? "more" : "";
+
+          return (
+            <div key={label}>
+              <span className="attribut">{label} : &nbsp; </span>
+              <span className="value">{value}&nbsp; &nbsp;</span>
+              { value !== "???" && (
+                <>
+                  <span className={rarityClass}>{count}</span>
+                  <span className="pourcent"> %</span>
+                </>
+              )}
+              <br />
+            </div>
+          );
+        })}
       </>
     );
   }

@@ -37,7 +37,6 @@
 	100% { transform: translateX(0); }
 }
 
-/* Tooltip text */
 .tooltip .tooltiptext {
 	visibility: hidden;
 	max-width: 20%;
@@ -65,13 +64,24 @@
 	font-size: 0.9em;
 }
 
-.rareness {
-	color : #ffac4d;
+.pourcent {
+	color : #f8d6b0;
+	font-size: 0.75em;
+}
+
+.more, .unique, .only-two {
 	font-weight: bold;
 	font-size: 0.8em;
 }
 
-.pourcent {
-	color : #838382;
-	font-size: 0.7em;
+.more {
+	color : #ffac4d;
+}
+
+.unique {
+	color : #e5ff00;
+}
+
+.few {
+	color : #7edb04;
 }
