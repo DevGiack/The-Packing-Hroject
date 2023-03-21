@@ -64,3 +64,14 @@
 	color: #fffffe;
 	font-size: 0.9em;
 }
+
+.rareness {
+	color : #ff8906;
+	font-weight: bold;
+	font-size: 0.8em;
+}
+
+.pourcent {
+	color : #fffffe;
+	font-size: 0.7em;
+}
