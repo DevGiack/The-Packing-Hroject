@@ -1,5 +1,5 @@
 import "./About.css"
-import about from "../../assets/images/PACK_2.png"
+import about from "../../assets/images/PACK_2.webp"
 import { Link } from "react-router-dom"
 import { MintButton } from "../MintButton/MintButton"
 
