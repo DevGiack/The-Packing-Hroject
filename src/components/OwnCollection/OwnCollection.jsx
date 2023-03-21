@@ -1,37 +1,40 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import "./OwnCollection.css"
 import { Alchemy } from "alchemy-sdk"
 import { v1 as uuidv1 } from "uuid"
 import { Link } from "react-router-dom"
 
-const network = {
-    80001: "polygon-mumbai",
-    137: "polygon-mainnet",
-    1: "eth-mainnet",
-}
-
-const settings = {
-    apiKey: import.meta.env.VITE_MORALIS_API_KEY,
-    network: network["80001"],
-}
-const alchemy = new Alchemy(settings)
-
-let nftsForOwner = []
-window.ethereum
-    ? window.ethereum.selectedAddress
-        ? (nftsForOwner = await alchemy.nft.getNftsForOwner(
-              window.ethereum.selectedAddress
-          ))
-        : (nftsForOwner = [])
-    : (nftsForOwner = [])
-
-// let contractName = ""
-let NFTTitle = ""
-let imageUrl = ""
-let tokenId = ""
-// let OPFloor = ""
-
 export const OwnCollection = () => {
+    const network = {
+        80001: "polygon-mumbai",
+        137: "polygon-mainnet",
+        1: "eth-mainnet",
+    }
+    
+    const settings = {
+        apiKey: import.meta.env.VITE_MORALIS_API_KEY,
+        network: network["80001"],
+    }
+    const alchemy = new Alchemy(settings)
+    
+    let NFTTitle = ""
+    let imageUrl = ""
+    let tokenId = ""
+    
+    const [nftsForOwner, setNftsForOwner] = useState([])
+
+    useEffect(() => {
+        async function fetchNfts() {
+            if (window.ethereum && window.ethereum.selectedAddress) {
+                const ownerAddress = window.ethereum.selectedAddress
+                const nfts = await alchemy.nft.getNftsForOwner(ownerAddress)
+                setNftsForOwner(nfts.ownedNfts)
+            }
+        }
+
+        fetchNfts()
+    }, [])
+
     return (
         <>
             <div id="OwnCollection">
@@ -41,19 +44,14 @@ export const OwnCollection = () => {
                     <span id="title-border"></span>
                 </div>
                 <div className="bloc-cards">
-                    {nftsForOwner.ownedNfts
-                        .filter((obj) => obj.title == "THE PACKING HROJECT")
+                    {nftsForOwner
+                        .filter((obj) => obj.title === "THE PACKING HROJECT")
                         .map((x) => {
                             x.tokenId
                                 ? x.tokenId.length > 6
                                     ? (tokenId = `${x.tokenId.slice(0, 6)}...`)
                                     : (tokenId = x.tokenId)
                                 : (tokenId = "undefined")
-                            x.contract.name
-                                ? x.contract.name.length > 20
-                                    ? (contractName = `${x.contract.name.slice(0,16)}...`)
-                                    : (contractName = x.contract.name)
-                                : (contractName = "undefined")
                             x.title
                                 ? x.title.length > 20
                                     ? (NFTTitle = `${x.title.slice(0, 16)}...`)
