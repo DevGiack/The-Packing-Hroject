@@ -65,7 +65,7 @@
 }
 
 .pourcent {
-	color : #f8d6b0;
+	color : #e7e7e6;
 	font-size: 0.75em;
 }
 
@@ -74,14 +74,22 @@
 	font-size: 0.8em;
 }
 
-.more {
-	color : #ffac4d;
+.orange {
+	color : #ff8716;
 }
 
-.unique {
-	color : #e5ff00;
+.purple {
+	color : #b311f3;
 }
 
-.few {
-	color : #7edb04;
+.blue {
+	color : #1ba8e9;
+}
+
+.green {
+	color : #8aca36;
+}
+
+.gray {
+	color : #afacac;
 }

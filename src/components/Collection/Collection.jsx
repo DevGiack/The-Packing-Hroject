@@ -55,9 +55,11 @@ import NFT49 from "../../assets/images/mini_collection/TPH_049.webp"
 import NFT50 from "../../assets/images/mini_collection/TPH_050.webp"
 
 const randomized = [
-    17, 20, 18, 3, 1, 19, 23, 21, 8, 2, 5, 7, 4, 6, 9, 22, 11, 24, 30, 10, 29,
-    12, 31, 13, 14, 16, 26, 15, 25, 32, 27, 28, 40, 39, 50, 49, 44, 42, 41, 43,
-    45, 47, 38, 48, 46, 36, 37, 33, 34, 35,
+    17, 20, 18, 37, 1, 19, 23, 5, 48, 32,
+    21, 7, 40, 16, 9, 42, 11, 24, 30, 10,
+    43, 45, 31, 39, 14, 6, 26, 15, 25, 2,
+    27, 4, 35, 13, 50, 49, 44, 22, 41, 29,
+    12, 47, 38, 46, 8, 36, 33, 3, 34, 28
 ]
 
 const network = {
@@ -146,7 +148,13 @@ export const Collection =() => {
       <>
         {attributes.map(({ label, value, count }) => {
 
-          const rarityClass = count === 2 ? "unique" : count === 4 || count === 6 ? "few" : count > 6 ? "more" : "";
+          const rarityClass = 
+            count === 2 ? "orange" : 
+            count >= 2  && count <= 8 ? "purple" : 
+            count >= 10 && count <= 18 ? "blue" : 
+            count >= 20 && count <= 36 ? "green" : 
+            count > 36 ? "gray" :
+            "";
 
           return (
             <div key={label}>
