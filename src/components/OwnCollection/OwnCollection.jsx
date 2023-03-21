@@ -25,11 +25,11 @@ window.ethereum
         : (nftsForOwner = [])
     : (nftsForOwner = [])
 
-let contractName = ""
+// let contractName = ""
 let NFTTitle = ""
 let imageUrl = ""
 let tokenId = ""
-let OPFloor = ""
+// let OPFloor = ""
 
 export const OwnCollection = () => {
     return (
@@ -51,10 +51,7 @@ export const OwnCollection = () => {
                                 : (tokenId = "undefined")
                             x.contract.name
                                 ? x.contract.name.length > 20
-                                    ? (contractName = `${x.contract.name.slice(
-                                          0,
-                                          16
-                                      )}...`)
+                                    ? (contractName = `${x.contract.name.slice(0,16)}...`)
                                     : (contractName = x.contract.name)
                                 : (contractName = "undefined")
                             x.title
@@ -65,7 +62,6 @@ export const OwnCollection = () => {
                             x.media[0].gateway
                                 ? (imageUrl = x.media[0].gateway)
                                 : (imageUrl = "undefined")
-                            //  x.contract.openSea.floorPrice ? OPFloor = x.contract.openSea.floorPrice : OPFloor = 'undefined';
                             const id = uuidv1()
                             return (
                                 <div key={id} className="card">

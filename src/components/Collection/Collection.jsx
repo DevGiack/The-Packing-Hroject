@@ -72,8 +72,6 @@ const settings = {
 
 const alchemy = new Alchemy(settings)
 
-// 0xee510D0B3F41C113c7A61F3AfF3D04dE43Bc3049
-
 const getList = async () => {
     const collection = await alchemy.nft.getNftsForContract(
         "0xee510D0B3F41C113c7A61F3AfF3D04dE43Bc3049"

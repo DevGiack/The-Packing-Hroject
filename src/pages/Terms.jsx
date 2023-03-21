@@ -1,6 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "./Conditions.css"
-import { useEffect } from "react"
 
 export const Terms = () => {
     useEffect(() => {
