@@ -21,12 +21,6 @@ window.ethereum
         : (nftsForOwner = [])
     : (nftsForOwner = [])
 
-let contractName = ""
-let NFTTitle = ""
-let imageUrl = ""
-let tokenId = ""
-let OPFloor = ""
-
 export const Details = () => {
     return (
         <>
@@ -34,7 +28,7 @@ export const Details = () => {
                 <div>
                     <img
                         src="https://nft-cdn.alchemy.com/matic-mumbai/c3284f590b948aaa0ca9a313c91ab76b"
-                        alt="..."
+                        alt="NFT TPH"
                     ></img>
                 </div>
                 <div className="metadata_details">
