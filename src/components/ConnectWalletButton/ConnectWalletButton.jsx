@@ -76,14 +76,14 @@ const ConnectWalletButton = () => {
     // Afficher le bouton CONNECT WALLET ou l'adresse ETH de l'utilisateur
     const buttonOrAddress = walletAddress ? (
         <div className="button-icons">
-            <Link to="/profil/#OwnCollection">
+            <Link to="/profil">
                 <FontAwesomeIcon
                     icon={faUser}
                     color="rgb(224, 224, 224)"
                     id="user"
                 />
             </Link>
-            <Link to="/profil/#OwnCollection">
+            <Link to="/profil">
                 <button className="address-button">
                     {`${walletAddress.slice(0, 6)}....${walletAddress.slice(-4)}`}
                 </button>
