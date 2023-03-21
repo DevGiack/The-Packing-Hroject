@@ -140,45 +140,66 @@ export const Collection =() => {
   const howManyBackgroundColor = (value) => { return value ? statistiques.BACKGROUND_COLOR[0][value] : "??";}
   const howManyComputer = (value) => { return value ? statistiques.COMPUTER[0][value] : "??";}
 
+  const getTooltipContent = (attributes) => {
+    return (
+      <>
+        {attributes.map(({ label, value, count }) => (
+          <div key={label}>
+            <span className="attribut">{label} : &nbsp; </span>
+            <span className="value">{value}&nbsp; &nbsp;</span>
+            <span className="rareness">{count}</span>
+            <span className="pourcent">/50</span>
+            <br />
+          </div>
+        ))}
+      </>
+    );
+  }
+
   const imgTab = (slide, nameClass, start, end) => {
+
     for (let i = start; i <= end; i++) {
-      const img = list[randomized[i-1]-1]
-      const id = uuidv1()
-      const meta = metadata[randomized[i-1]-1]
+      const metadataMap = metadata.map((item) => item[randomized[i-1] - 1]);
+      const img = list[randomized[i - 1] - 1];
+      const id = uuidv1();
+      const meta = metadataMap[i - 1];
+      const genre = meta.GENRE ? meta.GENRE : "???";
+      const language = meta.LANGUAGE ? meta.LANGUAGE : "???";
+      const expression = meta.EXPRESSION ? meta.EXPRESSION : "???";
+      const glasses = meta.GLASSES ? meta.GLASSES : "???";
+      const lisereTph = meta.LISERE_TPH ? meta.LISERE_TPH : "???";
+      const sticker = meta.STICKER ? meta.STICKER : "???";
+      const article = meta.ARTICLE ? meta.ARTICLE : "???";
+      const backgroundColor = meta.BACKGROUND_COLOR ? meta.BACKGROUND_COLOR : "???";
+      const computer = meta.COMPUTER ? meta.COMPUTER : "???";
+      const genreCount = meta.GENRE ? howManyGenre(meta.GENRE) : "??";
+      const languageCount = meta.LANGUAGE ? howManyLanguage(meta.LANGUAGE) : "??";
+      const expressionCount = meta.EXPRESSION ? howManyExpression(meta.EXPRESSION) : "??";
+      const glassesCount = meta.GLASSES ? howManyGlasses(meta.GLASSES) : "??";
+      const lisereTphCount = meta.LISERE_TPH ? howManyLisereTph(meta.LISERE_TPH) : "??";
+      const stickerCount = meta.STICKER ? howManySticker(meta.STICKER) : "??";
+      const articleCount = meta.ARTICLE ? howManyArticle(meta.ARTICLE) : "??";
+      const backgroundColorCount = meta.BACKGROUND_COLOR ? howManyBackgroundColor(meta.BACKGROUND_COLOR) : "??";
+      const computerCount = meta.COMPUTER ? howManyComputer(meta.COMPUTER) : "??";
+  
       slide.push(
         <div key={id} className={nameClass}>
           <img src={img} height="200" width="200" alt={`NFT_${i}`} />
           <span className="tooltiptext">
-            <span className='attribut'>GENRE : &nbsp; </span>
-            <span className='value'>{meta[randomized[i-1]-1].GENRE ? meta[randomized[i-1]-1].GENRE : "???"}&nbsp; &nbsp;</span>
-            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyGenre(meta[randomized[i-1]-1].GENRE) : "??"}</span><span className="pourcent">/50</span><br></br>
-            <span className='attribut'>LANGUAGE : &nbsp; </span>
-            <span className='value'>{meta[randomized[i-1]-1].LANGUAGE ? meta[randomized[i-1]-1].LANGUAGE : "???"}&nbsp; &nbsp;</span>
-            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyLanguage(meta[randomized[i-1]-1].LANGUAGE) : "??"}</span><span className="pourcent">/50</span><br></br>
-            <span className='attribut'>EXPRESSION : &nbsp; </span>
-            <span className='value'>{meta[randomized[i-1]-1].EXPRESSION ? meta[randomized[i-1]-1].EXPRESSION : "???"}&nbsp; &nbsp;</span>
-            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyExpression(meta[randomized[i-1]-1].EXPRESSION) : "??"}</span><span className="pourcent">/50</span><br></br>
-            <span className='attribut'>GLASSES : &nbsp; </span>
-            <span className='value'>{meta[randomized[i-1]-1].GLASSES ? meta[randomized[i-1]-1].GLASSES : "???"}&nbsp; &nbsp;</span>
-            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyGlasses(meta[randomized[i-1]-1].GLASSES) : "??"}</span><span className="pourcent">/50</span><br></br>
-            <span className='attribut'>LISERE_TPH : &nbsp; </span>
-            <span className='value'>{meta[randomized[i-1]-1].LISERE_TPH ? meta[randomized[i-1]-1].LISERE_TPH : "???"}&nbsp; &nbsp;</span>
-            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyLisereTph(meta[randomized[i-1]-1].LISERE_TPH) : "??"}</span><span className="pourcent">/50</span><br></br>
-            <span className='attribut'>STICKER : &nbsp; </span>
-            <span className='value'>{meta[randomized[i-1]-1].STICKER ? meta[randomized[i-1]-1].STICKER : "???"}&nbsp; &nbsp;</span>
-            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManySticker(meta[randomized[i-1]-1].STICKER) : "??"}</span><span className="pourcent">/50</span><br></br>
-            <span className='attribut'>ARTICLE : &nbsp; </span>
-            <span className='value'>{meta[randomized[i-1]-1].ARTICLE ? meta[randomized[i-1]-1].ARTICLE : "???"}&nbsp; &nbsp;</span>
-            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyArticle(meta[randomized[i-1]-1].ARTICLE) : "??"}</span><span className="pourcent">/50</span><br></br>
-            <span className='attribut'>BG_COLOR : &nbsp; </span>
-            <span className='value'>{meta[randomized[i-1]-1].BACKGROUND_COLOR ? meta[randomized[i-1]-1].BACKGROUND_COLOR : "???"}&nbsp; &nbsp;</span>
-            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyBackgroundColor(meta[randomized[i-1]-1].BACKGROUND_COLOR) : "??"}</span><span className="pourcent">/50</span><br></br>
-            <span className='attribut'>COMPUTER : &nbsp; </span>
-            <span className='value'>{meta[randomized[i-1]-1].COMPUTER ? meta[randomized[i-1]-1].COMPUTER : "???"}&nbsp; &nbsp;</span>
-            <span className="rareness">{meta[randomized[i-1]-1].GENRE ? howManyComputer(meta[randomized[i-1]-1].COMPUTER) : "??"}</span><span className="pourcent">/50</span>
+            {getTooltipContent([
+              { label: "GENRE", value: genre, count: genreCount },
+              { label: "LANGUAGE", value: language, count: languageCount },
+              { label: "EXPRESSION", value: expression, count: expressionCount },
+              { label: "GLASSES", value: glasses, count: glassesCount },
+              { label: "LISERE_TPH", value: lisereTph, count: lisereTphCount },
+              { label: "STICKER", value: sticker, count: stickerCount },
+              { label: "ARTICLE", value: article, count: articleCount },
+              { label: "BG_COLOR", value: backgroundColor, count: backgroundColorCount },
+              { label: "COMPUTER", value: computer, count: computerCount },
+            ])}
           </span>
         </div>
-      )
+      );
     }
   }
 
@@ -211,46 +232,12 @@ export const Collection =() => {
   slideJ = slideJ.reverse()
 
   return (
-      <>
-          <div className="sliderL">
-              <div className="slidetrackL">{slideA}</div>
-          </div>
-
-          <div className="sliderR">
-              <div className="slidetrackR">{slideB}</div>
-          </div>
-
-          <div className="sliderL">
-              <div className="slidetrackL">{slideC}</div>
-          </div>
-
-          <div className="sliderR">
-              <div className="slidetrackR">{slideD}</div>
-          </div>
-
-          <div className="sliderL">
-              <div className="slidetrackL">{slideE}</div>
-          </div>
-
-          <div className="sliderR">
-              <div className="slidetrackR">{slideF}</div>
-          </div>
-
-          <div className="sliderL">
-              <div className="slidetrackL">{slideG}</div>
-          </div>
-
-          <div className="sliderR">
-              <div className="slidetrackR">{slideH}</div>
-          </div>
-
-          <div className="sliderL">
-              <div className="slidetrackL">{slideI}</div>
-          </div>
-
-          <div className="sliderR">
-              <div className="slidetrackR">{slideJ}</div>
-          </div>
-      </>
-  )
+    <>
+      {[slideA, slideB, slideC, slideD, slideE, slideF, slideG, slideH, slideI, slideJ].map((slide, index) => (
+        <div key={index} className={`slider${index % 2 === 0 ? 'L' : 'R'}`}>
+          <div className={`slidetrack${index % 2 === 0 ? 'L' : 'R'}`}>{slide}</div>
+        </div>
+      ))}
+    </>
+  );
 }

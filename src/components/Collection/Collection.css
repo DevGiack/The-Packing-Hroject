@@ -42,7 +42,7 @@
 	visibility: hidden;
 	max-width: 20%;
 	background-color: rgba(0, 0, 0, 0.97);
-	color: #ff8906;
+	color: #ffac4d;
 	padding: 0.4em 0.6em 0.4em 0.6em;
 	border-radius: 0 1.3em 1.3em 0;
 	font-size: 1em;
@@ -61,17 +61,17 @@
 
 .value {
 	font-weight: 600;
-	color: #fffffe;
+	color: #f1f1f1;
 	font-size: 0.9em;
 }
 
 .rareness {
-	color : #ff8906;
+	color : #ffac4d;
 	font-weight: bold;
 	font-size: 0.8em;
 }
 
 .pourcent {
-	color : #fffffe;
+	color : #838382;
 	font-size: 0.7em;
 }
