@@ -1,0 +1,115 @@
+export const stats = {
+  GENRE : [{
+    "MEN TYPE 1" : 18,
+    "MEN TYPE 2" : 14,
+    "WOMEN TYPE 1" : 9,
+    "WOMEN TYPE 2" : 6,
+    "MEN TYPE 1 HAIRLESS" : 1,
+    "MISSING" : 1,
+    "INSPECTEUR GADGET" : 1
+  }],
+  LANGUAGE : [{
+    "HTML/CSS" : 11,
+    "HTML/CSS SPECIAL SOCIAL" : 1,
+    "RUBY ON RAILS" : 13,
+    "JAVASCRIPT" : 12,
+    "BINARY" : 1
+  }],
+  EXPRESSION : [{
+    "N°1" : 2,
+    "N°2" : 7,
+    "N°3" : 4,
+    "N°4" : 7,
+    "N°5" : 6,
+    "N°6" : 8,
+    "N°7" : 4,
+    "N°8" : 5,
+    "N°9" : 3,
+    "NO EXPRESSION" : 2,
+    "SPECIAL CAPTAIN MELON" : 1,
+    "INSPECTEUR GAGDET" : 1
+  }],
+  GLASSES : [{
+    "N°1 SUNGLASSES" : 5,
+    "N°2" : 8,
+    "N°3" : 6,
+    "N°4" : 5,
+    "N°5 SKI" : 2,
+    "NO GLASSES" : 24
+  }],
+  LISERE_TPH : [{
+    "CLASSIC" : 37,
+    "SPECIAL STAFF" : 4,
+    "SPECIAL CUP OF TEA" : 1,
+    "SPECIAL BOSS" : 1,
+    "SPECIAL INSPECTEUR GADGET" : 1,
+    "SPECIAL CAPTAIN MELON" : 1,
+    "SPECIAL HARRY POTTER" : 1,
+    "SPECIAL BRITANNY" : 1,
+    "SPECIAL MISSING" : 1,
+    "SPECIAL GREEN" : 1
+  }],
+  STICKER : [{
+    "REACT" : 4,
+    "LINUX" : 5,
+    "MUSTACHE" : 6,
+    "MUSIC" : 4,
+    "STACK OVERFLOW" : 4,
+    "IA SKULL" : 4,
+    "CODING KING" : 3,
+    "GIT HUB" : 5,
+    "NINJA FULLSTACK" : 5,
+    "STAFF" : 3,
+    "SNAKOOZ" : 1,
+    "DOBBY" : 1,
+    "CAPTAIN MELON" : 1,
+    "POOP" : 1,
+    "CATAMARAN" : 1,
+    "INSPECTEUR GADGET" : 1,
+    "CUP OF TEA" : 1,
+    "NO STICKER" : 3
+  }],
+  ARTICLE : [{
+    "SOCIAL SMARTPHONE" : 1,
+    "SPIDER" : 3,
+    "CAP" : 7,
+    "CHRISTMAS HAT" : 2,
+    "POSTER" : 3,
+    "PIN'S NO PAIN NO GAIN" : 2,
+    "HEADPHONES" : 11,
+    "SOMBRERO" : 3,
+    "CAMERA" : 4,
+    "LANTERN" : 1,
+    "BATMAN MASK" : 1,
+    "GADGET" : 1,
+    "CAPTAIN'S CAP" : 1,
+    "HARRY POTTER ACCESSORIES" : 1,
+    "TOILET PAPER ROLL" : 1,
+    "BRITTANY ACCESSORIES" : 1,
+    "CARNAVAL MASK" : 1,
+    "NO ARTICLE" : 7
+  }],
+  BACKGROUND_COLOR : [{
+    "PASTEL BEIGE" : 9,
+    "BROWN" : 5,
+    "BLUE" : 7,
+    "PURPLE" : 4,
+    "GREEN" : 6,
+    "PURPLE RED" : 4,
+    "YELLOW" : 6,
+    "GRAY" : 3,
+    "SPECIAL CUP OF TEA" : 1,
+    "SPECIAL CAPTAIN MELON" : 1,
+    "SPECIAL HARRY POTTER" : 1,
+    "SPECIAL BRITTANY" : 1,
+    "SPECIAL BOSS" : 1
+  }],
+  COMPUTER : [{
+    "DARK" : 25, // voir si rectif du .Json ou de l'image avec Alexis ?
+    "BLACK" : 25,
+    "SILVER" : 18,
+    "PEARLY" : 5,
+    "GREEN" : 1,
+    "GOLD" : 1
+  }]
+}
