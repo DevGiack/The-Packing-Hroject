@@ -20,7 +20,7 @@ const ConnectWalletButton = () => {
                 })
                 const address = accounts[0]
                 setWalletAddress(address) // Mets à jour le state global
-                localStorage.setItem("isLogin", "true"); // Stocke le status dans le local storage
+                localStorage.setItem("isLogin", "true"); // Stocke l'etat dans le local storage
             } catch (error) {}
         } else {
             alert("Meta Mask not detected")
