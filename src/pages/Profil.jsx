@@ -6,7 +6,10 @@ export const Profil = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        const userAddress = localStorage.getItem("userAddress")
+        const isLogin = localStorage.getItem("isLogin")
+        if (!isLogin) {
+            navigate("/")
+        } 
     }, [navigate])
 
     const { profil } = useLocation()
