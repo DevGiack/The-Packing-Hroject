@@ -24,7 +24,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/security" element={<Security />} />
         <Route path="/terms" element={<Terms />} />
-        <Route path="/details" element={<Details />} />
+        <Route path="/details/:TokenId" element={<Details />} />
       </Routes>
       <Footer />
     </>

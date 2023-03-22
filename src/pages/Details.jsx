@@ -1,57 +1,75 @@
-import React from "react"
+import { useEffect, useState } from "react"
 import { Alchemy } from "alchemy-sdk"
+import { useParams } from "react-router-dom";
 import "./Details.css"
 
-const network = {
-    80001: "polygon-mumbai",
-    137: "polygon-mainnet",
-    1: "eth-mainnet",
-}
-
-const settings = {
-    apiKey: import.meta.env.VITE_MORALIS_API_KEY,
-    network: network[0],
-}
-const alchemy = new Alchemy(settings)
-let nftsForOwner = []
-window.ethereum
-    ? window.ethereum.selectedAddress
-        ? (nftsForOwner = await alchemy.nft.getNftsForOwner(
-              window.ethereum.selectedAddress
-          ))
-        : (nftsForOwner = [])
-    : (nftsForOwner = [])
-
 export const Details = () => {
+
+    const { TokenId } = useParams();
+
+    const network = {
+        80001: "polygon-mumbai",
+        137: "polygon-mainnet",
+        1: "eth-mainnet",
+    }
+
+    const settings = {
+        apiKey: import.meta.env.VITE_MORALIS_API_KEY,
+        network: network["80001"],
+    }
+    const alchemy = new Alchemy(settings)
+    
+    const [nftsForOwner, setNftsForOwner] = useState([])
+
+    useEffect(() => {
+        async function fetchNfts() {
+            if (window.ethereum && window.ethereum.selectedAddress) {
+                const ownerAddress = window.ethereum.selectedAddress
+                const nfts = await alchemy.nft.getNftsForOwner(ownerAddress)
+                setNftsForOwner(nfts.ownedNfts)
+            }
+        }
+        fetchNfts()
+    }, [])
+
+    const currentNFT = nftsForOwner.find(nft => nft.tokenId === TokenId)
+    const currentImgUrl = currentNFT?.media[0]?.gateway;
+
     return (
-        <>
-            <div className="img_details">
-                <div>
-                    <img
-                        src={"https://nft-cdn.alchemy.com/matic-mumbai/c3284f590b948aaa0ca9a313c91ab76b"}
-                        width="750px"
-                        height="750px"
-                        alt="NFT TPH"
-                    ></img>
-                </div>
-                <div className="metadata_details">
-                    "GENRE : MEN TYPE 2 LANGUAGE : HTML/CSS
-                    <br></br>
-                    EXPRESSION : N°3
-                    <br></br>
-                    GLASSES : NO GLASSES
-                    <br></br>
-                    LISERE TPH : CLASSIC
-                    <br></br>
-                    STICKER : STACK OVERFLOW
-                    <br></br>
-                    ARTICLE : POSTER
-                    <br></br>
-                    BACKGROUND COLOR : BROWN
-                    <br></br>
-                    COMPUTER : SILVER"
-                </div>
+    <>
+        {currentImgUrl && (
+        <div className="img_details">
+            <div>
+            <img
+                src={currentImgUrl}
+                width="750px"
+                height="750px"
+                alt="NFT TPH"
+            />
             </div>
-        </>
-    )
+            <div className="metadata_details">
+                GENRE : MEN TYPE 2 LANGUAGE : HTML/CSS
+                <br></br>
+                EXPRESSION : N°3
+                <br></br>
+                GLASSES : NO GLASSES
+                <br></br>
+                LISERE TPH : CLASSIC
+                <br></br>
+                STICKER : STACK OVERFLOW
+                <br></br>
+                ARTICLE : POSTER
+                <br></br>
+                BACKGROUND COLOR : BROWN
+                <br></br>
+                COMPUTER : SILVER
+            </div>
+        </div>
+        )}
+    </>
+    );
+
+
+
+
 }
