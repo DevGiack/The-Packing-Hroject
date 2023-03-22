@@ -31,7 +31,6 @@ export const OwnCollection = () => {
                 setNftsForOwner(nfts.ownedNfts)
             }
         }
-
         fetchNfts()
     }, [])
 

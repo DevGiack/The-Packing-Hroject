@@ -1,12 +1,3 @@
-:root {
-	--bg: #0f0e17;
-	--primary: #ff8906;
-	--text: rgb(250, 192, 84);
-	--solid: rgba(235, 235, 235, 0.9);
-	--btn-w: 10em;
-	--dot-w: calc(var(--btn-w)*.2);
-	--tr-X: calc(var(--btn-w) - var(--dot-w));
-}
 
 *:before, *:after {box-sizing: border-box;}
 

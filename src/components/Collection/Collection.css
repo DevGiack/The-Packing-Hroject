@@ -41,7 +41,7 @@
 	visibility: hidden;
 	max-width: 20%;
 	background-color: rgba(0, 0, 0, 0.97);
-	color: #ffac4d;
+	color: var(--tip-text);
 	padding: 0.4em 0.6em 0.4em 0.6em;
 	border-radius: 0 1.3em 1.3em 0;
 	font-size: 1em;
@@ -60,12 +60,12 @@
 
 .value {
 	font-weight: 600;
-	color: #f1f1f1;
+	color: var(--tip-value);
 	font-size: 0.9em;
 }
 
 .pourcent {
-	color : #e7e7e6;
+	color : var(--tip-pourcent);
 	font-size: 0.75em;
 }
 
@@ -75,21 +75,21 @@
 }
 
 .orange {
-	color : #ff8716;
+	color : var(--pourcent-orange);
 }
 
 .purple {
-	color : #b311f3;
+	color : var(--pourcent-purple);
 }
 
 .blue {
-	color : #1ba8e9;
+	color : var(--pourcent-blue);
 }
 
 .green {
-	color : #8aca36;
+	color : var(--pourcent-green);
 }
 
 .gray {
-	color : #afacac;
+	color : var(--pourcent-gray);
 }

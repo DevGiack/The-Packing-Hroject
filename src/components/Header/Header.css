@@ -27,12 +27,12 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
-    color: #fffffe;
+    color: white;
 }
 
 .link.active {
     text-decoration: underline;
-    color: #ff8906;
+    color: var(--primary);
 }
 
   

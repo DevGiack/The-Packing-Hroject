@@ -77,7 +77,7 @@ const alchemy = new Alchemy(settings)
 
 const getList = async () => {
     const collection = await alchemy.nft.getNftsForContract(
-        "0xee510D0B3F41C113c7A61F3AfF3D04dE43Bc3049"
+        "0xd2A71deE05cF8f72b7F9Df45eD0CE481d5e41A1b"
     )
     const list_nft = [
         NFT1, NFT2, NFT3, NFT4, NFT5, NFT6, NFT7, NFT8, NFT9, NFT10,
@@ -93,7 +93,7 @@ const getList = async () => {
 }
 
 const getTooltipList = async () => {
-  const collection = await alchemy.nft.getNftsForContract("0xee510D0B3F41C113c7A61F3AfF3D04dE43Bc3049")
+  const collection = await alchemy.nft.getNftsForContract("0xd2A71deE05cF8f72b7F9Df45eD0CE481d5e41A1b")
   const traitList = randomized.map((x, i) => {
     return collection.nfts.length >= i ? collection.nfts[i] ? collection.nfts[i].rawMetadata.attributes : "???" : "???";
   });
