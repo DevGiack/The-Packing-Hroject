@@ -10,7 +10,7 @@ export const OwnCollection = () => {
         137: "polygon-mainnet",
         1: "eth-mainnet",
     }
-    
+
     const settings = {
         apiKey: import.meta.env.VITE_MORALIS_API_KEY,
         network: network["80001"],
@@ -77,7 +77,7 @@ export const OwnCollection = () => {
                                             <b>member {tokenId}/50</b>
                                         </span>
                                         <div className="card-button-link">
-                                            <Link to="/details">
+                                            <Link to={`/details/${tokenId}`}>
                                                 <button id="details_button">
                                                     Details
                                                 </button>
