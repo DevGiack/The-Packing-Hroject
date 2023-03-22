@@ -9,6 +9,7 @@ import { Terms } from "./pages/Terms";
 import { Security } from "./pages/Security";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
+import "./pages/Title.css";
 import "./App.css";
 
 function App() {

@@ -20,7 +20,7 @@ export const OwnCollection = () => {
     let NFTTitle = ""
     let imageUrl = ""
     let tokenId = ""
-    
+
     const [nftsForOwner, setNftsForOwner] = useState([])
 
     useEffect(() => {
@@ -59,7 +59,8 @@ export const OwnCollection = () => {
                             x.media[0].gateway
                                 ? (imageUrl = x.media[0].gateway)
                                 : (imageUrl = "undefined")
-                            const id = uuidv1()
+                            const id = uuidv1();
+
                             return (
                                 <div key={id} className="card">
                                     <div className="card-body">
@@ -69,7 +70,7 @@ export const OwnCollection = () => {
                                         <img
                                             src={imageUrl}
                                             className="card-img"
-                                            alt="..."
+                                            alt="NFT TPH"
                                         ></img>
                                         <span>{NFTTitle}</span>
                                         <span>

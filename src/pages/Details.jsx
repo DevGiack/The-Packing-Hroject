@@ -1,5 +1,6 @@
 import React from "react"
 import { Alchemy } from "alchemy-sdk"
+import "./Details.css"
 
 const network = {
     80001: "polygon-mumbai",
@@ -27,7 +28,9 @@ export const Details = () => {
             <div className="img_details">
                 <div>
                     <img
-                        src="https://nft-cdn.alchemy.com/matic-mumbai/c3284f590b948aaa0ca9a313c91ab76b"
+                        src={"https://nft-cdn.alchemy.com/matic-mumbai/c3284f590b948aaa0ca9a313c91ab76b"}
+                        width="750px"
+                        height="750px"
                         alt="NFT TPH"
                     ></img>
                 </div>

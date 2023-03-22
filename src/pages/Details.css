@@ -1,0 +1,20 @@
+.img_details {
+  padding: 7em;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 3em;
+}
+
+.metadata_details {
+  width: 100%;
+  background-color: black;
+  color: var(--primary);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  white-space: pre;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  max-width: 50%;
+}
