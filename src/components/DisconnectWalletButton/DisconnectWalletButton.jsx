@@ -10,7 +10,7 @@ export const DisconnectWalletButton = () => {
     const navigate = useNavigate()
 
     const handleDisconnectWallet = () => {
-        localStorage.removeItem("isLogin") // Supprime l'etat du localStorage
+        localStorage.removeItem("userAddress") // Supprime l'etat du localStorage
         setWalletAddress(undefined) // Met à jour le state global
         navigate("/") // Redirige vers la page d'accueil
     }
