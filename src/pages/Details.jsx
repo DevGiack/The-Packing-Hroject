@@ -50,8 +50,8 @@ export const Details = () => {
             <div>
             <img
                 src={currentImgUrl}
-                width="750px"
-                height="750px"
+                width="700px"
+                height="700px"
                 alt="NFT TPH"
             />
             </div>
