@@ -19,7 +19,7 @@
   width: 270px;
   height: 370px;
   border-radius: 2em;
-  background-color: rgb(11, 11, 22);
+  background-color: var(--teams-card-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +31,7 @@
   width: 240px;
   height: 260px;
   border-radius: 1.5em;
-  background: linear-gradient(to bottom,  #2c2c2c,  #dddddd, #dddddd, #2c2c2c);
+  background: linear-gradient(to bottom, var(--teams-card-bg-1),  var(--teams-card-bg-2), var(--teams-card-bg-2), var(--teams-card-bg-1));
 }
 
 .name {
@@ -40,6 +40,6 @@
 }
 
 .fonction {
-  color: rgba(255, 255, 255, 0.5) ;
+  color: var(--teams-fonction-text);
   font-size: 1.1em;
 }

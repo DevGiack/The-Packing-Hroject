@@ -1,3 +1,42 @@
+:root {
+	--bg: #0f0e17;
+	--primary: #ff8906;
+  --body-text: rgb(224, 224, 224);
+  --big-title:rgba(255, 255, 255, 0.15);
+	--text: rgb(250, 192, 84);
+	--solid: rgba(235, 235, 235, 0.9);
+  --h2: #a7a9be;
+  --paragraph: #a5a6aa;
+  --tip-text: #ffac4d;
+  --tip-value: #f1f1f1;
+  --tip-pourcent: #e7e7e6;
+  --pourcent-orange: #ff8716;
+  --pourcent-purple: #b311f3;
+  --pourcent-blue: #1ba8e9;
+  --pourcent-green: #8aca36;
+  --pourcent-gray: #afacac;
+  --bg-btn-hover: #fa7426;
+  --btn-text: rgb(250, 230, 180);
+  --btn-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  --disconnect-btn-hover: #ff1e00;
+  --faq-details-p: rgb(161, 161, 161);
+  --faq-border-bottom: 1px solid rgb(71, 71, 71);
+  --intro-stat-box-bg: rgba(11, 11, 33, 0.9);
+  --intro-stat-box-text: rgb(250, 192, 84);
+  --intro-stat-box-val: rgb(212, 212, 212);
+  --card-bg: #2222227a;
+  --card-border: #898a89;
+  --card-text: rgba(250, 250, 250, 0.8);
+  --teams-card-bg: rgb(11, 11, 22);
+  --teams-fonction-text: rgba(255, 255, 255, 0.5);
+  --teams-card-bg-1: #2c2c2c;
+  --teams-card-bg-2: #dddddd;
+	--btn-w: 10em;
+	--dot-w: calc(var(--btn-w)*.2);
+	--tr-X: calc(var(--btn-w) - var(--dot-w));
+  --smaller: .75;
+}
+
 #root {
   width: 100%;
   height: 100%;
@@ -8,7 +47,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  color: rgb(224, 224, 224);
+  color: var(--body-text);
   background: linear-gradient(90deg, rgba(15,14,23,1) 0%, rgba(47,47,79,1) 50%, rgba(15,14,23,1) 100%);
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -25,7 +64,7 @@ body {
 #big-title {
   font-size: 8em;
   font-weight: bolder;
-  color: rgba(255, 255, 255, 0.15);
+  color: var(--big-title);
 }
 
 #little-title {
@@ -36,7 +75,7 @@ body {
 
 #title-border {
   width: 5em;
-  border-top: 3px solid #ff8906;
+  border-top: 3px solid var(--primary);
 }
 
 .img_details {
@@ -50,14 +89,14 @@ body {
 }
 
 .metadata_details {
-width: 100%;
-background-color: black;
-color: #ff8906;
-text-align: center;
-padding: 5px 0;
-border-radius: 6px;
-white-space: pre;
-margin-top: 5%;
-margin-bottom: 5%;
-max-width: 50%;
+  width: 100%;
+  background-color: black;
+  color: var(--primary);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  white-space: pre;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  max-width: 50%;
 }

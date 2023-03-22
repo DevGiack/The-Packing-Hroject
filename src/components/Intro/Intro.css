@@ -62,15 +62,15 @@
   width: 16em;
   height: 8em;
   border-radius: 2em;
-  background-color: rgba(11, 11, 33, 0.9);
+  background-color: var(--intro-stat-box-bg);
 }
 
 .box-text {
-  color: rgb(250, 192, 84);;
+  color: var(--intro-stat-box-text);
 }
 
 .box-val {
   font-size: 3em;
   font-weight: bold;
-  color: rgb(212, 212, 212);
+  color: var(--intro-stat-box-val);
 }

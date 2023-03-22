@@ -18,16 +18,16 @@
 }
 
 .card {
-  background: #2222227a;
-  border: 1px solid #898a89;
-  color: rgba(250, 250, 250, 0.8);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--card-text);
   border-radius: 2em;
   width: 16em;
 
 }
 
 .card-id , .cardtxt {
-  color: #ff8906;
+  color: var(--primary);
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.3rem;
   text-align: center;
@@ -80,7 +80,7 @@
 
 .card-button-link button::after {
   content: '';
-  background-color: #ff8906;
+  background-color: var(--primary);
   position: absolute;
   top: -50%;
   bottom: -50%;

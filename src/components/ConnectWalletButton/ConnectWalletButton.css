@@ -5,15 +5,15 @@
   font-weight: bolder;
   border: none;
   border-radius: 19px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  background-color: #ff8906;
-  color: rgb(250, 230, 180);
+  box-shadow: var(--btn-box-shadow);
+  background-color: var(--primary);
+  color: var(--btn-text);
   cursor: pointer;
 }
 
 .connect-wallet-button:hover,
 .address-button:hover {
-  background: #fa7426;
+  background: var(--bg-btn-hover);
   color: white;
   transition: 1s;
 }
@@ -25,9 +25,9 @@
   font-weight: bold;
   border: none;
   border-radius: 19px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  background-color: #ff8906;
-  color: rgb(250, 230, 180);
+  box-shadow: var(--btn-box-shadow);
+  background-color: var(--primary);
+  color: var(--btn-text);
   margin-left: 10px;
   margin-right: 10px;
   cursor: pointer;

@@ -44,12 +44,12 @@ summary {
 
 details {
   padding-bottom: 0.6em;
-  border-bottom: 1px solid rgb(71, 71, 71);
+  border-bottom: var(--faq-border-bottom);
 }
 
 details p {
   margin-left: 1.4em;
   font-size: 1.05em;
-  color: rgb(161, 161, 161);
+  color: var(--faq-details-p);
   margin-bottom: 0;
 }
