@@ -17,6 +17,7 @@ export const DisconnectWalletButton = () => {
 
     setInterval(function() {
         localStorage.clear("userAddress");
+        setWalletAddress(undefined) // Met à jour le state global
         navigate("/");
       }, 3600000); // Efface le Local Storage, redirige vers la page d'accueil toutes les 3 heures
       
