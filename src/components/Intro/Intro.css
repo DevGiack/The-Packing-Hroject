@@ -1,3 +1,4 @@
+@media (min-width: 1024px) {
 .global-intro {
   display: flex;
   flex-direction: column;
@@ -73,4 +74,50 @@
   font-size: 3em;
   font-weight: bold;
   color: var(--intro-stat-box-val);
+}
+}
+
+@media (max-width: 1024px) {
+  .global-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    padding-top: 3%;
+    margin-right: 5%;
+    margin-left: 5%; 
+  }
+
+  .bloc1-intro {
+    width: 100%;
+    text-align: center;
+  }
+
+  #pack1 {
+    height: 320px;
+    margin-top: 3%;
+  }
+
+  #title-intro {
+    font-size: 1.6em;
+    font-weight: bolder;
+  }
+
+  #text-intro {
+    font-size: 1.2em;
+    max-width: 26em;
+  }
+
+  .bloc1A-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+  }
+
+  .stat-box {
+    display: none
+  }
+
 }

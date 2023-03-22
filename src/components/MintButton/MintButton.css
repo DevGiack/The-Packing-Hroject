@@ -37,8 +37,7 @@
 	background: var(--primary);
 	border-radius: 1em;
 	border: .25em solid var(--solid);
-	box-shadow: 0 0 .7em var(--solid),
-							0 0 2em var(--primary);
+	box-shadow: 0 0 .7em var(--solid),0 0 2em var(--primary);
 }
 
 .btn:hover .dot,
