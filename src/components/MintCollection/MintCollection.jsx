@@ -685,7 +685,6 @@ const abi = [
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
-        console.log("signer: "+ signer);
         const connectedContract = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
         console.log(connectedContract)
         console.log("Going to pop wallet now to pay gas...")
@@ -693,7 +692,6 @@ const abi = [
         handleConfetti();
         console.log("Mining...please wait.")
         await nftTxn.wait();
-  
       } else {
         console.log("Ethereum object doesn't exist!");
       }
