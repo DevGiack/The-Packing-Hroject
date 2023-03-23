@@ -42,3 +42,7 @@
   font-size: 1.2em;
   text-shadow: var(--btn-text-shadow);
 }
+
+.valNFT {
+  font-size: 0.6em;
+}

@@ -1,5 +1,5 @@
 import { Alchemy } from "alchemy-sdk"
-import mistery from "../assets/images/mini_collection/NFT_MYSTERY.webp"
+import NFT_MYSTERY from "../assets/images/mini_collection/NFT_MYSTERY.webp"
 import NFT1 from "../assets/images/mini_collection/TPH_01.webp"
 import NFT2 from "../assets/images/mini_collection/TPH_02.webp"
 import NFT3 from "../assets/images/mini_collection/TPH_03.webp"
@@ -96,7 +96,7 @@ async function  getList () {
     NFT41, NFT42, NFT43, NFT44, NFT45, NFT46, NFT47, NFT48, NFT49, NFT50
   ]
   const list_1 = list_nft.slice(0, collection.length)
-  const list_2 = Array(50 - collection.length).fill(mistery)
+  const list_2 = Array(50 - collection.length).fill(NFT_MYSTERY)
   const list_3 = [...list_1, ...list_2]
   return list_3
 }
