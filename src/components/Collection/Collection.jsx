@@ -8,16 +8,18 @@ let attributes = await getTooltipList()
 export const Collection =() => {
 
   const getTooltipContent = (index) => {
-    console.log(index)
     let toolTip = attributes[index].map((x) => {
       const id = uuidv1()
-      console.log("attribut: " + x.traitName+ ",value: " + x.traitValue + ",percent: " + x.traitPercent + ",color: " + x.traitColor)
       return (
         <div key={id}>
           <span className="attribut">{x.traitName} : &nbsp; </span>
           <span className="value">{x.traitValue}&nbsp; &nbsp;</span>
-          <span className={x.traitColor}>{x.traitPercent}</span>
-          <span className="pourcent"> %</span>
+          { x.traitValue !== "???" && (
+              <>
+                <span className={x.traitColor}>{x.traitPercent}</span>
+                <span className="pourcent"> %</span>
+              </>
+              )}
           <br />
         </div>
       )
