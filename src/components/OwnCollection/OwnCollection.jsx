@@ -3,20 +3,11 @@ import "./OwnCollection.css"
 import { Alchemy } from "alchemy-sdk"
 import { v1 as uuidv1 } from "uuid"
 import { Link } from "react-router-dom"
+import { getAlchemy } from "../../utils/utils.js"
 
 export const OwnCollection = () => {
-    const network = {
-        80001: "polygon-mumbai",
-        137: "polygon-mainnet",
-        1: "eth-mainnet",
-    }
 
-    const settings = {
-        apiKey: import.meta.env.VITE_ALCHEMY_API_KEY,
-        network: network["80001"],
-    }
-    const alchemy = new Alchemy(settings)
-    
+    const alchemy = getAlchemy()
     let NFTTitle = ""
     let imageUrl = ""
     let tokenId = ""
@@ -28,6 +19,7 @@ export const OwnCollection = () => {
             if (window.ethereum && window.ethereum.selectedAddress) {
                 const ownerAddress = window.ethereum.selectedAddress
                 const nfts = await alchemy.nft.getNftsForOwner(ownerAddress)
+                console.log(nfts)
                 setNftsForOwner(nfts.ownedNfts)
             }
         }
@@ -44,21 +36,11 @@ export const OwnCollection = () => {
                 </div>
                 <div className="bloc-cards">
                     {nftsForOwner
-                        .filter((obj) => obj.title === "THE PACKING HROJECT")
+                        .filter((obj) => obj.contract.address === import.meta.env.VITE_CONTRACT_ADRESS)
                         .map((x) => {
-                            x.tokenId
-                                ? x.tokenId.length > 6
-                                    ? (tokenId = `${x.tokenId.slice(0, 6)}...`)
-                                    : (tokenId = x.tokenId)
-                                : (tokenId = "undefined")
-                            x.title
-                                ? x.title.length > 20
-                                    ? (NFTTitle = `${x.title.slice(0, 16)}...`)
-                                    : (NFTTitle = x.title)
-                                : (NFTTitle = "undefined")
-                            x.media[0].gateway
-                                ? (imageUrl = x.media[0].gateway)
-                                : (imageUrl = "undefined")
+                            x.tokenId ? tokenId = x.tokenId : tokenId = "undefined"
+                            x.title ? NFTTitle = x.title : NFTTitle = "undefined"
+                            x.media[0].gateway ? imageUrl = x.media[0].gateway : imageUrl = "undefined"
                             const id = uuidv1();
 
                             return (
