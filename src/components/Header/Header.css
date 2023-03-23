@@ -1,4 +1,4 @@
-@media (max-width: 1024px) {
+@media (max-width: 1250px) {
     .header-container {
     flex-direction: column;
     align-items: center;
@@ -9,9 +9,9 @@
     }
 
     .logo {
-    width: 80%;
-    margin-right: 10%;
-    margin-left: 10%;
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
     margin-bottom: 3%;
     }
 
@@ -19,6 +19,7 @@
         display: block;
         text-align: center;
     }
+
 
     .header-content a {
     margin-right: 0;
@@ -35,7 +36,7 @@
     }
     }
     
-    @media (min-width: 1024px) {
+    @media (min-width: 1250px) {
     .header-container {
     display: flex;
     align-items: center;

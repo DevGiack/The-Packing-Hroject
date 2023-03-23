@@ -1,4 +1,4 @@
-@media (min-width: 1024px) {
+@media (min-width: 1250px) {
 .global-intro {
   display: flex;
   flex-direction: column;
@@ -11,31 +11,32 @@
 .bloc1-intro {
   display: flex;
   flex-direction: row;
-  width: 1150px;
+  width: 70%;
   height: 550px;
 }
 
-.bloc1A-intro, .bloc1B-intro {
-  width: 600px;
-  height: 550px;
+.bloc1-intro span {
+text-align: center;
 }
 
 .bloc1A-intro {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 3em;
+  width: 50%;
 }
 
 .bloc1B-intro {
-  margin-left: -3em;
-  margin-top: 1em;
+width: 50%;
 }
 
 .bloc2-intro {
+  margin-top: 3%;
   display: flex;
   flex-direction: row;
-  width: 72em;
+  width: 70%;
   height: 15em;
   justify-content: space-between;
   align-items: center;
@@ -51,8 +52,9 @@
   max-width: 26em;
 }
 
-#pack1 {
-  height: 520px;
+#pack1{
+  margin-top: 5%;
+  height: 28vw;
 }
 
 .stat-box {
@@ -60,7 +62,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  width: 16em;
+  width: 220px;
   height: 8em;
   border-radius: 2em;
   background-color: var(--intro-stat-box-bg);
@@ -77,7 +79,7 @@
 }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1250px) {
   .global-intro {
     display: flex;
     flex-direction: column;
