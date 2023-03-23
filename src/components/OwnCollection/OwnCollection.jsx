@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import "./OwnCollection.css"
-import { Alchemy } from "alchemy-sdk"
 import { v1 as uuidv1 } from "uuid"
 import { Link } from "react-router-dom"
 import { getAlchemy } from "../../utils/utils.js"

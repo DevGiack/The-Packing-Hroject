@@ -1,5 +1,14 @@
+.global-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 93.8vh;
+}
+
 .img_details {
-  padding: 6em;
+  margin-top: 4em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,10 +28,17 @@
 .attrib {
   font-size: 2em;
   color: var(--primary);
-  text-shadow: 2px 2px 4px black;
+  text-shadow: var(--btn-text-shadow);
 }
 
 .values {
   font-weight: bold;
   color: var(--body-text);
+}
+
+.back-profil a {
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 1.2em;
+  text-shadow: var(--btn-text-shadow);
 }

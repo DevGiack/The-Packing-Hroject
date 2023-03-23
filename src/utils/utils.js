@@ -53,30 +53,27 @@ import NFT50 from "../assets/images/mini_collection/TPH_050.webp"
 import { statistiques } from "../statistiques/statistiques"
 
 async function getCollection() {
-
-    const collection = await getAlchemy().nft.getNftsForContract(
-        import.meta.env.VITE_CONTRACT_ADRESS
-    )
-
-    return collection.nfts
+  const collection = await getAlchemy().nft.getNftsForContract(
+      import.meta.env.VITE_CONTRACT_ADRESS
+  )
+  return collection.nfts
 }
 
 const getRandomizedArray = () => {
-  
-    return ([
-    17, 20, 18, 37, 1, 19, 23, 5, 48, 32,
-    21, 7, 40, 16, 9, 42, 11, 24, 30, 10,
-    43, 45, 31, 39, 14, 6, 26, 15, 25, 2,
-    27, 4, 35, 13, 50, 49, 44, 22, 41, 29,
-    12, 47, 38, 46, 8, 36, 33, 3, 34, 28
-])
+  return ([
+  17, 20, 18, 37, 1, 19, 23, 5, 48, 32,
+  21, 7, 40, 16, 9, 42, 11, 24, 30, 10,
+  43, 45, 31, 39, 14, 6, 26, 15, 25, 2,
+  27, 4, 35, 13, 50, 49, 44, 22, 41, 29,
+  12, 47, 38, 46, 8, 36, 33, 3, 34, 28
+  ])
 }
 
 const getAlchemy = () => {
   const settings = {
     apiKey: import.meta.env.VITE_ALCHEMY_API_KEY,
     network: import.meta.env.VITE_ALCHEMY_NETWORK_ID,
-}
+  }
   return new Alchemy(settings)
 }
 
@@ -90,18 +87,18 @@ const getTraitColor = (percent) => {
 }
 
 async function  getList () {
-    const collection = await getCollection()
-    const list_nft = [
-        NFT1, NFT2, NFT3, NFT4, NFT5, NFT6, NFT7, NFT8, NFT9, NFT10,
-        NFT11, NFT12, NFT13, NFT14, NFT15, NFT16, NFT17, NFT18, NFT19, NFT20,
-        NFT21, NFT22, NFT23, NFT24, NFT25, NFT26, NFT27, NFT28, NFT29, NFT30,
-        NFT31, NFT32, NFT33, NFT34, NFT35, NFT36, NFT37, NFT38, NFT39, NFT40,
-        NFT41, NFT42, NFT43, NFT44, NFT45, NFT46, NFT47, NFT48, NFT49, NFT50
-    ]
-    const list_1 = list_nft.slice(0, collection.length)
-    const list_2 = Array(50 - collection.length).fill(mistery)
-    const list_3 = [...list_1, ...list_2]
-    return list_3
+  const collection = await getCollection()
+  const list_nft = [
+    NFT1, NFT2, NFT3, NFT4, NFT5, NFT6, NFT7, NFT8, NFT9, NFT10,
+    NFT11, NFT12, NFT13, NFT14, NFT15, NFT16, NFT17, NFT18, NFT19, NFT20,
+    NFT21, NFT22, NFT23, NFT24, NFT25, NFT26, NFT27, NFT28, NFT29, NFT30,
+    NFT31, NFT32, NFT33, NFT34, NFT35, NFT36, NFT37, NFT38, NFT39, NFT40,
+    NFT41, NFT42, NFT43, NFT44, NFT45, NFT46, NFT47, NFT48, NFT49, NFT50
+  ]
+  const list_1 = list_nft.slice(0, collection.length)
+  const list_2 = Array(50 - collection.length).fill(mistery)
+  const list_3 = [...list_1, ...list_2]
+  return list_3
 }
 
 async function  getTooltipList () {
@@ -137,4 +134,3 @@ async function  getTooltipList () {
 }
 
 export { getCollection, getRandomizedArray, getList, getTooltipList, getTraitColor, getAlchemy }
-
