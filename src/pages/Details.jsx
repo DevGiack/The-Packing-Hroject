@@ -41,54 +41,16 @@ export const Details = () => {
     const attributValues = ["GENRE : ","LANGUAGE : ","EXPRESSION : ","GLASSES : ","LISERE TPH : ",
     "STICKER : ","ARTICLE : ","BG COLOR : ","COMPUTER : "];
     
-    attributValues.map((x) => {
-        // REPRENDRE ICI
-    })
+    const infosValues = attributValues.map((x) => currentNFT?.rawMetadata?.attributes[x]?.value);
 
-    const currentGenre = currentNFT?.rawMetadata?.attributes[0]?.value;
-    const currentLanguage = currentNFT?.rawMetadata?.attributes[1]?.value;
-    const currentExpression = currentNFT?.rawMetadata?.attributes[2]?.value;
-    const currentGlasses = currentNFT?.rawMetadata?.attributes[3]?.value;
-    const currentLisereTPH = currentNFT?.rawMetadata?.attributes[4]?.value;
-    const currentSticker = currentNFT?.rawMetadata?.attributes[5]?.value;
-    const currentArticle = currentNFT?.rawMetadata?.attributes[6]?.value;
-    const currentBackground = currentNFT?.rawMetadata?.attributes[7]?.value;
-    const currentComputer = currentNFT?.rawMetadata?.attributes[8]?.value;
+    const infosPercents = infosValues.map((obj, i) => statistiques[i][obj]);
 
-    const percentGenre = statistiques[0][currentGenre];
-    const percentLanguage = statistiques[1][currentLanguage];
-    const percentExpression = statistiques[2][currentExpression];
-    const percentGlasses = statistiques[3][currentGlasses];
-    const percentLisereTPH = statistiques[4][currentLisereTPH];
-    const percentSticker = statistiques[5][currentSticker];
-    const percentArticle = statistiques[6][currentArticle];
-    const percentBackground = statistiques[7][currentBackground];
-    const percentComputer = statistiques[8][currentComputer];
+    const infosColors = infosPercents.map((x) => getTraitColor(x));
 
-    const colorGenre = getTraitColor(percentGenre);
-    const colorLanguage = getTraitColor(percentLanguage);
-    const colorExpression = getTraitColor(percentExpression);
-    const colorGlasses = getTraitColor(percentGlasses);
-    const colorLisereTPH = getTraitColor(percentLisereTPH);
-    const colorSticker = getTraitColor(percentSticker);
-    const colorArticle = getTraitColor(percentArticle);
-    const colorBackground = getTraitColor(percentBackground);
-    const colorComputer = getTraitColor(percentComputer);
+    const colorsGraduation = [{"orange":"LEGENDARY"},{"purple":"EPIC"},{"blue":"RARE"},{"green":"UNUSUAL"},{"gray":"COMMON"}];
 
-    const colorValue = [{"orange":"LEGENDARY"},{"purple":"EPIC"},{"blue":"RARE"},{"green":"UNUSUAL"},{"gray":"COMMON"}];
+    const infosGraduation = infosColors.map((x) => colorsGraduation.find(color => color[x])?.[x] );
 
-    const valueGenre = colorValue.find(color => color[colorGenre])?.[colorGenre];
-    const valueLanguage = colorValue.find(color => color[colorLanguage])?.[colorLanguage];
-    const valueExpression = colorValue.find(color => color[colorExpression])?.[colorExpression];
-    const valueGlasses = colorValue.find(color => color[colorGlasses])?.[colorGlasses];
-    const valueLisereTPH = colorValue.find(color => color[colorLisereTPH])?.[colorLisereTPH];
-    const valueSticker = colorValue.find(color => color[colorSticker])?.[colorSticker];
-    const valueArticle = colorValue.find(color => color[colorArticle])?.[colorArticle];
-    const valueBackground = colorValue.find(color => color[colorBackground])?.[colorBackground];
-    const valueComputer = colorValue.find(color => color[colorComputer])?.[colorComputer];
-
-    const attrib = ["GENRE : ","LANGUAGE : ","EXPRESSION : ","GLASSES : ","LISERE TPH : ",
-                    "STICKER : ","ARTICLE : ","BG COLOR : ","COMPUTER : "];
 
     return (
         <div className="global-details">
@@ -104,51 +66,15 @@ export const Details = () => {
                     <span className="attrib">ID : 
                         <span className="values"> #{TokenId}
                     </span></span>
-                    <span className="attrib">{attrib[0]}
-                        <span className="values"> {currentGenre} </span>
-                        <span className={colorGenre}> {percentGenre}% 
-                        <span className="valNFT"> ( {valueGenre} )
-                    </span></span></span>
-                    <span className="attrib">{attrib[1]} 
-                        <span className="values"> {currentLanguage} </span>
-                        <span className={colorLanguage}> {percentLanguage}% 
-                        <span className="valNFT"> ( {valueLanguage} )
-                    </span></span></span>
-                    <span className="attrib">{attrib[2]}
-                        <span className="values"> {currentExpression} </span>
-                        <span className={colorExpression}> {percentExpression}% 
-                        <span className="valNFT"> ( {valueExpression} )
-                    </span></span></span>
-                    <span className="attrib">{attrib[3]}
-                        <span className="values"> {currentGlasses} </span>
-                        <span className={colorGlasses}> {percentGlasses}% 
-                        <span className="valNFT"> ( {valueGlasses} )
-                    </span></span></span>
-                    <span className="attrib">{attrib[4]}
-                        <span className="values"> {currentLisereTPH} </span>
-                        <span className={colorLisereTPH}> {percentLisereTPH}% 
-                        <span className="valNFT"> ( {valueLisereTPH} )
-                    </span></span></span>
-                    <span className="attrib">{attrib[5]}
-                        <span className="values"> {currentSticker} </span>
-                        <span className={colorSticker}> {percentSticker}% 
-                        <span className="valNFT"> ( {valueSticker} )
-                    </span></span></span>
-                    <span className="attrib">{attrib[6]}
-                        <span className="values"> {currentArticle} </span>
-                        <span className={colorArticle}> {percentArticle}% 
-                        <span className="valNFT"> ( {valueArticle} )
-                    </span></span></span>
-                    <span className="attrib">{attrib[7]}
-                        <span className="values"> {currentBackground} </span>
-                        <span className={colorBackground}> {percentBackground}% 
-                        <span className="valNFT"> ( {valueBackground} )
-                    </span></span></span>
-                    <span className="attrib">{attrib[8]}
-                        <span className="values"> {currentComputer} </span>
-                        <span className={colorComputer}> {percentComputer}% 
-                        <span className="valNFT"> ( {valueComputer} )
-                    </span></span></span>
+                    { attributValues.map((i) => {
+                        return (
+                            <span className="attrib">{attributValues[i]}
+                            <span className="values"> {infosValues[i]} </span>
+                            <span className={infosColors[i]}> {infosPercents[i]}% 
+                            <span className="valNFT"> &lpar; {infosGraduation[i]} &rpar;
+                            </span></span></span>
+                        )
+                    })}
                 </div>
             </div>
             )}
