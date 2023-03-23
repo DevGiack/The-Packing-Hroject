@@ -2,20 +2,22 @@
   padding: 6em;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: row;
   gap: 2.5em;
 }
 
 .metadata_details {
+  height: 650px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   white-space: pre;
-  gap: 0.95em;
+  gap: 1.8em;
 }
 
 .attrib {
-  font-size: 2.1em;
+  font-size: 2em;
   color: var(--primary);
   text-shadow: 2px 2px 4px black;
 }
