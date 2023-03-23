@@ -6,11 +6,11 @@ import { getCollection, getAlchemy } from "../../utils/utils.js"
 
 const list = await getCollection()
 const alchemy = getAlchemy();
-const owners = await alchemy.nft.getOwnersForContract(import.meta.env.VITE_CONTRACT_ADRESS)
+const owners = await alchemy.nft.getOwnersForContract("0xbd19e7b4404111a535ba9c321503a23572a9dffa")
 const floor_price = 8
 
 try {
-    floor_price = await alchemy.nft.getFloorPrice(import.meta.env.VITE_CONTRACT_ADRESS)
+    floor_price = await alchemy.nft.getFloorPrice("0xbd19e7b4404111a535ba9c321503a23572a9dffa")
   } catch (error) {
 
   }
@@ -19,9 +19,7 @@ try {
 
 export const Intro = () => {
     const minted = list.length
-    console.log(owners.owners)
     const owners_count = new Set(owners.owners).size;
-    console.log(floor_price)
     return (
         <div className="global-intro">
             <div className="bloc1-intro">

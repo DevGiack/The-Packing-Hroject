@@ -86,7 +86,7 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
         _unpause();
     }
 
-    function safeMint(address to) public onlyRole(MINTER_ROLE) {
+    function safeMint(address to) public {
         uint256 tokenId = getId();        
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, _tokenURIs[tokenId]);

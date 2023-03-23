@@ -6,7 +6,6 @@ const list = await getList()
 let attributes = await getTooltipList()
 
 export const Collection =() => {
-  console.log("list: " + list)
   const getTooltipContent = (index) => {
     let toolTip = attributes[index].map((x) => {
       const id = uuidv1()
@@ -31,8 +30,6 @@ export const Collection =() => {
 
     for (let i = start; i <= end; i++) {
       const rid = getRandomizedArray()[i - 1] - 1
-      console.log("rid: " + rid)
-      console.log("list[rid]: " + list[rid])
       const img = list[rid];
       const id = uuidv1();
   

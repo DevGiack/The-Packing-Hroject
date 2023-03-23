@@ -677,7 +677,7 @@ const abi = [
 ]
 
   const askContractToMintNft = async () => {
-    const CONTRACT_ADDRESS = import.meta.env.VITE_CONTRACT_ADRESS;
+    const CONTRACT_ADDRESS = "0xbd19e7b4404111a535ba9c321503a23572a9dffa";
   
     try {
       const { ethereum } = window;
@@ -685,8 +685,8 @@ const abi = [
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
+        console.log(signer)
         const connectedContract = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
-        console.log(connectedContract)
         console.log("Going to pop wallet now to pay gas...")
         let nftTxn = await connectedContract.safeMint(address);
         handleConfetti();

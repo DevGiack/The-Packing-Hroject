@@ -54,7 +54,7 @@ import { statistiques } from "../statistiques/statistiques"
 
 async function getCollection() {
   const collection = await getAlchemy().nft.getNftsForContract(
-      import.meta.env.VITE_CONTRACT_ADRESS
+      "0xbd19e7b4404111a535ba9c321503a23572a9dffa"
   )
   return collection.nfts
 }
@@ -88,7 +88,6 @@ const getTraitColor = (percent) => {
 
 async function  getList () {
   const collection = await getCollection()
-  console.log(collection)
   const list_nft = [
     NFT1, NFT2, NFT3, NFT4, NFT5, NFT6, NFT7, NFT8, NFT9, NFT10,
     NFT11, NFT12, NFT13, NFT14, NFT15, NFT16, NFT17, NFT18, NFT19, NFT20,
@@ -99,7 +98,6 @@ async function  getList () {
   const list_1 = list_nft.slice(0, collection.length)
   const list_2 = Array(50 - collection.length).fill(NFT_MYSTERY)
   const list_3 = [...list_1, ...list_2]
-  console.log(list_3)
   return list_3
 }
 
