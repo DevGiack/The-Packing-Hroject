@@ -102,36 +102,35 @@ async function  getList () {
 }
 
 async function  getTooltipList () {
+
   const collection = await getCollection()
+
   const traitList = collection.map((x) => {
     let res = [];
-    let attributes = []
     x.rawMetadata.attributes.forEach((hash) => res.push(hash.value));
-    attributes = [
-      {"traitValue": res[0], "traitName": "GENRE", "traitPercent": statistiques[0][res[0]] * 2, "traitColor": getTraitColor(statistiques[0][res[0]] * 2)},
-      {"traitValue": res[1], "traitName": "LANGUAGE", "traitPercent": statistiques[1][res[1]] * 2, "traitColor": getTraitColor(statistiques[1][res[1]] * 2)},
-      {"traitValue": res[2], "traitName": "EXPRESSION", "traitPercent": statistiques[2][res[2]] * 2, "traitColor": getTraitColor(statistiques[2][res[2]] * 2)},
-      {"traitValue": res[3], "traitName": "GLASSES", "traitPercent": statistiques[3][res[3]] * 2, "traitColor": getTraitColor(statistiques[3][res[3]] * 2)},
-      {"traitValue": res[4], "traitName": "LISERE_TPH", "traitPercent": statistiques[4][res[4]] * 2, "traitColor": getTraitColor(statistiques[4][res[4]] * 2)},
-      {"traitValue": res[5], "traitName": "STICKER", "traitPercent": statistiques[5][res[5]] * 2, "traitColor": getTraitColor(statistiques[5][res[5]] * 2)},
-      {"traitValue": res[6], "traitName": "ARTICLE", "traitPercent": statistiques[6][res[6]] * 2, "traitColor": getTraitColor(statistiques[6][res[6]] * 2)},
-      {"traitValue":  res[7], "traitName": "BACKGROUND_COLOR", "traitPercent": statistiques[7][res[7]] * 2, "traitColor": getTraitColor(statistiques[7][res[7]] * 2)},
-      {"traitValue":  res[8], "traitName": "COMPUTER", "traitPercent": statistiques[8][res[8]] * 2, "traitColor": getTraitColor(statistiques[8][res[8]] * 2)},
-    ]
-  return attributes
-});
-let tl = Array(50 - collection.length).fill([
-  {"traitValue": "???", "traitName": "GENRE", "traitPercent": "", "traitColor": ""},
-  {"traitValue": "???", "traitName": "LANGUAGE", "traitPercent": "", "traitColor": ""},
-  {"traitValue": "???", "traitName": "EXPRESSION", "traitPercent": "", "traitColor": ""},
-  {"traitValue": "???", "traitName": "GLASSES", "traitPercent": "", "traitColor": ""},
-  {"traitValue": "???", "traitName": "LISERE_TPH", "traitPercent": "", "traitColor": ""},
-  {"traitValue": "???", "traitName": "STICKER", "traitPercent": "", "traitColor": ""},
-  {"traitValue": "???", "traitName": "ARTICLE", "traitPercent": "", "traitColor": ""},
-  {"traitValue": "???", "traitName": "BACKGROUND_COLOR", "traitPercent": "", "traitColor": ""},
-  {"traitValue": "???", "traitName": "COMPUTER", "traitPercent": "", "traitColor": ""},
-])
-return [...traitList, ...tl]
+    const attributeNames = ["GENRE", "LANGUAGE", "EXPRESSION", "GLASSES", "LISERE_TPH", "STICKER", "ARTICLE", "BACKGROUND_COLOR", "COMPUTER"];
+    const attributes = attributeNames.map((attributeName, index) => ({
+      traitName: attributeName,
+      traitValue: res[index],
+      traitPercent: statistiques[index][res[index]],
+      traitColor: getTraitColor(statistiques[index][res[index]])
+    }));
+    return attributes
+  });
+
+  let defaultTL = Array(50 - collection.length).fill([
+    {"traitValue": "???", "traitName": "GENRE"},
+    {"traitValue": "???", "traitName": "LANGUAGE"},
+    {"traitValue": "???", "traitName": "EXPRESSION"},
+    {"traitValue": "???", "traitName": "GLASSES"},
+    {"traitValue": "???", "traitName": "LISERE_TPH"},
+    {"traitValue": "???", "traitName": "STICKER"},
+    {"traitValue": "???", "traitName": "ARTICLE"},
+    {"traitValue": "???", "traitName": "BACKGROUND_COLOR"},
+    {"traitValue": "???", "traitName": "COMPUTER"}
+  ])
+
+  return [...traitList, ...defaultTL]
 }
 
 export { getCollection, getRandomizedArray, getList, getTooltipList, getTraitColor }
