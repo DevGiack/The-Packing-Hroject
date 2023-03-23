@@ -37,6 +37,14 @@ export const Details = () => {
 
     const currentNFT = nftsForOwner.find(nft => nft.tokenId === TokenId)
     const currentImgUrl = currentNFT?.media[0]?.gateway;
+
+    const attributValues = ["GENRE : ","LANGUAGE : ","EXPRESSION : ","GLASSES : ","LISERE TPH : ",
+    "STICKER : ","ARTICLE : ","BG COLOR : ","COMPUTER : "];
+    
+    attributValues.map((x) => {
+        // REPRENDRE ICI
+    })
+
     const currentGenre = currentNFT?.rawMetadata?.attributes[0]?.value;
     const currentLanguage = currentNFT?.rawMetadata?.attributes[1]?.value;
     const currentExpression = currentNFT?.rawMetadata?.attributes[2]?.value;
@@ -79,6 +87,9 @@ export const Details = () => {
     const valueBackground = colorValue.find(color => color[colorBackground])?.[colorBackground];
     const valueComputer = colorValue.find(color => color[colorComputer])?.[colorComputer];
 
+    const attrib = ["GENRE : ","LANGUAGE : ","EXPRESSION : ","GLASSES : ","LISERE TPH : ",
+                    "STICKER : ","ARTICLE : ","BG COLOR : ","COMPUTER : "];
+
     return (
         <div className="global-details">
             {currentImgUrl && (
@@ -90,16 +101,54 @@ export const Details = () => {
                     alt="NFT TPH"
                 />
                 <div className="metadata_details">
-                    <span className="attrib">ID : <span className="values"> #{TokenId}</span></span>
-                    <span className="attrib">GENRE : <span className="values"> {currentGenre} </span><span className={colorGenre}> {percentGenre}% <span className="valNFT"> ( {valueGenre} )</span></span></span>
-                    <span className="attrib">LANGUAGE : <span className="values"> {currentLanguage} </span><span className={colorLanguage}> {percentLanguage}% <span className="valNFT"> ( {valueLanguage} )</span></span></span>
-                    <span className="attrib">EXPRESSION : <span className="values"> {currentExpression} </span><span className={colorExpression}> {percentExpression}% <span className="valNFT"> ( {valueExpression} )</span></span></span>
-                    <span className="attrib">GLASSES : <span className="values"> {currentGlasses} </span><span className={colorGlasses}> {percentGlasses}% <span className="valNFT"> ( {valueGlasses} )</span></span></span>
-                    <span className="attrib">LISERE TPH : <span className="values"> {currentLisereTPH} </span><span className={colorLisereTPH}> {percentLisereTPH}% <span className="valNFT"> ( {valueLisereTPH} )</span></span></span>
-                    <span className="attrib">STICKER : <span className="values"> {currentSticker} </span><span className={colorSticker}> {percentSticker}% <span className="valNFT"> ( {valueSticker} )</span></span></span>
-                    <span className="attrib">ARTICLE : <span className="values"> {currentArticle} </span><span className={colorArticle}> {percentArticle}% <span className="valNFT"> ( {valueArticle} )</span></span></span>
-                    <span className="attrib">BG COLOR : <span className="values"> {currentBackground} </span><span className={colorBackground}> {percentBackground}% <span className="valNFT"> ( {valueBackground} )</span></span></span>
-                    <span className="attrib">COMPUTER : <span className="values"> {currentComputer} </span><span className={colorComputer}> {percentComputer}% <span className="valNFT"> ( {valueComputer} )</span></span></span>
+                    <span className="attrib">ID : 
+                        <span className="values"> #{TokenId}
+                    </span></span>
+                    <span className="attrib">{attrib[0]}
+                        <span className="values"> {currentGenre} </span>
+                        <span className={colorGenre}> {percentGenre}% 
+                        <span className="valNFT"> ( {valueGenre} )
+                    </span></span></span>
+                    <span className="attrib">{attrib[1]} 
+                        <span className="values"> {currentLanguage} </span>
+                        <span className={colorLanguage}> {percentLanguage}% 
+                        <span className="valNFT"> ( {valueLanguage} )
+                    </span></span></span>
+                    <span className="attrib">{attrib[2]}
+                        <span className="values"> {currentExpression} </span>
+                        <span className={colorExpression}> {percentExpression}% 
+                        <span className="valNFT"> ( {valueExpression} )
+                    </span></span></span>
+                    <span className="attrib">{attrib[3]}
+                        <span className="values"> {currentGlasses} </span>
+                        <span className={colorGlasses}> {percentGlasses}% 
+                        <span className="valNFT"> ( {valueGlasses} )
+                    </span></span></span>
+                    <span className="attrib">{attrib[4]}
+                        <span className="values"> {currentLisereTPH} </span>
+                        <span className={colorLisereTPH}> {percentLisereTPH}% 
+                        <span className="valNFT"> ( {valueLisereTPH} )
+                    </span></span></span>
+                    <span className="attrib">{attrib[5]}
+                        <span className="values"> {currentSticker} </span>
+                        <span className={colorSticker}> {percentSticker}% 
+                        <span className="valNFT"> ( {valueSticker} )
+                    </span></span></span>
+                    <span className="attrib">{attrib[6]}
+                        <span className="values"> {currentArticle} </span>
+                        <span className={colorArticle}> {percentArticle}% 
+                        <span className="valNFT"> ( {valueArticle} )
+                    </span></span></span>
+                    <span className="attrib">{attrib[7]}
+                        <span className="values"> {currentBackground} </span>
+                        <span className={colorBackground}> {percentBackground}% 
+                        <span className="valNFT"> ( {valueBackground} )
+                    </span></span></span>
+                    <span className="attrib">{attrib[8]}
+                        <span className="values"> {currentComputer} </span>
+                        <span className={colorComputer}> {percentComputer}% 
+                        <span className="valNFT"> ( {valueComputer} )
+                    </span></span></span>
                 </div>
             </div>
             )}
