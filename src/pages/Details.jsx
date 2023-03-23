@@ -40,17 +40,13 @@ export const Details = () => {
 
     const attributValues = ["GENRE : ","LANGUAGE : ","EXPRESSION : ","GLASSES : ","LISERE TPH : ",
     "STICKER : ","ARTICLE : ","BG COLOR : ","COMPUTER : "];
-    
-    const infosValues = attributValues.map((x) => currentNFT?.rawMetadata?.attributes[x]?.value);
 
+    const infosValues = attributValues.map((obj, i) => currentNFT?.rawMetadata?.attributes[i]?.value);
     const infosPercents = infosValues.map((obj, i) => statistiques[i][obj]);
-
     const infosColors = infosPercents.map((x) => getTraitColor(x));
-
+    
     const colorsGraduation = [{"orange":"LEGENDARY"},{"purple":"EPIC"},{"blue":"RARE"},{"green":"UNUSUAL"},{"gray":"COMMON"}];
-
     const infosGraduation = infosColors.map((x) => colorsGraduation.find(color => color[x])?.[x] );
-
 
     return (
         <div className="global-details">
@@ -58,21 +54,20 @@ export const Details = () => {
             <div className="img_details">
                 <img
                     src={currentImgUrl}
-                    width="700px"
-                    height="700px"
+                    width="650px"
+                    height="650px"
                     alt="NFT TPH"
                 />
                 <div className="metadata_details">
-                    <span className="attrib">ID : 
-                        <span className="values"> #{TokenId}
-                    </span></span>
-                    { attributValues.map((i) => {
+                    <span className="NFT-ID">ID : <span className="value"> #{TokenId}</span></span>
+                    { attributValues.map((obj, i) => {
                         return (
-                            <span className="attrib">{attributValues[i]}
-                            <span className="values"> {infosValues[i]} </span>
-                            <span className={infosColors[i]}> {infosPercents[i]}% 
-                            <span className="valNFT"> &lpar; {infosGraduation[i]} &rpar;
-                            </span></span></span>
+                            <div key={obj} className="line">
+                                <span className="attrib">{attributValues[i]}</span>
+                                <span className="value"> &nbsp; {infosValues[i]}</span>
+                                <span className={infosColors[i]}> &nbsp; &nbsp; <i>{infosPercents[i]} %</i>
+                                <span className="valNFT"> &nbsp; &nbsp;<i>{infosGraduation[i]}</i></span></span>
+                            </div>
                         )
                     })}
                 </div>

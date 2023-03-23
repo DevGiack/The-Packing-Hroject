@@ -22,16 +22,24 @@
   flex-direction: column;
   justify-content: flex-start;
   white-space: pre;
-  gap: 1.8em;
+  gap: 1.72em;
 }
 
-.attrib {
+.line {
   font-size: 2em;
+}
+
+.NFT-ID {
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.attrib, .NFT-ID {
   color: var(--primary);
   text-shadow: var(--btn-text-shadow);
 }
 
-.values {
+.value {
   font-weight: bold;
   color: var(--body-text);
 }
@@ -46,3 +54,4 @@
 .valNFT {
   font-size: 0.6em;
 }
+
