@@ -53,13 +53,8 @@ import NFT50 from "../assets/images/mini_collection/TPH_050.webp"
 import { statistiques } from "../statistiques/statistiques"
 
 async function getCollection() {
-    
-    const settings = {
-        apiKey: import.meta.env.VITE_ALCHEMY_API_KEY,
-        network: import.meta.env.VITE_ALCHEMY_NETWORK_ID,
-    }
-    const alchemy = new Alchemy(settings)
-    const collection = await alchemy.nft.getNftsForContract(
+
+    const collection = await getAlchemy().nft.getNftsForContract(
         import.meta.env.VITE_CONTRACT_ADRESS
     )
 
@@ -75,6 +70,14 @@ const getRandomizedArray = () => {
     27, 4, 35, 13, 50, 49, 44, 22, 41, 29,
     12, 47, 38, 46, 8, 36, 33, 3, 34, 28
 ])
+}
+
+const getAlchemy = () => {
+  const settings = {
+    apiKey: import.meta.env.VITE_ALCHEMY_API_KEY,
+    network: import.meta.env.VITE_ALCHEMY_NETWORK_ID,
+}
+  return new Alchemy(settings)
 }
 
 const getTraitColor = (percent) => {
@@ -134,5 +137,5 @@ let tl = Array(50 - collection.length).fill([
 return [...traitList, ...tl]
 }
 
-export { getCollection, getRandomizedArray, getList, getTooltipList, getTraitColor }
+export { getCollection, getRandomizedArray, getList, getTooltipList, getTraitColor, getAlchemy }
 
