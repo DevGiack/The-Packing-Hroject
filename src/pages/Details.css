@@ -1,22 +1,21 @@
 .img_details {
-  padding: 7em;
+  padding: 6em;
   display: flex;
   align-items: center;
   flex-direction: row;
-  gap: 3em;
+  gap: 2.5em;
 }
 
 .metadata_details {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 500px;
   white-space: pre;
-  gap: 1em;
+  gap: 0.95em;
 }
 
 .attrib {
-  font-size: 2.4em;
+  font-size: 2.1em;
   color: var(--primary);
   text-shadow: 2px 2px 4px black;
 }
