@@ -14,7 +14,7 @@ export const Details = () => {
     }
 
     const settings = {
-        apiKey: import.meta.env.VITE_MORALIS_API_KEY,
+        apiKey: import.meta.env.VITE_ALCHEMY_API_KEY,
         network: network["80001"],
     }
     const alchemy = new Alchemy(settings)
