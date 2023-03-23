@@ -17,6 +17,7 @@
   --pourcent-gray: #afacac;
   --bg-btn-hover: #fa7426;
   --btn-text: rgb(250, 230, 180);
+  --btn-text-shadow: 2px 2px 4px black;
   --btn-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   --disconnect-btn-hover: #ff1e00;
   --faq-details-p: rgb(161, 161, 161);

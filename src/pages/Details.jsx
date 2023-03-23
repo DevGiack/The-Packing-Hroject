@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Alchemy } from "alchemy-sdk"
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Details.css"
 
 export const Details = () => {
@@ -44,17 +45,15 @@ export const Details = () => {
     const currentBackground = currentNFT?.rawMetadata?.attributes[7]?.value;
     const currentComputer = currentNFT?.rawMetadata?.attributes[8]?.value;
     return (
-    <>
+    <div className="global-details">
         {currentImgUrl && (
         <div className="img_details">
-            <div>
             <img
                 src={currentImgUrl}
                 width="700px"
                 height="700px"
                 alt="NFT TPH"
             />
-            </div>
             <div className="metadata_details">
                 <span className="attrib">ID : <span className="values"> #{TokenId}</span></span>
                 <span className="attrib">GENRE : <span className="values"> {currentGenre}</span></span>
@@ -69,6 +68,9 @@ export const Details = () => {
             </div>
         </div>
         )}
-    </>
+        <div className="back-profil">
+            <Link to="/profil"> &lt; Back</Link>
+        </div>
+    </div>
     );
 }
