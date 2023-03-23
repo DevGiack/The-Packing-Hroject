@@ -56,15 +56,15 @@ export const Details = () => {
             />
             </div>
             <div className="metadata_details">
-                <span className="attrib">ID : <span className="values"> #{TokenId}</span></span><br />
-                <span className="attrib">GENRE : <span className="values"> {currentGenre}</span></span><br />
-                <span className="attrib">LANGUAGE : <span className="values"> {currentLanguage}</span></span><br />
-                <span className="attrib">EXPRESSION : <span className="values"> {currentExpression}</span></span><br />
-                <span className="attrib">GLASSES : <span className="values"> {currentGlasses}</span></span><br />
-                <span className="attrib">LISERE TPH : <span className="values"> {currentLisereTPH}</span></span><br />
-                <span className="attrib">STICKER : <span className="values"> {currentSticker}</span></span><br />
-                <span className="attrib">ARTICLE : <span className="values"> {currentArticle}</span></span><br />
-                <span className="attrib">BG COLOR : <span className="values"> {currentBackground}</span></span><br />
+                <span className="attrib">ID : <span className="values"> #{TokenId}</span></span>
+                <span className="attrib">GENRE : <span className="values"> {currentGenre}</span></span>
+                <span className="attrib">LANGUAGE : <span className="values"> {currentLanguage}</span></span>
+                <span className="attrib">EXPRESSION : <span className="values"> {currentExpression}</span></span>
+                <span className="attrib">GLASSES : <span className="values"> {currentGlasses}</span></span>
+                <span className="attrib">LISERE TPH : <span className="values"> {currentLisereTPH}</span></span>
+                <span className="attrib">STICKER : <span className="values"> {currentSticker}</span></span>
+                <span className="attrib">ARTICLE : <span className="values"> {currentArticle}</span></span>
+                <span className="attrib">BG COLOR : <span className="values"> {currentBackground}</span></span>
                 <span className="attrib">COMPUTER : <span className="values"> {currentComputer}</span></span>
             </div>
         </div>
