@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import { Alchemy } from "alchemy-sdk"
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { statistiques } from "../statistiques/statistiques"
 import { getTraitColor } from "../utils/utils";
+import { statistiques } from "../utils/stats";
+import { useParams } from "react-router-dom";
+import { Alchemy } from "alchemy-sdk"
+import { Link } from "react-router-dom";
 import "./Details.css"
 
 export const Details = () => {
