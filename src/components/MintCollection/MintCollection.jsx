@@ -692,7 +692,6 @@ const abi = [
         handleConfetti();
         console.log("Mining...please wait.")
         await nftTxn.wait();
-  
       } else {
         console.log("Ethereum object doesn't exist!");
       }

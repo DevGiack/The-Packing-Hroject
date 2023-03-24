@@ -15,8 +15,8 @@ export const Collection =() => {
           <span className="value">{x.traitValue}&nbsp; &nbsp;</span>
           { x.traitValue !== "???" && (
               <>
-                <span className={x.traitColor}>{x.traitPercent}</span>
-                <span className="pourcent"> %</span>
+                <span className={x.traitColor}><i>{x.traitPercent}</i>
+                <span className="pourcent"> <i>%</i></span></span>
               </>
               )}
           <br />
