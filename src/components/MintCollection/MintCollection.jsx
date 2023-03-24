@@ -50,7 +50,7 @@ export const MintCollection = () => {
   }
 
   const askContractToMintNft = async () => {
-    const CONTRACT_ADDRESS = "0xbd19e7b4404111a535ba9c321503a23572a9dffa";
+    const CONTRACT_ADDRESS = "0x6b75a793421d5ee29ba3f47d25073b01320936ac";
   
     try {
       const { ethereum } = window;
