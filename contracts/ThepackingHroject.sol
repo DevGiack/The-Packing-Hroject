@@ -8,15 +8,18 @@ import "../node_modules/@openzeppelin/contracts/access/AccessControl.sol";
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 
 contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
+    address payable DAOAddress = payable(0x6FeB2c2427378bdbaF9E93ead21079C1CC24a758);
+    address DAOAgent = 0xD0eC80A25A0139174C03BA41450E026740A59ad2;
+    uint256 public mintPrice = 0.1 ether;
+    uint256 public maxSupply = 50;
+    uint256 public maxPerWallet = 25;
     mapping (uint256 => string) private _tokenURIs;
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
-    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     uint256 idCounter = 1;
 
     constructor() ERC721("TPH", "TPH") {
-        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
-        _grantRole(PAUSER_ROLE, msg.sender);
-        _grantRole(MINTER_ROLE, msg.sender);
+        _grantRole(DEFAULT_ADMIN_ROLE, DAOAgent);
+        _grantRole(PAUSER_ROLE, DAOAgent);
     _tokenURIs[1] = "QmVMZ4v2cfhY53Er2Pf4yYBuT7NzBWLnSK3J2sQMjKJbAx";
     _tokenURIs[2] = "QmYarKZsKUGgPxCTosyBLxLHAMU7gbvobrvPr4SuFqi68o";
     _tokenURIs[3] = "QmdSdvpAw7cedjvnnPAGcsG7AdzPxYHNqxK6CWqW1Kc6se";
@@ -40,7 +43,7 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
     _tokenURIs[21] = "QmSPyGfqrJwzzBjkVdkbSsBf5DEPs2shet9AcogRRJWGFm";
     _tokenURIs[22] = "QmYmTanwYpZDfPys8NPQTsU3puU1PKAGxYosceCAk2PMjB";
     _tokenURIs[23] = "Qmf9UnVwUcbrFJNLLoMovHM59Kx1FbB2hsDgMLN7EzvvUZ";
-    _tokenURIs[24] = "QmRVsUoinkR6rbG31xLRpvfh6zK97S8Uedk4YLTA4Ss59j";
+    _tokenURIs[24] = "Qma1Wvt9yNU48A4m4khCPjCsAWqbHLb5iNTVXhce4cmrMB";
     _tokenURIs[25] = "QmSsFAWgzHTfHMDrQmWFU2mgNzvkopno38mCfcag5HFodN";
     _tokenURIs[26] = "QmUavR4PkJ4zSkDAx1LywbXCRMz9bRnFr9HsNiz3s4gTgE";
     _tokenURIs[27] = "QmVznarXpTpDsarLhqvx6mkuPRRW9BCXkypdiQ4VYPLfUK";
@@ -86,23 +89,18 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
         _unpause();
     }
 
-    function safeMint(address to) public {
+    function safeMint(address to) internal {
         uint256 tokenId = getId();        
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, _tokenURIs[tokenId]);
     }
-// function mint() payable public returns (uint256) {
-//   require(msg.value == 0.1 ether || msg.value == 100000000000000000 
-//     wei, "Transaction amount has to be 0.1 eth");
 
-//   payable(this).transfer(msg.value);
+    function mintToken() public payable {
+        require(idCounter < 50, "collection fully minted");
+        require(mintPrice == msg.value, "wrong amount sent");
+        safeMint(msg.sender);
+    }
 
-//   _safeMint(msg.sender, token_id);
-
-//   token_id.increament();
-
-//   return token_id;
-// }
     function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)
         internal
         whenNotPaused
@@ -110,8 +108,6 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
     {
         super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }
-
-    // The following functions are overrides required by Solidity.
 
     function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
         super._burn(tokenId);
@@ -134,4 +130,13 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
     {
         return super.supportsInterface(interfaceId);
     }
+
+    function getBalance() public view returns(uint) {
+        return address(this).balance;
+    }
+
+    function withdrawMoneyToDAO() public payable {
+        DAOAddress.transfer(getBalance());
+    }
+
 }

@@ -54,7 +54,9 @@ import { statistiques } from "../statistiques/statistiques"
 
 async function getCollection() {
   const collection = await getAlchemy().nft.getNftsForContract(
-    "0x6b75a793421d5ee29ba3f47d25073b01320936ac"
+
+      "0xb57c8a626850753f18342eadf24b63cee75f198e"
+
   )
   return collection.nfts
 }
