@@ -31,7 +31,6 @@
 	100% { transform: translateX(0); }
 }
 
-/* anim second slider */
 @keyframes scrollleft {
 	0% { transform: translateX(100%); }
 	100% { transform: translateX(0); }
@@ -39,7 +38,7 @@
 
 .tooltip .tooltiptext {
 	visibility: hidden;
-	max-width: 20%;
+	max-width: auto;
 	background-color: rgba(0, 0, 0, 0.97);
 	color: var(--tip-text);
 	padding: 0.4em 0.6em 0.4em 0.6em;

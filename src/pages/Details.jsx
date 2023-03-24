@@ -38,8 +38,8 @@ export const Details = () => {
     const currentNFT = nftsForOwner.find(nft => nft.tokenId === TokenId)
     const currentImgUrl = currentNFT?.media[0]?.gateway;
 
-    const attributValues = ["GENRE : ","LANGUAGE : ","EXPRESSION : ","GLASSES : ","LISERE TPH : ",
-    "STICKER : ","ARTICLE : ","BG COLOR : ","COMPUTER : "];
+    const attributValues = ["GENRE : ","LANGUAGE : ","EXPRESSION : ","GLASSES : ","BORDER : ",
+    "STICKER : ","ARTICLE : ","BACKGROUND : ","COMPUTER : "];
 
     const infosValues = attributValues.map((obj, i) => currentNFT?.rawMetadata?.attributes[i]?.value);
     const infosPercents = infosValues.map((obj, i) => statistiques[i][obj]);
