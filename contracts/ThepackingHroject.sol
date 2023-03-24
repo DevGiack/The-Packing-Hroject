@@ -102,8 +102,6 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
         super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }
 
-    // The following functions are overrides required by Solidity.
-
     function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
         super._burn(tokenId);
     }
