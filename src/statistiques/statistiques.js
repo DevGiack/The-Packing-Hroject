@@ -28,7 +28,7 @@ export const statistiques = [
     "N°9" : 6,
     "NO EXPRESSION" : 4,
     "CAPTAIN MELON" : 2,
-    "INSPECTEUR GAGDET" : 2
+    "INSPECTEUR GADGET" : 2
   },
   {
     "N°1 SUNGLASSES" : 10,
