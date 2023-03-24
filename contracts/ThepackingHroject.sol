@@ -8,15 +8,18 @@ import "../node_modules/@openzeppelin/contracts/access/AccessControl.sol";
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 
 contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
+    address payable DAOAddress = payable(0x6FeB2c2427378bdbaF9E93ead21079C1CC24a758);
+    address DAOAgent = 0xD0eC80A25A0139174C03BA41450E026740A59ad2;
+    uint256 public mintPrice = 0.1 ether;
+    uint256 public maxSupply = 50;
+    uint256 public maxPerWallet = 25;
     mapping (uint256 => string) private _tokenURIs;
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
-    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     uint256 idCounter = 1;
 
     constructor() ERC721("TPH", "TPH") {
-        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
-        _grantRole(PAUSER_ROLE, msg.sender);
-        _grantRole(MINTER_ROLE, msg.sender);
+        _grantRole(DEFAULT_ADMIN_ROLE, DAOAgent);
+        _grantRole(PAUSER_ROLE, DAOAgent);
     _tokenURIs[1] = "QmVMZ4v2cfhY53Er2Pf4yYBuT7NzBWLnSK3J2sQMjKJbAx";
     _tokenURIs[2] = "QmYarKZsKUGgPxCTosyBLxLHAMU7gbvobrvPr4SuFqi68o";
     _tokenURIs[3] = "QmdSdvpAw7cedjvnnPAGcsG7AdzPxYHNqxK6CWqW1Kc6se";
@@ -86,12 +89,16 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
         _unpause();
     }
 
-    function safeMint(address to) payable public returns (uint256) {
-        require(msg.value == 100000000000000000 wei, "Transaction amount has to be 0.1 MATIC");
+    function safeMint(address to) internal {
         uint256 tokenId = getId();        
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, _tokenURIs[tokenId]);
-        return tokenId;
+    }
+
+    function mintToken() public payable {
+        require(idCounter < 50, "collection fully minted");
+        require(mintPrice == msg.value, "wrong amount sent");
+        safeMint(msg.sender);
     }
 
     function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)
@@ -123,4 +130,13 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
     {
         return super.supportsInterface(interfaceId);
     }
+
+    function getBalance() public view returns(uint) {
+        return address(this).balance;
+    }
+
+    function withdrawMoneyToDAO() public payable {
+        DAOAddress.transfer(getBalance());
+    }
+
 }

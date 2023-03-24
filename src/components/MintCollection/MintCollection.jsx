@@ -50,7 +50,7 @@ export const MintCollection = () => {
   }
 
   const askContractToMintNft = async () => {
-    const CONTRACT_ADDRESS = "0x01b8921982511aabc37b78e79281fb0463e97366";
+    const CONTRACT_ADDRESS = "0xb57c8a626850753f18342eadf24b63cee75f198e";
   
     try {
       const { ethereum } = window;
@@ -61,7 +61,8 @@ export const MintCollection = () => {
         console.log(signer)
         const connectedContract = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
         console.log("Going to pop wallet now to pay gas...")
-        let nftTxn = await connectedContract.safeMint(address);
+        const ETH_VALUE_AS_STRING = "100000000000000000"
+        let nftTxn = await connectedContract.mintToken({value: ethers.utils.parseEther("0.1")});
         handleConfetti();
         console.log("Mining...please wait.")
         await nftTxn.wait();

@@ -35,7 +35,7 @@ export const OwnCollection = () => {
                 </div>
                 <div className="bloc-cards">
                     {nftsForOwner
-                        .filter((obj) => obj.contract.address === "0x01b8921982511aabc37b78e79281fb0463e97366")
+                        .filter((obj) => obj.contract.address === "0xb57c8a626850753f18342eadf24b63cee75f198e")
                         .map((x) => {
                             console.log(x);
                             x.tokenId ? tokenId = x.tokenId : tokenId = "undefined"
