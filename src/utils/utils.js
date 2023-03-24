@@ -50,7 +50,7 @@ import NFT47 from "../assets/images/mini_collection/TPH_047.webp"
 import NFT48 from "../assets/images/mini_collection/TPH_048.webp"
 import NFT49 from "../assets/images/mini_collection/TPH_049.webp"
 import NFT50 from "../assets/images/mini_collection/TPH_050.webp"
-import { statistiques } from "../statistiques/statistiques"
+import { stats } from "./stats" 
 
 async function getCollection() {
   const collection = await getAlchemy().nft.getNftsForContract(
@@ -114,8 +114,8 @@ async function  getTooltipList () {
     const attributes = attributeNames.map((attributeName, index) => ({
       traitName: attributeName,
       traitValue: res[index],
-      traitPercent: statistiques[index][res[index]],
-      traitColor: getTraitColor(statistiques[index][res[index]])
+      traitPercent: stats[index][res[index]],
+      traitColor: getTraitColor(stats[index][res[index]])
     }));
     return attributes
   });

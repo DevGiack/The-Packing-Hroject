@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import { Alchemy } from "alchemy-sdk"
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { statistiques } from "../statistiques/statistiques"
 import { getTraitColor } from "../utils/utils";
+import { stats } from "../utils/stats"; 
+import { useParams } from "react-router-dom";
+import { Alchemy } from "alchemy-sdk"
+import { Link } from "react-router-dom";
 import "./Details.css"
 
 export const Details = () => {
@@ -42,7 +42,7 @@ export const Details = () => {
     "STICKER : ","ARTICLE : ","BACKGROUND : ","COMPUTER : "];
 
     const infosValues = attributValues.map((obj, i) => currentNFT?.rawMetadata?.attributes[i]?.value);
-    const infosPercents = infosValues.map((obj, i) => statistiques[i][obj]);
+    const infosPercents = infosValues.map((obj, i) => stats[i][obj]);
     const infosColors = infosPercents.map((x) => getTraitColor(x));
     
     const colorsGraduation = [{"orange":"LEGENDARY"},{"purple":"EPIC"},{"blue":"RARE"},{"green":"UNUSUAL"},{"gray":"COMMON"}];

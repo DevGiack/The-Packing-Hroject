@@ -1,4 +1,4 @@
-export const statistiques = [
+export const stats = [
   {
     "MEN TYPE 1" : 36,
     "MEN TYPE 2" : 28,
@@ -113,4 +113,4 @@ export const statistiques = [
     "SPECIAL GREEN EDITION" : 2,
     "SPECIAL GOLD EDITION" : 2
   }
-]
+] 
