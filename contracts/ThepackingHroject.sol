@@ -86,23 +86,14 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
         _unpause();
     }
 
-    function safeMint(address to) public {
+    function safeMint(address to) payable public returns (uint256) {
+        require(msg.value == 100000000000000000 wei, "Transaction amount has to be 0.1 MATIC");
         uint256 tokenId = getId();        
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, _tokenURIs[tokenId]);
+        return tokenId;
     }
-// function mint() payable public returns (uint256) {
-//   require(msg.value == 0.1 ether || msg.value == 100000000000000000 
-//     wei, "Transaction amount has to be 0.1 eth");
 
-//   payable(this).transfer(msg.value);
-
-//   _safeMint(msg.sender, token_id);
-
-//   token_id.increament();
-
-//   return token_id;
-// }
     function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)
         internal
         whenNotPaused
