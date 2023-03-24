@@ -10,22 +10,22 @@
   .bloc-about {
     display: flex;
     flex-direction: row;
-    width: 1150px;
-    height: 550px;
+    width: 68em;
+    height: 34em;
     gap: 35px;
   }
 
   .blocA-about {
-    width: 480px;
-    height: 550px;
+    width: 30em;
+    height: 34em;
   }
 
   .blocB-about {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 635px;
-    height: 450px;
+    width: 39em;
+    height: 28em;
   }
 
   #title-about {
