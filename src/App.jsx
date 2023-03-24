@@ -12,7 +12,7 @@ import { Footer } from "./components/Footer/Footer";
 import "./pages/Title.css";
 import "./App.css";
 
-function App() {
+export const App = () => {
   return (
     <>
       <Header />
@@ -30,4 +30,3 @@ function App() {
     </>
   );
 }
-export default App;

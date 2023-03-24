@@ -8,7 +8,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { DisconnectWalletButton } from "../DisconnectWalletButton/DisconnectWalletButton"
 import { Link } from "react-router-dom"
 
-const ConnectWalletButton = () => {
+export const ConnectWalletButton = () => {
     const [walletAddress, setWalletAddress] = useAtom(UserAddressAtom)
 
     async function requestAccount() {
@@ -80,5 +80,3 @@ const ConnectWalletButton = () => {
         </div>
     )
 }
-
-export default ConnectWalletButton

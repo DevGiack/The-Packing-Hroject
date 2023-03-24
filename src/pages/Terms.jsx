@@ -1,10 +1,12 @@
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import "./Conditions.css"
 
 export const Terms = () => {
+
     useEffect(() => {
         window.scrollTo(0, 0)
     })
+
     return (
         <>
             <div className="bloc-title">

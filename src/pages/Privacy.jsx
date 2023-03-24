@@ -1,7 +1,8 @@
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import "./Conditions.css"
 
 export const Privacy = () => {
+    
     useEffect(() => {
         window.scrollTo(0, 0)
     })

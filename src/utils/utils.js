@@ -108,7 +108,7 @@ async function  getTooltipList () {
   const traitList = collection.map((x) => {
     let res = [];
     x.rawMetadata.attributes.forEach((hash) => res.push(hash.value));
-    const attributeNames = ["GENRE", "LANGUAGE", "EXPRESSION", "GLASSES", "LISERE_TPH", "STICKER", "ARTICLE", "BACKGROUND_COLOR", "COMPUTER"];
+    const attributeNames = ["GENRE", "LANGUAGE", "EXPRESSION", "GLASSES", "BORDER", "STICKER", "ARTICLE", "BACKGROUND", "COMPUTER"];
     const attributes = attributeNames.map((attributeName, index) => ({
       traitName: attributeName,
       traitValue: res[index],
@@ -123,10 +123,10 @@ async function  getTooltipList () {
     {"traitValue": "???", "traitName": "LANGUAGE"},
     {"traitValue": "???", "traitName": "EXPRESSION"},
     {"traitValue": "???", "traitName": "GLASSES"},
-    {"traitValue": "???", "traitName": "LISERE_TPH"},
+    {"traitValue": "???", "traitName": "BORDER"},
     {"traitValue": "???", "traitName": "STICKER"},
     {"traitValue": "???", "traitName": "ARTICLE"},
-    {"traitValue": "???", "traitName": "BACKGROUND_COLOR"},
+    {"traitValue": "???", "traitName": "BACKGROUND"},
     {"traitValue": "???", "traitName": "COMPUTER"}
   ])
 

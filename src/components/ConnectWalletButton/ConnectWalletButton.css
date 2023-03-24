@@ -43,8 +43,8 @@
 }
 
 @media (max-width: 1250px) {
-.button-icons {
-  display: flex;
-  justify-content: center;
-}
+  .button-icons {
+    display: flex;
+    justify-content: center;
+  }
 }

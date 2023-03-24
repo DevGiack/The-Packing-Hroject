@@ -1,85 +1,87 @@
 @media (min-width: 1250px) {
-.global-intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 42em;
-  padding-top: 7em;
-}
 
-.bloc1-intro {
-  display: flex;
-  flex-direction: row;
-  width: 70%;
-  height: 550px;
-}
+  .global-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 42em;
+    padding-top: 7em;
+  }
 
-.bloc1-intro span {
-text-align: center;
-}
+  .bloc1-intro {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 550px;
+  }
 
-.bloc1A-intro {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3em;
-  width: 50%;
-}
-
-.bloc1B-intro {
-width: 50%;
-}
-
-.bloc2-intro {
-  margin-top: 3%;
-  display: flex;
-  flex-direction: row;
-  width: 70%;
-  height: 15em;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#title-intro {
-  font-size: 3.7em;
-  font-weight: bolder;
-}
-
-#text-intro {
-  font-size: 1.2em;
-  max-width: 26em;
-}
-
-#pack1{
-  margin-top: 5%;
-  height: 28vw;
-}
-
-.stat-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  .bloc1-intro span {
   text-align: center;
-  width: 220px;
-  height: 8em;
-  border-radius: 2em;
-  background-color: var(--intro-stat-box-bg);
-}
+  }
 
-.box-text {
-  color: var(--intro-stat-box-text);
-}
+  .bloc1A-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    width: 50%;
+  }
 
-.box-val {
-  font-size: 3em;
-  font-weight: bold;
-  color: var(--intro-stat-box-val);
-}
+  .bloc1B-intro {
+  width: 50%;
+  }
+
+  .bloc2-intro {
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 15em;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #title-intro {
+    font-size: 3.7em;
+    font-weight: bolder;
+  }
+
+  #text-intro {
+    font-size: 1.2em;
+    max-width: 26em;
+  }
+
+  #pack1{
+    margin-top: 5%;
+    height: 28vw;
+  }
+
+  .stat-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 220px;
+    height: 8em;
+    border-radius: 2em;
+    background-color: var(--intro-stat-box-bg);
+  }
+
+  .box-text {
+    color: var(--intro-stat-box-text);
+  }
+
+  .box-val {
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--intro-stat-box-val);
+  }
 }
 
 @media (max-width: 1250px) {
+
   .global-intro {
     display: flex;
     flex-direction: column;
@@ -121,5 +123,4 @@ width: 50%;
   .stat-box {
     display: none
   }
-
 }

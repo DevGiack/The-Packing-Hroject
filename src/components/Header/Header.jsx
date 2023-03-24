@@ -1,8 +1,8 @@
-import "./Header.css"
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
-import ConnectWalletButton from "../ConnectWalletButton/ConnectWalletButton"
+import { ConnectWalletButton } from "../ConnectWalletButton/ConnectWalletButton"
 import logo from "../../assets/images/LOGO-TPH.webp"
+import "./Header.css"
 
 export const Header = () => {
     const [activeLink, setActiveLink] = useState(null)
