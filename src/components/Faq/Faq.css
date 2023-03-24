@@ -1,59 +1,59 @@
 @media (min-width: 1250px) {
-.global-faq {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 42em;
-}
+  .global-faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 42em;
+  }
 
-.bloc-faq {
-  display: flex;
-  flex-direction: row;
-  width: 1150px;
-  height: 550px;
-  margin-top: 3em;
-}
+  .bloc-faq {
+    display: flex;
+    flex-direction: row;
+    width: 1150px;
+    height: 550px;
+    margin-top: 3em;
+  }
 
-.blocA-faq {
-  width: 650px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2.4em;
-}
+  .blocA-faq {
+    width: 650px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4em;
+  }
 
-.blocB-faq {
-  display: flex;
-  justify-content: center;
-  width: 500px;
-  height: 500px;
-}
+  .blocB-faq {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+  }
 
-.blocB-faq img {
-  width: max-content;
-  height: max-content;
-}
+  .blocB-faq img {
+    width: max-content;
+    height: max-content;
+  }
 
-summary {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  width: 650px;
-  font-size: 1.2em;
-  font-weight: bold;
-  cursor: pointer;
-}
+  summary {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 650px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
-details {
-  padding-bottom: 0.6em;
-  border-bottom: var(--faq-border-bottom);
-}
+  details {
+    padding-bottom: 0.6em;
+    border-bottom: var(--faq-border-bottom);
+  }
 
-details p {
-  margin-left: 1.4em;
-  font-size: 1.05em;
-  color: var(--faq-details-p);
-  margin-bottom: 0;
-}
+  details p {
+    margin-left: 1.4em;
+    font-size: 1.05em;
+    color: var(--faq-details-p);
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 1250px) {
@@ -73,7 +73,8 @@ details p {
     gap: 2.4em;
     margin-bottom: 15%;
   }
+
   .blocB-faq {
- display: none;
+    display: none;
   }
 }

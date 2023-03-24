@@ -1,8 +1,8 @@
-import "./Intro.css"
 import pack1 from "../../assets/images/PACK_1.webp"
 import { Link } from "react-router-dom"
 import { MintButton } from "../MintButton/MintButton"
 import { getCollection, getAlchemy } from "../../utils/utils.js"
+import "./Intro.css"
 
 const list = await getCollection()
 const alchemy = getAlchemy();
@@ -15,11 +15,11 @@ try {
 
   }
 
-
-
 export const Intro = () => {
+
     const minted = list.length
     const owners_count = new Set(owners.owners).size;
+    
     return (
         <div className="global-intro">
             <div className="bloc1-intro">
