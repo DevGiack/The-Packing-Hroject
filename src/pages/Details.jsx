@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { getTraitColor } from "../utils/utils";
-import { stats } from "../utils/stats";
+import { stats } from "../utils/stats"; 
 import { useParams } from "react-router-dom";
 import { Alchemy } from "alchemy-sdk"
 import { Link } from "react-router-dom";

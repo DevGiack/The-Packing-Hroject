@@ -113,4 +113,4 @@ export const stats = [
     "SPECIAL GREEN EDITION" : 2,
     "SPECIAL GOLD EDITION" : 2
   }
-]
+] 
