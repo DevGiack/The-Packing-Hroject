@@ -9,7 +9,7 @@ import { DisconnectWalletButton } from "../DisconnectWalletButton/DisconnectWall
 import { Link } from "react-router-dom"
 import CryptoJS from "crypto-js"
 
-const ConnectWalletButton = () => {
+export const ConnectWalletButton = () => {
     const [walletAddress, setWalletAddress] = useAtom(UserAddressAtom)
 
        // La clé de chiffrement
@@ -48,7 +48,6 @@ const ConnectWalletButton = () => {
         }
     }
     
-
     // Surveiller les changements de compte dans MetaMask
     useEffect(() => {
         const address = getLocalStorageItem("userAddress")
@@ -102,5 +101,3 @@ const ConnectWalletButton = () => {
         </div>
     )
 }
-
-export default ConnectWalletButton
