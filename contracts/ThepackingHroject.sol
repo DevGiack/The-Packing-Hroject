@@ -40,7 +40,7 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
     _tokenURIs[21] = "QmSPyGfqrJwzzBjkVdkbSsBf5DEPs2shet9AcogRRJWGFm";
     _tokenURIs[22] = "QmYmTanwYpZDfPys8NPQTsU3puU1PKAGxYosceCAk2PMjB";
     _tokenURIs[23] = "Qmf9UnVwUcbrFJNLLoMovHM59Kx1FbB2hsDgMLN7EzvvUZ";
-    _tokenURIs[24] = "QmRVsUoinkR6rbG31xLRpvfh6zK97S8Uedk4YLTA4Ss59j";
+    _tokenURIs[24] = "Qma1Wvt9yNU48A4m4khCPjCsAWqbHLb5iNTVXhce4cmrMB";
     _tokenURIs[25] = "QmSsFAWgzHTfHMDrQmWFU2mgNzvkopno38mCfcag5HFodN";
     _tokenURIs[26] = "QmUavR4PkJ4zSkDAx1LywbXCRMz9bRnFr9HsNiz3s4gTgE";
     _tokenURIs[27] = "QmVznarXpTpDsarLhqvx6mkuPRRW9BCXkypdiQ4VYPLfUK";
