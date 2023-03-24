@@ -10,19 +10,11 @@ export const DisconnectWalletButton = () => {
     const navigate = useNavigate()
 
     const handleDisconnectWallet = () => {
-        localStorage.removeItem("userAddress") // Supprime l'etat du localStorage
+        sessionStorage.clear(); // Supprime l'etat du sessionStorage
         setWalletAddress(undefined) // Met à jour le state global
         navigate("/") // Redirige vers la page d'accueil
     }
-
-    setInterval(function() {
-        localStorage.clear("userAddress");
-        setWalletAddress(undefined) // Met à jour le state global
-        navigate("/");
-      }, 3600000); // Efface le Local Storage, redirige vers la page d'accueil toutes les 3 heures
-      
-
-
+    
     return (
         <FontAwesomeIcon
             icon={faPowerOff}

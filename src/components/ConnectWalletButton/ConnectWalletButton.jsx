@@ -7,30 +7,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { DisconnectWalletButton } from "../DisconnectWalletButton/DisconnectWalletButton"
 import { Link } from "react-router-dom"
-import CryptoJS from "crypto-js"
 
 const ConnectWalletButton = () => {
     const [walletAddress, setWalletAddress] = useAtom(UserAddressAtom)
-
-       // La clé de chiffrement
-       const secretKey = "secret-key"
-
-       // Chiffre les données avant de les stocker dans le localStorage
-       function setLocalStorageItem(key, value) {
-           const ciphertext = CryptoJS.AES.encrypt(value, secretKey).toString()
-           localStorage.setItem(key, ciphertext)
-       }
-   
-       // Déchiffre les données stockées dans le localStorage
-       function getLocalStorageItem(key) {
-           const ciphertext = localStorage.getItem(key)
-           if (ciphertext) {
-               const bytes = CryptoJS.AES.decrypt(ciphertext, secretKey)
-               const plaintext = bytes.toString(CryptoJS.enc.Utf8)
-               return plaintext
-           }
-           return null
-       }
 
     async function requestAccount() {
         // Vérifie si MetaMask est présent dans le navigateur
@@ -40,7 +19,7 @@ const ConnectWalletButton = () => {
                     method: "eth_requestAccounts",
                 })
                 const address = accounts[0]
-                setLocalStorageItem("userAddress", address) // Stocke l'adresse dans le localStorage
+                sessionStorage.setItem("userAddress", address) // Stocke l'adresse dans le sessionStorage
                 setWalletAddress(address) // Mets à jour le state global
             } catch (error) {}
         } else {
@@ -48,17 +27,16 @@ const ConnectWalletButton = () => {
         }
     }
     
-
     // Surveiller les changements de compte dans MetaMask
     useEffect(() => {
-        const address = getLocalStorageItem("userAddress")
+        const address = sessionStorage.getItem("userAddress")
         if (address) {
             setWalletAddress(address)
         }
         if (window.ethereum) {
             window.ethereum.on("accountsChanged", (accounts) => {
                 const address = accounts[0]
-                setLocalStorageItem("userAddress", address)
+                sessionStorage.setItem("userAddress", address)
                 setWalletAddress(address)
             })
         }
