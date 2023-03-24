@@ -6,18 +6,18 @@
     align-items: center;
     width: 100%;
     height: 42em;
-    padding-top: 7em;
+    padding-top: 6em;
   }
 
   .bloc1-intro {
     display: flex;
     flex-direction: row;
-    width: 70%;
-    height: 550px;
+    width: 68em;
+    height: 34em;
   }
 
   .bloc1-intro span {
-  text-align: center;
+    text-align: center;
   }
 
   .bloc1A-intro {
@@ -26,19 +26,18 @@
     justify-content: center;
     align-items: center;
     gap: 3em;
-    width: 50%;
+    width: 31em;
   }
 
   .bloc1B-intro {
-  width: 50%;
+    width: 37em;
   }
 
   .bloc2-intro {
-    margin-top: 3%;
+    margin-top: 3em;
     display: flex;
     flex-direction: row;
-    width: 70%;
-    height: 15em;
+    width: 68em;
     justify-content: space-between;
     align-items: center;
   }
@@ -54,8 +53,8 @@
   }
 
   #pack1{
-    margin-top: 5%;
-    height: 28vw;
+    margin-top: 3em;
+    height: 32em;
   }
 
   .stat-box {
@@ -63,9 +62,9 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 220px;
+    width: 15em;
     height: 8em;
-    border-radius: 2em;
+    border-radius: 1.5em;
     background-color: var(--intro-stat-box-bg);
   }
 
@@ -74,7 +73,7 @@
   }
 
   .box-val {
-    font-size: 3em;
+    font-size: 2.7em;
     font-weight: bold;
     color: var(--intro-stat-box-val);
   }

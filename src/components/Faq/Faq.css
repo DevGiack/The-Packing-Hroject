@@ -10,13 +10,12 @@
   .bloc-faq {
     display: flex;
     flex-direction: row;
-    width: 1150px;
-    height: 550px;
+    width: 71em;
     margin-top: 3em;
   }
 
   .blocA-faq {
-    width: 650px;
+    width: 40em;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -26,8 +25,7 @@
   .blocB-faq {
     display: flex;
     justify-content: center;
-    width: 500px;
-    height: 500px;
+    width: 31em;
   }
 
   .blocB-faq img {
