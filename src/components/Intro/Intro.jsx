@@ -6,11 +6,11 @@ import "./Intro.css"
 
 const list = await getCollection()
 const alchemy = getAlchemy();
-const owners = await alchemy.nft.getOwnersForContract("0xbd19e7b4404111a535ba9c321503a23572a9dffa")
+const owners = await alchemy.nft.getOwnersForContract("0xb57c8a626850753f18342eadf24b63cee75f198e")
 const floor_price = 8
 
 try {
-    floor_price = await alchemy.nft.getFloorPrice("0xbd19e7b4404111a535ba9c321503a23572a9dffa")
+    floor_price = await alchemy.nft.getFloorPrice("0xb57c8a626850753f18342eadf24b63cee75f198e")
   } catch (error) {
 
   }

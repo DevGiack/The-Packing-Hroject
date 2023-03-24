@@ -6,7 +6,7 @@ export const Profil = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        const userAddress = localStorage.getItem("userAddress")
+        const userAddress = sessionStorage.getItem("userAddress")
         if (!userAddress) {
             navigate("/")
         } 

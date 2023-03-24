@@ -54,18 +54,20 @@ import { stats } from "./stats"
 
 async function getCollection() {
   const collection = await getAlchemy().nft.getNftsForContract(
-      "0xbd19e7b4404111a535ba9c321503a23572a9dffa"
+
+      "0xb57c8a626850753f18342eadf24b63cee75f198e"
+
   )
   return collection.nfts
 }
 
 const getRandomizedArray = () => {
   return ([
-  17, 20, 18, 37, 1, 19, 23, 5, 48, 32,
-  21, 7, 40, 16, 9, 42, 11, 24, 30, 10,
-  43, 45, 31, 39, 14, 6, 26, 15, 25, 2,
-  27, 4, 35, 13, 50, 49, 44, 22, 41, 29,
-  12, 47, 38, 46, 8, 36, 33, 3, 34, 28
+  32, 12, 18, 11, 21, 7, 48, 23, 27, 17,
+  1, 49, 13, 16, 9, 42, 37, 26, 14, 47,
+  8, 31, 43, 45, 3, 41, 39, 15, 25, 2,
+  50, 30, 40, 35, 19, 36, 44, 22, 6, 34,
+  20, 5, 4, 46, 33, 29, 24, 38, 10, 28
   ])
 }
 
