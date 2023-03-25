@@ -1,37 +1,99 @@
+@media (min-width: 1250px) {
+  :root {
+    --dir: row;
+    --global-h: 93.8vh;
+    --details-content: space-around;
+    --margin-adjust: 0;
+    --text-gap: 0em;
+  }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --img-size: 70vh;
+    --data-size: 70vh;
+    --line-f-size: 2em;
+    --id-f-size: 2.5em;
+  }
+}
+
+@media (min-width: 1250px) and (max-width: 1600px) {
+  :root {
+    --img-size: 60vh;
+    --data-size: 60vh;
+    --line-f-size: 1.7em;
+    --id-f-size: 2.1em;
+  }
+}
+
+@media (max-width: 1250px) {
+  :root {
+    --dir: column;
+    --img-size: 40vw;
+    --data-size: auto;
+    --global-h: 132vh;
+    --details-content: flex-start;
+    --margin-adjust: -10em;
+    --line-f-size: 1.5em;
+    --id-f-size: 2em;
+    --text-gap: 0;
+  }
+}
+
+@media (max-height: 750px) {
+  :root {
+    --img-size: 60vh;
+    --data-size: auto;
+    --line-f-size: 3.5vh;
+    --id-f-size: 2em;
+    --text-gap: 0;
+  }
+}
+
 .global-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1em;
-  height: 93.8vh;
+  height: var(--global-h);
 }
 
 .img_details {
-  margin-top: 3%;
+  margin-top: 4em;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: var(--dir);
   gap: 2.5em;
 }
 
+.img-content {
+  width: var(--img-size);
+  height: var(--img-size);
+  min-width: 26em;
+  min-height: 26em;
+}
+
 .metadata_details {
-  height: 650px;
+  height: var(--data-size);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: var(--details-content);
   white-space: pre;
-  gap: 1.72em;
+  gap: var(--text-gap);
 }
 
 .line {
-  font-size: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: var(--line-f-size);
 }
 
 .NFT-ID {
   text-align: center;
-  font-size: 2.5em;
+  font-size: var(--id-f-size);
 }
 
 .attrib, .NFT-ID {
@@ -44,7 +106,7 @@
   color: var(--body-text);
 }
 
-.back-profil a {
+.back-to-profil a {
   text-decoration: none;
   color: var(--primary);
   font-size: 1.2em;
@@ -54,4 +116,3 @@
 .valNFT {
   font-size: 0.6em;
 }
-
