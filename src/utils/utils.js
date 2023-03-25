@@ -50,89 +50,151 @@ import NFT47 from "../assets/images/mini_collection/TPH_047.webp"
 import NFT48 from "../assets/images/mini_collection/TPH_048.webp"
 import NFT49 from "../assets/images/mini_collection/TPH_049.webp"
 import NFT50 from "../assets/images/mini_collection/TPH_050.webp"
-import { stats } from "./stats" 
+import { stats } from "./stats"
 
 async function getCollection() {
-  const collection = await getAlchemy().nft.getNftsForContract(
-
-      "0xb57c8a626850753f18342eadf24b63cee75f198e"
-
-  )
-  return collection.nfts
+    const collection = await getAlchemy().nft.getNftsForContract(
+        "0x5561c71E298DFE9fEd388e7e57042156Bb6C348F"
+    )
+    return collection.nfts
 }
 
 const getRandomizedArray = () => {
-  return ([
-  32, 12, 18, 11, 21, 7, 48, 23, 27, 17,
-  1, 49, 13, 16, 9, 42, 37, 26, 14, 47,
-  8, 31, 43, 45, 3, 41, 39, 15, 25, 2,
-  50, 30, 40, 35, 19, 36, 44, 22, 6, 34,
-  20, 5, 4, 46, 33, 29, 24, 38, 10, 28
-  ])
+    return [
+        32, 12, 18, 11, 21, 7, 48, 23, 27, 17, 1, 49, 13, 16, 9, 42, 37, 26, 14,
+        47, 8, 31, 43, 45, 3, 41, 39, 15, 25, 2, 50, 30, 40, 35, 19, 36, 44, 22,
+        6, 34, 20, 5, 4, 46, 33, 29, 24, 38, 10, 28,
+    ]
 }
 
 const getAlchemy = () => {
-  const settings = {
-    apiKey: import.meta.env.VITE_ALCHEMY_API_KEY,
-    network: import.meta.env.VITE_ALCHEMY_NETWORK_ID,
-  }
-  return new Alchemy(settings)
+    const settings = {
+        apiKey: import.meta.env.VITE_ALCHEMY_API_KEY,
+        network: import.meta.env.VITE_ALCHEMY_NETWORK_ID,
+    }
+    return new Alchemy(settings)
 }
 
 const getTraitColor = (percent) => {
-  return percent === 2 ? "orange" : 
-  percent > 2  && percent <= 9 ? "purple" : 
-  percent >= 10 && percent <= 19 ? "blue" : 
-  percent >= 20 && percent <= 36 ? "green" : 
-  percent > 36 ? "gray" :
-  "";
+    return percent === 2
+        ? "orange"
+        : percent > 2 && percent <= 9
+        ? "purple"
+        : percent >= 10 && percent <= 19
+        ? "blue"
+        : percent >= 20 && percent <= 36
+        ? "green"
+        : percent > 36
+        ? "gray"
+        : ""
 }
 
-async function  getList () {
-  const collection = await getCollection()
-  const list_nft = [
-    NFT1, NFT2, NFT3, NFT4, NFT5, NFT6, NFT7, NFT8, NFT9, NFT10,
-    NFT11, NFT12, NFT13, NFT14, NFT15, NFT16, NFT17, NFT18, NFT19, NFT20,
-    NFT21, NFT22, NFT23, NFT24, NFT25, NFT26, NFT27, NFT28, NFT29, NFT30,
-    NFT31, NFT32, NFT33, NFT34, NFT35, NFT36, NFT37, NFT38, NFT39, NFT40,
-    NFT41, NFT42, NFT43, NFT44, NFT45, NFT46, NFT47, NFT48, NFT49, NFT50
-  ]
-  const list_1 = list_nft.slice(0, collection.length)
-  const list_2 = Array(50 - collection.length).fill(NFT_MYSTERY)
-  const list_3 = [...list_1, ...list_2]
-  return list_3
+async function getList() {
+    const collection = await getCollection()
+    const list_nft = [
+        NFT1,
+        NFT2,
+        NFT3,
+        NFT4,
+        NFT5,
+        NFT6,
+        NFT7,
+        NFT8,
+        NFT9,
+        NFT10,
+        NFT11,
+        NFT12,
+        NFT13,
+        NFT14,
+        NFT15,
+        NFT16,
+        NFT17,
+        NFT18,
+        NFT19,
+        NFT20,
+        NFT21,
+        NFT22,
+        NFT23,
+        NFT24,
+        NFT25,
+        NFT26,
+        NFT27,
+        NFT28,
+        NFT29,
+        NFT30,
+        NFT31,
+        NFT32,
+        NFT33,
+        NFT34,
+        NFT35,
+        NFT36,
+        NFT37,
+        NFT38,
+        NFT39,
+        NFT40,
+        NFT41,
+        NFT42,
+        NFT43,
+        NFT44,
+        NFT45,
+        NFT46,
+        NFT47,
+        NFT48,
+        NFT49,
+        NFT50,
+    ]
+    const list_1 = list_nft.slice(0, collection.length)
+    const list_2 = Array(50 - collection.length).fill(NFT_MYSTERY)
+    const list_3 = [...list_1, ...list_2]
+    return list_3
 }
 
-async function  getTooltipList () {
+async function getTooltipList() {
+    const collection = await getCollection()
 
-  const collection = await getCollection()
+    const traitList = collection.map((x) => {
+        let res = []
+        x.rawMetadata.attributes.forEach((hash) => res.push(hash.value))
+        const attributeNames = [
+            "GENRE",
+            "LANGUAGE",
+            "EXPRESSION",
+            "GLASSES",
+            "BORDER",
+            "STICKER",
+            "ARTICLE",
+            "BACKGROUND",
+            "COMPUTER",
+        ]
+        const attributes = attributeNames.map((attributeName, index) => ({
+            traitName: attributeName,
+            traitValue: res[index],
+            traitPercent: stats[index][res[index]],
+            traitColor: getTraitColor(stats[index][res[index]]),
+        }))
+        return attributes
+    })
 
-  const traitList = collection.map((x) => {
-    let res = [];
-    x.rawMetadata.attributes.forEach((hash) => res.push(hash.value));
-    const attributeNames = ["GENRE", "LANGUAGE", "EXPRESSION", "GLASSES", "BORDER", "STICKER", "ARTICLE", "BACKGROUND", "COMPUTER"];
-    const attributes = attributeNames.map((attributeName, index) => ({
-      traitName: attributeName,
-      traitValue: res[index],
-      traitPercent: stats[index][res[index]],
-      traitColor: getTraitColor(stats[index][res[index]])
-    }));
-    return attributes
-  });
+    let defaultTL = Array(50 - collection.length).fill([
+        { traitValue: "???", traitName: "GENRE" },
+        { traitValue: "???", traitName: "LANGUAGE" },
+        { traitValue: "???", traitName: "EXPRESSION" },
+        { traitValue: "???", traitName: "GLASSES" },
+        { traitValue: "???", traitName: "BORDER" },
+        { traitValue: "???", traitName: "STICKER" },
+        { traitValue: "???", traitName: "ARTICLE" },
+        { traitValue: "???", traitName: "BACKGROUND" },
+        { traitValue: "???", traitName: "COMPUTER" },
+    ])
 
-  let defaultTL = Array(50 - collection.length).fill([
-    {"traitValue": "???", "traitName": "GENRE"},
-    {"traitValue": "???", "traitName": "LANGUAGE"},
-    {"traitValue": "???", "traitName": "EXPRESSION"},
-    {"traitValue": "???", "traitName": "GLASSES"},
-    {"traitValue": "???", "traitName": "BORDER"},
-    {"traitValue": "???", "traitName": "STICKER"},
-    {"traitValue": "???", "traitName": "ARTICLE"},
-    {"traitValue": "???", "traitName": "BACKGROUND"},
-    {"traitValue": "???", "traitName": "COMPUTER"}
-  ])
-
-  return [...traitList, ...defaultTL]
+    return [...traitList, ...defaultTL]
 }
 
-export { getCollection, getRandomizedArray, getList, getTooltipList, getTraitColor, getAlchemy }
+export {
+    getCollection,
+    getRandomizedArray,
+    getList,
+    getTooltipList,
+    getTraitColor,
+    getAlchemy,
+}
