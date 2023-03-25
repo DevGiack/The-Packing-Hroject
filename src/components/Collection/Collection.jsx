@@ -35,7 +35,7 @@ export const Collection =() => {
   
       slide.push(
         <div key={id} className={nameClass}>
-          <img src={img} height="200" width="200" alt={`NFT_${i}`} />
+          <img src={img} height="200px" width="200px" alt={`NFT_${i}`} />
           <span className="tooltiptext">
             {getTooltipContent(rid)}
           </span>
