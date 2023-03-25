@@ -7,7 +7,7 @@ import "./Intro.css"
 const list = await getCollection()
 const alchemy = getAlchemy();
 const owners = await alchemy.nft.getOwnersForContract("0x5561c71E298DFE9fEd388e7e57042156Bb6C348F")
-const floor_price = 8
+let floor_price = 8;
 
 try {
     floor_price = await alchemy.nft.getFloorPrice("0x5561c71E298DFE9fEd388e7e57042156Bb6C348F")
@@ -17,7 +17,7 @@ try {
 
 export const Intro = () => {
 
-    const minted = list.length
+    const minted = list.length;
     const owners_count = new Set(owners.owners).size;
     
     return (
