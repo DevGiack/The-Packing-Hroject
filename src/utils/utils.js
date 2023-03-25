@@ -60,11 +60,11 @@ async function getCollection() {
 }
 
 const getRandomizedArray = () => {
-    return [
-        32, 12, 18, 11, 21, 7, 48, 23, 27, 17, 1, 49, 13, 16, 9, 42, 37, 26, 14,
-        47, 8, 31, 43, 45, 3, 41, 39, 15, 25, 2, 50, 30, 40, 35, 19, 36, 44, 22,
-        6, 34, 20, 5, 4, 46, 33, 29, 24, 38, 10, 28,
-    ]
+    return [ 32, 12, 18, 11, 21, 7, 48, 23, 27, 17,
+             1, 49, 13, 16, 9, 42, 37, 26, 14, 47,
+             8, 31, 43, 45, 3, 41, 39, 15, 25, 2,
+             50, 30, 40, 35, 19, 36, 44, 22, 6, 34,
+             20, 5, 4, 46, 33, 29, 24, 38, 10, 28 ]
 }
 
 const getAlchemy = () => {
@@ -91,58 +91,10 @@ const getTraitColor = (percent) => {
 
 async function getList() {
     const collection = await getCollection()
-    const list_nft = [
-        NFT1,
-        NFT2,
-        NFT3,
-        NFT4,
-        NFT5,
-        NFT6,
-        NFT7,
-        NFT8,
-        NFT9,
-        NFT10,
-        NFT11,
-        NFT12,
-        NFT13,
-        NFT14,
-        NFT15,
-        NFT16,
-        NFT17,
-        NFT18,
-        NFT19,
-        NFT20,
-        NFT21,
-        NFT22,
-        NFT23,
-        NFT24,
-        NFT25,
-        NFT26,
-        NFT27,
-        NFT28,
-        NFT29,
-        NFT30,
-        NFT31,
-        NFT32,
-        NFT33,
-        NFT34,
-        NFT35,
-        NFT36,
-        NFT37,
-        NFT38,
-        NFT39,
-        NFT40,
-        NFT41,
-        NFT42,
-        NFT43,
-        NFT44,
-        NFT45,
-        NFT46,
-        NFT47,
-        NFT48,
-        NFT49,
-        NFT50,
-    ]
+    const list_nft = [ NFT1, NFT2, NFT3, NFT4, NFT5, NFT6, NFT7, NFT8, NFT9, NFT10, NFT11, NFT12,
+        NFT13, NFT14, NFT15, NFT16, NFT17, NFT18, NFT19, NFT20, NFT21, NFT22, NFT23, NFT24, NFT25,
+        NFT26, NFT27, NFT28, NFT29, NFT30, NFT31, NFT32, NFT33, NFT34, NFT35, NFT36, NFT37, NFT38,
+        NFT39, NFT40, NFT41, NFT42, NFT43, NFT44, NFT45, NFT46, NFT47, NFT48, NFT49, NFT50 ];
     const list_1 = list_nft.slice(0, collection.length)
     const list_2 = Array(50 - collection.length).fill(NFT_MYSTERY)
     const list_3 = [...list_1, ...list_2]
