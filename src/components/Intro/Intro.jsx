@@ -39,25 +39,29 @@ export const Intro = () => {
                     </Link>
                 </div>
                 <div className="bloc1B-intro">
-                    <img id="pack1" alt="pack1_NFT" src={pack1} />
+                    <img id="pack1" alt="pack1_NFT" src={pack1} height="100%" width="100%" />
                 </div>
             </div>
             <div className="bloc2-intro">
-                <div className="stat-box">
-                    <span className="box-val">50</span>
-                    <span className="box-text">Total Items</span>
+                <div className="boxs">
+                    <div className="stat-box">
+                        <span className="box-val">50</span>
+                        <span className="box-text">Total Items</span>
+                    </div>
+                    <div className="stat-box">
+                        <span className="box-val">{minted}</span>
+                        <span className="box-text">Total Minted</span>
+                    </div>
                 </div>
-                <div className="stat-box">
-                    <span className="box-val">{minted}</span>
-                    <span className="box-text">Total Minted</span>
-                </div>
-                <div className="stat-box">
-                    <span className="box-val">{owners_count}</span>
-                    <span className="box-text">Unique owners</span>
-                </div>
-                <div className="stat-box">
-                    <span className="box-val">{floor_price} MATIC</span>
-                    <span className="box-text">floor price</span>
+                <div className="boxs">
+                    <div className="stat-box">
+                        <span className="box-val">{owners_count}</span>
+                        <span className="box-text">Unique owners</span>
+                    </div>
+                    <div className="stat-box">
+                        <span className="box-val">{floor_price} MATIC</span>
+                        <span className="box-text">floor price</span>
+                    </div>
                 </div>
             </div>
         </div>

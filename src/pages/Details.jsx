@@ -52,12 +52,14 @@ export const Details = () => {
         <div className="global-details">
             {currentImgUrl && (
             <div className="img_details">
+                <div className="img-content">
                 <img
                     src={currentImgUrl}
-                    width="650px"
-                    height="650px"
+                    width="100%"
+                    height="100%"
                     alt="NFT TPH"
                 />
+                </div>
                 <div className="metadata_details">
                     <span className="NFT-ID">ID : <span className="value"> #{TokenId}</span></span>
                     { attributValues.map((obj, i) => {
@@ -73,7 +75,7 @@ export const Details = () => {
                 </div>
             </div>
             )}
-            <div className="back-profil">
+            <div className="back-to-profil">
                 <Link to="/profil"> &lt; Back</Link>
             </div>
         </div>

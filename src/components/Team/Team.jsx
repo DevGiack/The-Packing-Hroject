@@ -13,7 +13,7 @@ export const Team = () => {
                 <span id="title-border"></span>
             </div>
             <div className="global-team">
-                <div className="bloc-team">
+                <div className="bloc-team-front">
                     <div className="team-card">
                         <div className="photo-background">
                             <img src={yann} alt="avatar" />
@@ -28,6 +28,8 @@ export const Team = () => {
                         <span className="name">Jaccomo DE GRÉGORIO</span>
                         <span className="fonction">Front Dev</span>
                     </div>
+                </div>
+                <div className="bloc-team-dev">
                     <div className="team-card">
                         <div className="photo-background">
                             <img src={alexis} alt="avatar" />

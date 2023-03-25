@@ -14,7 +14,7 @@ export const Header = () => {
     return (
         <div className="header-container">
             <Link to="/">
-                <img className="logo" src={logo} />
+                <img className="logo" src={logo} height="100%" width="100%" />
             </Link>
             <div className="header-content">
                 <a

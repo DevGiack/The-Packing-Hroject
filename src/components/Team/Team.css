@@ -1,88 +1,56 @@
 @media (min-width: 1250px) {
-
-  .global-team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 22em;
-    margin-top: 2em;
-  }
-
-  .bloc-team {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 71em;
-  }
-
-  .team-card {
-    width: 270px;
-    height: 370px;
-    border-radius: 2em;
-    background-color: var(--teams-card-bg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-  }
-
-  .photo-background {
-    margin-top: 15px;
-    width: 240px;
-    height: 260px;
-    border-radius: 1.5em;
-    background: linear-gradient(to bottom, var(--teams-card-bg-1),  var(--teams-card-bg-2), var(--teams-card-bg-2), var(--teams-card-bg-1));
-  }
-
-  .name {
-    font-weight: bolder;
-    font-size: 1.2em;
-  }
-
-  .fonction {
-    color: var(--teams-fonction-text);
-    font-size: 1.1em;
+  :root {
+    --team-dir: row;
   }
 }
 
 @media (max-width: 1250px) {
-  
-  .global-team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 2em;
+  :root {
+    --team-dir: column;
   }
+}
 
-  .team-card {
-    width: 270px;
-    height: 370px;
-    margin-top: 5%;
-    border-radius: 2em;
-    background-color: var(--teams-card-bg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-  }
+.global-team {
+  display: flex;
+  flex-direction: var(--team-dir);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1em;
+}
 
-  .photo-background {
-    margin-top: 15px;
-    width: 240px;
-    height: 260px;
-    border-radius: 1.5em;
-    background: linear-gradient(to bottom, var(--teams-card-bg-1),  var(--teams-card-bg-2), var(--teams-card-bg-2), var(--teams-card-bg-1));
-  }
+.bloc-team-front, .bloc-team-dev {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1em;
+}
 
-  .name {
-    font-weight: bolder;
-    font-size: 1.2em;
-  }
-  
-  .fonction {
-    color: var(--teams-fonction-text);
-    font-size: 1.1em;
-  }
+.team-card {
+  width: 270px;
+  height: 370px;
+  border-radius: 2em;
+  background-color: var(--teams-card-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.photo-background {
+  margin-top: 15px;
+  width: 240px;
+  height: 260px;
+  border-radius: 1.5em;
+  background: linear-gradient(to bottom, var(--teams-card-bg-1),  var(--teams-card-bg-2), var(--teams-card-bg-2), var(--teams-card-bg-1));
+}
+
+.name {
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+
+.fonction {
+  color: var(--teams-fonction-text);
+  font-size: 1.1em;
 }
