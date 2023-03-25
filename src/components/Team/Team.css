@@ -1,30 +1,29 @@
 @media (min-width: 1250px) {
   :root {
-
+    --team-dir: row;
   }
 }
 
 @media (max-width: 1250px) {
   :root {
-
+    --team-dir: column;
   }
 }
 
 .global-team {
   display: flex;
-  flex-direction: column;
+  flex-direction: var(--team-dir);
   align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 22em;
-  margin-top: 2em;
+  gap: 1em;
 }
 
-.bloc-team {
+.bloc-team-front, .bloc-team-dev {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 1150px;
-  height: 370px;
+  justify-content: flex-start;
+  gap: 1em;
 }
 
 .team-card {
