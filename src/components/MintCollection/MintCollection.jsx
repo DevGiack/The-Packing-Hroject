@@ -67,7 +67,6 @@ export const MintCollection = () => {
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
-        console.log(signer)
         const connectedContract = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
         console.log("Going to pop wallet now to pay gas...")
         let nftTxn = await connectedContract.mintToken({value: ethers.utils.parseEther("0.001")});
