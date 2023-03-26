@@ -1,3 +1,4 @@
+import { getCollection } from "../../utils/utils";
 import { Collection } from "../Collection/Collection";
 import { MintButton } from '../MintButton/MintButton';
 import { useEffect } from 'react';
