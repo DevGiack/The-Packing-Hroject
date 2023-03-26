@@ -127,7 +127,9 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
         return super.supportsInterface(interfaceId);
     }
 
-    function withdrawAll() external {
-        DAOAddress.transfer(address(this).balance);
+    function withdrawAll() public {
+        uint256 leftBalance = address(this).balance;
+        DAOAddress.transfer(leftBalance);
+
     }
 }
