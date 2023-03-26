@@ -42,6 +42,10 @@ export const MintCollection = () => {
   }, []);
   }());
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  })
+
   const handleConfetti = () => {
     confetti({
       particleCount: 1200,
