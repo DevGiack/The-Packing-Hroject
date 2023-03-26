@@ -32,6 +32,7 @@ export const Collection =() => {
       const rid = getRandomizedArray()[i - 1] - 1
       const img = list[rid];
       const id = uuidv1();
+      console.log(rid)
   
       slide.push(
         <div key={id} className={nameClass}>

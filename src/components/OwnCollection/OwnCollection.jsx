@@ -38,7 +38,7 @@ export const OwnCollection = () => {
                         .map((x) => {
                             x.tokenId ? tokenId = x.tokenId : tokenId = "undefined"
                             x.title ? NFTTitle = x.title : NFTTitle = "undefined"
-                            x.media[0].gateway ? imageUrl = x.media[0].gateway : imageUrl = "undefined"
+                            x.media[0] ? x.media[0].gateway ? imageUrl = x.media[0].gateway : imageUrl = "undefined" : imageUrl = "undefined"
                             const id = uuidv1();
 
                             return (

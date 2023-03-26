@@ -95,7 +95,7 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
     }
 
     function mintToken() public payable {
-        require(_tokenIds.current() <= maxSupply, "collection fully minted");
+        require(_tokenIds.current() < maxSupply, "collection fully minted");
         require(mintPrice == msg.value, "wrong amount sent");
         safeMint(msg.sender);
     }
