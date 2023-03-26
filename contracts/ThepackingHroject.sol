@@ -15,7 +15,7 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
         payable(0xCbC498846223Fb088454C24B98199C731Ed9D206);
     address DAOAgent = 0xD0eC80A25A0139174C03BA41450E026740A59ad2;
     uint256 public mintPrice = 0.001 ether;
-    uint256 public maxSupply = 50;
+    uint256 public maxSupply = 51;
     uint256 public maxPerWallet = 25;
     mapping(uint256 => string) private _tokenURIs;
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");

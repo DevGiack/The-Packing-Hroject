@@ -56,6 +56,7 @@ async function getCollection() {
     const collection = await getAlchemy().nft.getNftsForContract(
       import.meta.env.VITE_CONTRACT_ADRESS
     )
+    collection.nfts.shift()
     return collection.nfts
 }
 
@@ -91,6 +92,7 @@ const getTraitColor = (percent) => {
 
 async function getList() {
     const collection = await getCollection()
+    console.log(collection)
     const list_nft = [ NFT1, NFT2, NFT3, NFT4, NFT5, NFT6, NFT7, NFT8, NFT9, NFT10, NFT11, NFT12,
         NFT13, NFT14, NFT15, NFT16, NFT17, NFT18, NFT19, NFT20, NFT21, NFT22, NFT23, NFT24, NFT25,
         NFT26, NFT27, NFT28, NFT29, NFT30, NFT31, NFT32, NFT33, NFT34, NFT35, NFT36, NFT37, NFT38,
