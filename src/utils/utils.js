@@ -92,15 +92,14 @@ const getTraitColor = (percent) => {
 
 async function getList() {
     const collection = await getCollection()
-    console.log(collection)
     const list_nft = [ NFT1, NFT2, NFT3, NFT4, NFT5, NFT6, NFT7, NFT8, NFT9, NFT10, NFT11, NFT12,
         NFT13, NFT14, NFT15, NFT16, NFT17, NFT18, NFT19, NFT20, NFT21, NFT22, NFT23, NFT24, NFT25,
         NFT26, NFT27, NFT28, NFT29, NFT30, NFT31, NFT32, NFT33, NFT34, NFT35, NFT36, NFT37, NFT38,
         NFT39, NFT40, NFT41, NFT42, NFT43, NFT44, NFT45, NFT46, NFT47, NFT48, NFT49, NFT50 ];
     const list_1 = list_nft.slice(0, collection.length)
     const list_2 = Array(50 - collection.length).fill(NFT_MYSTERY)
-    const list_3 = [...list_1, ...list_2]
-    return list_3
+    const list = [...list_1, ...list_2]
+    return list
 }
 
 async function getTooltipList() {
