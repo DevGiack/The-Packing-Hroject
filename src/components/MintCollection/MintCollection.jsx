@@ -12,6 +12,8 @@ if (window.ethereum && window.ethereum.selectedAddress) {
   address = window.ethereum.selectedAddress
 }
 
+const list = await getCollection();
+
 export const MintCollection = () => {
 
   (function () {
@@ -45,6 +47,8 @@ export const MintCollection = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   })
+
+  const minted = list.length;
 
   const handleConfetti = () => {
     confetti({
@@ -87,7 +91,8 @@ export const MintCollection = () => {
         <span id="title-border"></span>
       </div>
 
-      <div className="containerTimer">
+      { minted < 50 ? (
+        <div className="containerTimer">
         <h1 id="headline">Minting will be live in :</h1>
         <span style={{display: "none"}} id="Mint-Button" onClick={askContractToMintNft}><MintButton/></span>
         
@@ -106,6 +111,10 @@ export const MintCollection = () => {
         </div>
 
       </div>
+      ) : (
+        <h1 id="headline">SOLD OUT !</h1>
+      )}
+
       <Collection />
     </div>
   </>
