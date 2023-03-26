@@ -8,7 +8,7 @@ import DELOREAN from "../assets/images/404/Delorean.webp"
 import BACKTO from "../assets/images/404/backToTheHomepage.webp"
 import "./Details.css"
 
-export const Details = ({showPage}) => {
+export const Details = () => {
 
     const { TokenId } = useParams();
 
