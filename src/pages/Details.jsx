@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
 import { getTraitColor } from "../utils/utils";
-import { stats } from "../utils/stats"; 
 import { useParams } from "react-router-dom";
 import { Alchemy } from "alchemy-sdk"
+import { stats } from "../utils/stats"; 
 import { Link } from "react-router-dom";
+import DELOREAN from "../assets/images/404/Delorean.webp"
+import BACKTO from "../assets/images/404/backToTheHomepage.webp"
 import "./Details.css"
 
-export const Details = () => {
+export const Details = ({showPage}) => {
 
     const { TokenId } = useParams();
 
@@ -48,35 +50,60 @@ export const Details = () => {
     const colorsGraduation = [{"orange":"LEGENDARY"},{"purple":"EPIC"},{"blue":"RARE"},{"green":"UNUSUAL"},{"gray":"COMMON"}];
     const infosGraduation = infosColors.map((x) => colorsGraduation.find(color => color[x])?.[x] );
 
-    return (
+    return ( 
         <div className="global-details">
-            {currentImgUrl && (
-            <div className="img_details">
-                <div className="img-content">
-                <img
-                    src={currentImgUrl}
-                    width="100%"
-                    height="100%"
-                    alt="NFT TPH"
-                />
+            {currentImgUrl ? (
+                <div className="img_details">
+                    <div className="img-content">
+                    <img
+                        src={currentImgUrl}
+                        width="100%"
+                        height="100%"
+                        alt="NFT TPH"
+                    />
+                    </div>
+                    <div className="metadata_details">
+                        <span className="NFT-ID">ID : <span className="value"> #{TokenId}</span></span>
+                        { attributValues.map((obj, i) => {
+                            return (
+                                <div key={obj} className="line">
+                                    <span className="attrib">{attributValues[i]}</span>
+                                    <span className="value"> &nbsp; {infosValues[i]}</span>
+                                    <span className={infosColors[i]}> &nbsp; &nbsp; <i>{infosPercents[i]} %</i>
+                                    <span className="valNFT"> &nbsp; &nbsp;<i>{infosGraduation[i]}</i></span></span>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
-                <div className="metadata_details">
-                    <span className="NFT-ID">ID : <span className="value"> #{TokenId}</span></span>
-                    { attributValues.map((obj, i) => {
-                        return (
-                            <div key={obj} className="line">
-                                <span className="attrib">{attributValues[i]}</span>
-                                <span className="value"> &nbsp; {infosValues[i]}</span>
-                                <span className={infosColors[i]}> &nbsp; &nbsp; <i>{infosPercents[i]} %</i>
-                                <span className="valNFT"> &nbsp; &nbsp;<i>{infosGraduation[i]}</i></span></span>
-                            </div>
-                        )
-                    })}
+            ) : (
+            <>
+                <div className="error-access">
+                    <span className="error">ERROR :</span>
+                    <span className="permissions">YOU MUST HAVE PERMISSIONS TO VIEW THIS NFT</span>
                 </div>
-            </div>
+                <div className="img-error">
+                    <img
+                        src={BACKTO}
+                        width="65%"
+                        height="65%"
+                        alt="Back to the Homepage"
+                    />
+                    <img
+                        src={DELOREAN}
+                        width="65%"
+                        height="65%"
+                        alt="El Delorean, El Doc y Marti McFly"
+                    />
+                </div>
+            </>
             )}
             <div className="back-to-profil">
-                <Link to="/profil"> &lt; Back</Link>
+                { currentImgUrl ? (
+                    <Link to="/profil"> &lt; Back</Link>
+                ) : (
+                    <Link to="/"> &lt; Back</Link>
+                )}
             </div>
         </div>
     );

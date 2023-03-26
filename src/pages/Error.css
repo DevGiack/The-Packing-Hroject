@@ -44,6 +44,12 @@ div.text a:hover {
     text-decoration: underline; 
 }
 
+.img-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media only screen and (max-width: 768px) {
     section.notFound {
         flex-direction: column;

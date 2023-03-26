@@ -4,7 +4,7 @@
     --glob-intro-h: 42em;
     --blocs-intro-dir: row;
     --bloc-intro-img-w: 37em;
-    --bloc-intro-img-h: 34em;
+    --bloc-intro-img-h: 32em;
     --boxs-gap: 0em;
   }
 }
@@ -15,7 +15,7 @@
     --glob-intro-h: 77em;
     --blocs-intro-dir: column;
     --bloc-intro-img-w: 34em;
-    --bloc-intro-img-h: 31em;   
+    --bloc-intro-img-h: 30em;   
     --boxs-gap: 2em;
   }
 }
