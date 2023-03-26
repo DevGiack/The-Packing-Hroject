@@ -122,3 +122,17 @@
 .valNFT {
   font-size: 0.6em;
 }
+
+.error-access {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  height: 4em;
+  font-size: 1.5em;
+  text-shadow: var(--btn-text-shadow);
+}
+
+.error {
+  color: var(--primary);
+}
