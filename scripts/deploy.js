@@ -13,7 +13,7 @@ async function main() {
     await tph.deployed()
     console.log(`Deployed contract to: ${tph.address}`)
     const mint = async () => {
-        const mint0 = await tph.mintToken({value: ethers.utils.parseEther("0.001")})
+        const mint0 = await tph.mintToken({value: ethers.utils.parseEther("8")})
     }
     await mint()
     }
