@@ -19,5 +19,10 @@ module.exports = {
       accounts: MUMBAI_ACCOUNTS,
       chainId: 80001,
     },
+    polygon: {
+      url: POLYGON_RPC_URL,
+      accounts: POLYGON_ACCOUNTS,
+      chainId: 137,
+    }
   }
 };

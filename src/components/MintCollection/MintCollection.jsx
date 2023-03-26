@@ -89,7 +89,7 @@ export const MintCollection = () => {
         <span id="title-border"></span>
       </div>
       <div className="containerTimer">
-        { minted < 51 ? (
+        { minted < 50 ? (
           <>
             <h1 id="headline">Minting will be live in :</h1>
             <span style={{display: "none"}} id="Mint-Button" onClick={askContractToMintNft}><MintButton/></span>

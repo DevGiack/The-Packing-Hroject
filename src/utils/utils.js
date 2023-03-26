@@ -1,4 +1,4 @@
-import { Alchemy } from "alchemy-sdk"
+import { Alchemy, Network } from "alchemy-sdk"
 import NFT_MYSTERY from "../assets/images/mini_collection/NFT_MYSTERY.webp"
 import NFT1 from "../assets/images/mini_collection/TPH_01.webp"
 import NFT2 from "../assets/images/mini_collection/TPH_02.webp"
@@ -71,7 +71,7 @@ const getRandomizedArray = () => {
 const getAlchemy = () => {
     const settings = {
         apiKey: import.meta.env.VITE_ALCHEMY_API_KEY,
-        network: import.meta.env.VITE_ALCHEMY_NETWORK_ID,
+        network: Network.MATIC_MAINNET,
     }
     return new Alchemy(settings)
 }
