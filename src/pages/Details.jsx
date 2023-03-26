@@ -1,6 +1,6 @@
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react"
 import { getTraitColor } from "../utils/utils";
-import { useParams } from "react-router-dom";
 import { Alchemy } from "alchemy-sdk"
 import { stats } from "../utils/stats"; 
 import { Link } from "react-router-dom";
@@ -8,9 +8,18 @@ import DELOREAN from "../assets/images/404/Delorean.webp"
 import BACKTO from "../assets/images/404/backToTheHomepage.webp"
 import "./Details.css"
 
+let lecture = 0;
+
 export const Details = () => {
 
+    lecture += 1;
+    let display = true;
+    const navigate = useNavigate();
     const { TokenId } = useParams();
+
+    if (TokenId > 50) {
+        navigate("/*");
+    }
 
     const network = {
         80001: "polygon-mumbai",
@@ -29,15 +38,19 @@ export const Details = () => {
     useEffect(() => {
         async function fetchNfts() {
             if (window.ethereum && window.ethereum.selectedAddress) {
-                const ownerAddress = window.ethereum.selectedAddress
-                const nfts = await alchemy.nft.getNftsForOwner(ownerAddress)
-                setNftsForOwner(nfts.ownedNfts)
+                const ownerAddress = window.ethereum.selectedAddress;
+                const nfts = await alchemy.nft.getNftsForOwner(ownerAddress);
+                setNftsForOwner(nfts.ownedNfts);
             }
         }
         fetchNfts()
     }, [])
 
     const currentNFT = nftsForOwner.find(nft => nft.tokenId === TokenId)
+
+    if ((lecture > 5) && (currentNFT == undefined)) { display = false }
+    if (currentNFT) { lecture = 0 }
+
     const currentImgUrl = currentNFT?.media[0]?.gateway;
 
     const attributValues = ["GENRE : ","LANGUAGE : ","EXPRESSION : ","GLASSES : ","BORDER : ",
@@ -52,7 +65,8 @@ export const Details = () => {
 
     return ( 
         <div className="global-details">
-            {currentImgUrl ? (
+            {currentNFT && (
+            <>
                 <div className="img_details">
                     <div className="img-content">
                     <img
@@ -76,7 +90,12 @@ export const Details = () => {
                         })}
                     </div>
                 </div>
-            ) : (
+                <div className="back-to-profil">
+                    <Link to="/profil"> &lt; Back</Link>
+                </div>
+            </>
+            )}
+            { !display && (
             <>
                 <div className="error-access">
                     <span className="error">ERROR :</span>
@@ -96,15 +115,11 @@ export const Details = () => {
                         alt="El Delorean, El Doc y Marti McFly"
                     />
                 </div>
+                <div className="back-to-profil">
+                    <Link to="/"> &lt; Back</Link>
+                </div>
             </>
             )}
-            <div className="back-to-profil">
-                { currentImgUrl ? (
-                    <Link to="/profil"> &lt; Back</Link>
-                ) : (
-                    <Link to="/"> &lt; Back</Link>
-                )}
-            </div>
         </div>
     );
 }
