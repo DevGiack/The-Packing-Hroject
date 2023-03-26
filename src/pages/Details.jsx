@@ -52,7 +52,7 @@ export const Details = () => {
 
     return ( 
         <div className="global-details">
-            {currentNFT ? (
+            {currentImgUrl ? (
                 <div className="img_details">
                     <div className="img-content">
                     <img
