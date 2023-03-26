@@ -8,18 +8,19 @@ import "../node_modules/@openzeppelin/contracts/access/AccessControl.sol";
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 
 contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
     // address payable DAOAddress = payable(0x6FeB2c2427378bdbaF9E93ead21079C1CC24a758);
     address payable DAOAddress =
-        payable(0x809459B9a5F41fE91BCCbdf7894570d10c5242e9);
+        payable(0xCbC498846223Fb088454C24B98199C731Ed9D206);
     address DAOAgent = 0xD0eC80A25A0139174C03BA41450E026740A59ad2;
     uint256 public mintPrice = 0.001 ether;
     uint256 public maxSupply = 50;
     uint256 public maxPerWallet = 25;
     mapping(uint256 => string) private _tokenURIs;
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
-    uint256 idCounter = 1;
 
-    constructor() ERC721("TPH", "TPH") {
+    constructor() ERC721("THE PACKING HROJECT", "TPH") {
         _grantRole(DEFAULT_ADMIN_ROLE, DAOAgent);
         _grantRole(PAUSER_ROLE, DAOAgent);
         _tokenURIs[1] = "QmVMZ4v2cfhY53Er2Pf4yYBuT7NzBWLnSK3J2sQMjKJbAx";
@@ -74,11 +75,6 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
         _tokenURIs[50] = "QmUjfJBgkFBB5fnaHA2cnCDoURJ88JUGbvo3S46HQ8wa9H";
     }
 
-    function getId() public returns (uint256 counter) {
-        counter = idCounter;
-        idCounter += 1;
-    }
-
     function _baseURI() internal pure override returns (string memory) {
         return "ipfs://";
     }
@@ -92,13 +88,14 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
     }
 
     function safeMint(address to) internal {
-        uint256 tokenId = getId();
+        uint256 tokenId = _tokenIds.current();
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, _tokenURIs[tokenId]);
+        _tokenIds.increment();
     }
 
     function mintToken() public payable {
-        require(idCounter < maxSupply, "collection fully minted");
+        require(_tokenIds.current() <= maxSupply, "collection fully minted");
         require(mintPrice == msg.value, "wrong amount sent");
         safeMint(msg.sender);
     }
@@ -130,11 +127,7 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
         return super.supportsInterface(interfaceId);
     }
 
-    function getBalance() public view returns (uint) {
-        return address(this).balance;
-    }
-
-    function withdrawMoneyToDAO() public payable {
-        DAOAddress.transfer(getBalance());
+    function withdrawAll() external {
+        DAOAddress.transfer(address(this).balance);
     }
 }
