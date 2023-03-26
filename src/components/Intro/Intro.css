@@ -34,7 +34,6 @@
   flex-direction: var(--blocs-intro-dir);
   align-items: center;
   width: 68em;
-  height: var(--bloc1-height);
 }
 
 .bloc1-intro span {
