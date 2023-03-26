@@ -10,11 +10,9 @@ import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
-    // address payable DAOAddress = payable(0x6FeB2c2427378bdbaF9E93ead21079C1CC24a758);
-    address payable DAOAddress =
-        payable(0xCbC498846223Fb088454C24B98199C731Ed9D206);
+    address payable DAOAddress = payable(0x6FeB2c2427378bdbaF9E93ead21079C1CC24a758);
     address DAOAgent = 0xD0eC80A25A0139174C03BA41450E026740A59ad2;
-    uint256 public mintPrice = 0.001 ether;
+    uint256 public mintPrice = 8 ether;
     uint256 public maxSupply = 51;
     uint256 public maxPerWallet = 25;
     mapping(uint256 => string) private _tokenURIs;
@@ -87,6 +85,11 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
         _unpause();
     }
 
+    function withdrawAll() public {
+        uint256 contractBalance = address(this).balance;
+        DAOAddress.transfer(contractBalance);
+    }
+
     function safeMint(address to) internal {
         uint256 tokenId = _tokenIds.current();
         _safeMint(to, tokenId);
@@ -125,11 +128,5 @@ contract TPH is ERC721, ERC721URIStorage, Pausable, AccessControl {
         bytes4 interfaceId
     ) public view override(ERC721, AccessControl) returns (bool) {
         return super.supportsInterface(interfaceId);
-    }
-
-    function withdrawAll() public {
-        uint256 leftBalance = address(this).balance;
-        DAOAddress.transfer(leftBalance);
-
     }
 }

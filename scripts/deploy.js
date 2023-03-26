@@ -14,7 +14,6 @@ async function main() {
     console.log(`Deployed contract to: ${tph.address}`)
     const mint = async () => {
         const mint0 = await tph.mintToken({value: ethers.utils.parseEther("0.001")})
-        await new Promise(r => setTimeout(r, 2000));
     }
     await mint()
     }
