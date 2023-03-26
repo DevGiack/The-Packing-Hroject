@@ -1,6 +1,7 @@
 import { getRandomizedArray, getList, getTooltipList } from "../../utils/utils.js"
 import { v1 as uuidv1 } from "uuid"
 import "./Collection.css"
+import { useEffect } from "react"
 
 const list = await getList()
 let attributes = await getTooltipList()
@@ -32,7 +33,6 @@ export const Collection =() => {
       const rid = getRandomizedArray()[i - 1] - 1
       const img = list[rid];
       const id = uuidv1();
-      console.log(rid)
   
       slide.push(
         <div key={id} className={nameClass}>
