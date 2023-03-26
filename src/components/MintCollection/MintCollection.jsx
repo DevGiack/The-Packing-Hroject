@@ -82,41 +82,35 @@ export const MintCollection = () => {
   }
   
   return (
-  <>
     <div id="MintCollection">
-
       <div className="bloc-title-mint-page">
         <span id="big-title">MINT COLLECTION</span>
         <span id="little-title">The NFTs</span>
         <span id="title-border"></span>
       </div>
-
-      { minted < 50 ? (
-        <div className="containerTimer">
-        <h1 id="headline">Minting will be live in :</h1>
-        <span style={{display: "none"}} id="Mint-Button" onClick={askContractToMintNft}><MintButton/></span>
-        
-        <div id="countdown">
-          <p>
-            <li className="li-Timer"><span id="days"></span>days</li>
-            <li className="li-Timer"><span id="hours"></span>Hours</li>
-            <li className="li-Timer"><span id="minutes"></span>Minutes</li>
-            <li className="li-Timer"><span id="seconds"></span>Seconds</li>
-          </p>
-          <hr id="hr-MintPage"/>
-        </div>
-
-        <div className="typewriter">
-          <h1>which one will be yours ?</h1>
-        </div>
-
+      <div className="containerTimer">
+        { minted < 50 ? (
+          <>
+            <h1 id="headline">Minting will be live in :</h1>
+            <span style={{display: "none"}} id="Mint-Button" onClick={askContractToMintNft}><MintButton/></span>
+            <div id="countdown">
+              <p>
+                <li className="li-Timer"><span id="days"></span>days</li>
+                <li className="li-Timer"><span id="hours"></span>Hours</li>
+                <li className="li-Timer"><span id="minutes"></span>Minutes</li>
+                <li className="li-Timer"><span id="seconds"></span>Seconds</li>
+              </p>
+              <hr id="hr-MintPage"/>
+            </div>
+            <div className="typewriter">
+              <h1>which one will be yours ?</h1>
+            </div>
+          </>
+        ) : (
+          <h1 id="headline">SOLD OUT !</h1>
+        )}
       </div>
-      ) : (
-        <h1 id="headline">SOLD OUT !</h1>
-      )}
-
       <Collection />
     </div>
-  </>
   );
 };
