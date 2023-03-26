@@ -69,7 +69,7 @@ export const MintCollection = () => {
         const signer = provider.getSigner();
         const connectedContract = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
         console.log("Going to pop wallet now to pay gas...")
-        let nftTxn = await connectedContract.mintToken({value: ethers.utils.parseEther("0.001")});
+        let nftTxn = await connectedContract.mintToken({value: ethers.utils.parseEther("8")});
         handleConfetti();
         console.log("Mining...please wait.")
         await nftTxn.wait();

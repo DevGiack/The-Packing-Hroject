@@ -9,6 +9,8 @@ require("dotenv").config();
 
 const MUMBAI_RPC_URL = process.env.MUMBAI_RPC_URL;
 const MUMBAI_ACCOUNTS = [process.env.MUMBAI_ACCOUNT];
+const POLYGON_RPC_URL = process.env.POLYGON_RPC_URL;
+const POLYGON_ACCOUNTS = [process.env.POLYGON_ACCOUNT];
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
