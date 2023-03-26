@@ -98,8 +98,8 @@ async function getList() {
         NFT39, NFT40, NFT41, NFT42, NFT43, NFT44, NFT45, NFT46, NFT47, NFT48, NFT49, NFT50 ];
     const list_1 = list_nft.slice(0, collection.length)
     const list_2 = Array(50 - collection.length).fill(NFT_MYSTERY)
-    const list = [...list_1, ...list_2]
-    return list
+    const collectionList = [...list_1, ...list_2]
+    return collectionList
 }
 
 async function getTooltipList() {
