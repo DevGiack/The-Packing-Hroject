@@ -80,7 +80,7 @@ export const Details = ({showPage}) => {
             <>
                 <div className="error-access">
                     <span className="error">ERROR :</span>
-                    <span>YOU MUST HAVE PERMISSIONS TO VIEW THIS NFT</span>
+                    <span className="permissions">YOU MUST HAVE PERMISSIONS TO VIEW THIS NFT</span>
                 </div>
                 <div className="img-error">
                     <img
