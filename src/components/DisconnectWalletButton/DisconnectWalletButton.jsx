@@ -10,9 +10,9 @@ export const DisconnectWalletButton = () => {
     const navigate = useNavigate()
 
     const handleDisconnectWallet = () => {
-        sessionStorage.clear(); // Supprime l'etat du sessionStorage
-        setWalletAddress(undefined) // Met à jour le state global
-        navigate("/") // Redirige vers la page d'accueil
+        sessionStorage.clear(); // Remove sessionStorage state
+        setWalletAddress(undefined) // Update the global state
+        navigate("/")
     }
 
     return (
