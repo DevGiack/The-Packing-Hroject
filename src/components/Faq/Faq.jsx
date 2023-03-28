@@ -58,7 +58,7 @@ export const Faq = () => {
                         </details>
                     </div>
                     <div className="blocB-faq">
-                        <img alt="FAQ" src={faq} />
+                        <img src={faq} width="100%" height="100%" alt="FAQ"/>
                     </div>
                 </div>
             </div>

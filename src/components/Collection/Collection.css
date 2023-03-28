@@ -1,3 +1,25 @@
+@media (min-width: 1650px ) {
+	:root {
+		--marg-1: 1.2em;
+		--marg-2: 0.6em;
+		--attrib-f-size: 0.8em;
+		--value-f-size: 0.9em;
+		--epic-f-size: 0.8em;
+		--pourcent-f-size: 0.75em;
+	}
+}
+
+@media (max-width: 1650px ) {
+	:root {
+		--marg-1: 0.4em;
+		--marg-2: 0.2em;
+		--attrib-f-size: 0.6em;
+		--value-f-size: 0.8em;
+		--epic-f-size: 0.75em;
+		--pourcent-f-size: 0.7em;
+	}
+}
+
 .sliderL, 
 .sliderR {
 	height: 200px;
@@ -5,7 +27,7 @@
 	overflow: hidden;
 	position: relative;
 	width: 100%;
-	margin-bottom: 1.2em;
+	margin-bottom: var(--marg-1);
 }
 
 .slidetrackL {
@@ -22,8 +44,8 @@
 
 .slideL, 
 .slideR {
-	margin-right: 0.6em;
-	margin-left: 0.6em;
+	margin-right: var(--marg-2);
+	margin-left: var(--marg-2);
 }
 
 @keyframes scrollright {
@@ -43,7 +65,6 @@
 	color: var(--tip-text);
 	padding: 0.4em 0.6em 0.4em 0.6em;
 	border-radius: 0 1.3em 1.3em 0;
-	font-size: 1em;
 	position: absolute;
 	white-space: pre;
 	bottom: 0;
@@ -54,22 +75,22 @@
 }
 
 .attribut {
-	font-size: 0.8em;
+	font-size: var(--attrib-f-size);
 }
 
 .value {
 	font-weight: 600;
 	color: var(--tip-value);
-	font-size: 0.9em;
+	font-size: var(--value-f-size);
 }
 
 .pourcent {
-	font-size: 0.75em;
+	font-size: var(--pourcent-f-size);
 }
 
 .more, .unique, .only-two {
 	font-weight: bold;
-	font-size: 0.8em;
+	font-size: var(--epic-f-size);
 }
 
 .orange {

@@ -12,22 +12,22 @@ export const ConnectWalletButton = () => {
     const [walletAddress, setWalletAddress] = useAtom(UserAddressAtom)
 
     async function requestAccount() {
-        // Vérifie si MetaMask est présent dans le navigateur
+        // Checks if MetaMask is present in the browser
         if (window.ethereum) {
             try {
                 const accounts = await window.ethereum.request({
                     method: "eth_requestAccounts",
                 })
                 const address = accounts[0]
-                sessionStorage.setItem("userAddress", address) // Stocke l'adresse dans le sessionStorage
-                setWalletAddress(address) // Mets à jour le state global
+                sessionStorage.setItem("userAddress", address) // Store the address in the sessionStorage
+                setWalletAddress(address) // Update the global state
             } catch (error) {}
         } else {
             alert("Meta Mask not detected")
         }
     }
     
-    // Surveiller les changements de compte dans MetaMask
+    // Monitor account changes in MetaMask
     useEffect(() => {
         const address = sessionStorage.getItem("userAddress")
         if (address) {
@@ -46,12 +46,11 @@ export const ConnectWalletButton = () => {
     async function connectWallet() {
         if (typeof window.ethereum !== "undefined") {
             await requestAccount()
-
             const provider = new ethers.providers.Web3Provider(window.ethereum)
         }
     }
 
-    // Afficher le bouton CONNECT WALLET ou l'adresse ETH de l'utilisateur
+    // Show CONNECT WALLET button or user ETH address
     const buttonOrAddress = walletAddress ? (
         <div className="button-icons">
             <Link to="/profil">

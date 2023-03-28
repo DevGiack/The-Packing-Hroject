@@ -14,7 +14,7 @@ export const About = () => {
             <div className="global-about">
                 <div className="bloc-about">
                     <div className="blocA-about">
-                        <img src={about} alt="pack2_NFT" />
+                        <img id="img-about" src={about} alt="pack2_NFT" width="100%" height="100%" />
                     </div>
                     <div className="blocB-about">
                         <span id="title-about">

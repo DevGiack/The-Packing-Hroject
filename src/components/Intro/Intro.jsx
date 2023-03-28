@@ -4,6 +4,7 @@ import { MintButton } from "../MintButton/MintButton"
 import { getCollection, getAlchemy } from "../../utils/utils.js"
 import { useState, useEffect } from "react"
 import "./Intro.css"
+
 let newList = []
 let newOwners = []
 const alchemy = getAlchemy()
@@ -46,6 +47,7 @@ export const Intro = () => {
         getContractData()
         return () => clearInterval(interval);
         }, [count]);
+
 
     return (
         <div className="global-intro">

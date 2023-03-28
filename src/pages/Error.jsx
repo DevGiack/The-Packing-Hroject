@@ -1,4 +1,5 @@
-import React from "react"
+import BACKTO from "../assets/images/404/backToTheHomepage.webp"
+import DELOREAN from "../assets/images/404/Delorean.webp"
 import { Link } from "react-router-dom"
 import "./Error.css"
 
@@ -6,13 +7,17 @@ export const Error = () => {
     return (
         <div className="body">
             <section className="notFound">
-                <div className="img">
+                <div className="img-error">
                     <img
-                        src="https://assets.codepen.io/5647096/backToTheHomepage.png"
+                        src={BACKTO}
+                        width="70%"
+                        height="70%"
                         alt="Back to the Homepage"
                     />
                     <img
-                        src="https://assets.codepen.io/5647096/Delorean.png"
+                        src={DELOREAN}
+                        width="70%"
+                        height="70%"
                         alt="El Delorean, El Doc y Marti McFly"
                     />
                 </div>

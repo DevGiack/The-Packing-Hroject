@@ -1,3 +1,4 @@
+import { getCollection } from "../../utils/utils";
 import { Collection } from "../Collection/Collection";
 import { MintButton } from '../MintButton/MintButton';
 import { useEffect } from 'react';
@@ -11,6 +12,8 @@ let address = ""
 if (window.ethereum && window.ethereum.selectedAddress) {
   address = window.ethereum.selectedAddress
 }
+
+const list = await getCollection();
 
 export const MintCollection = () => {
 
@@ -42,6 +45,12 @@ export const MintCollection = () => {
   }, []);
   }());
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  })
+
+  const minted = list.length;
+
   const handleConfetti = () => {
     confetti({
       particleCount: 1200,
@@ -50,7 +59,7 @@ export const MintCollection = () => {
   }
 
   const askContractToMintNft = async () => {
-    const CONTRACT_ADDRESS = "0x5561c71E298DFE9fEd388e7e57042156Bb6C348F";
+    const CONTRACT_ADDRESS = import.meta.env.VITE_CONTRACT_ADRESS;
   
     try {
       const { ethereum } = window;
@@ -58,10 +67,9 @@ export const MintCollection = () => {
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
-        console.log(signer)
         const connectedContract = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
         console.log("Going to pop wallet now to pay gas...")
-        let nftTxn = await connectedContract.mintToken({value: ethers.utils.parseEther("0.001")});
+        let nftTxn = await connectedContract.mintToken({value: ethers.utils.parseEther("8")});
         handleConfetti();
         console.log("Mining...please wait.")
         await nftTxn.wait();
@@ -74,36 +82,35 @@ export const MintCollection = () => {
   }
   
   return (
-  <>
     <div id="MintCollection">
-
       <div className="bloc-title-mint-page">
         <span id="big-title">MINT COLLECTION</span>
         <span id="little-title">The NFTs</span>
         <span id="title-border"></span>
       </div>
-
       <div className="containerTimer">
-        <h1 id="headline">Minting will be live in :</h1>
-        <span style={{display: "none"}} id="Mint-Button" onClick={askContractToMintNft}><MintButton/></span>
-        
-        <div id="countdown">
-          <p>
-            <li className="li-Timer"><span id="days"></span>days</li>
-            <li className="li-Timer"><span id="hours"></span>Hours</li>
-            <li className="li-Timer"><span id="minutes"></span>Minutes</li>
-            <li className="li-Timer"><span id="seconds"></span>Seconds</li>
-          </p>
-          <hr id="hr-MintPage"/>
-        </div>
-
-        <div className="typewriter">
-          <h1>which one will be yours ?</h1>
-        </div>
-
+        { minted < 50 ? (
+          <>
+            <h1 id="headline">Minting will be live in :</h1>
+            <span style={{display: "none"}} id="Mint-Button" onClick={askContractToMintNft}><MintButton/></span>
+            <div id="countdown">
+              <p>
+                <li className="li-Timer"><span id="days"></span>days</li>
+                <li className="li-Timer"><span id="hours"></span>Hours</li>
+                <li className="li-Timer"><span id="minutes"></span>Minutes</li>
+                <li className="li-Timer"><span id="seconds"></span>Seconds</li>
+              </p>
+              <hr id="hr-MintPage"/>
+            </div>
+            <div className="typewriter">
+              <h1>which one will be yours ?</h1>
+            </div>
+          </>
+        ) : (
+          <h1 id="headline">SOLD OUT !</h1>
+        )}
       </div>
       <Collection />
     </div>
-  </>
   );
 };

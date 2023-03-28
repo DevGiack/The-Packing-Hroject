@@ -1,92 +1,69 @@
 @media (min-width: 1250px) {
-  .global-about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 27em;
-  }
-
-  .bloc-about {
-    display: flex;
-    flex-direction: row;
-    width: 68em;
-    height: 34em;
-    gap: 35px;
-  }
-
-  .blocA-about {
-    width: 30em;
-    height: 34em;
-  }
-
-  .blocB-about {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 39em;
-    height: 28em;
-  }
-
-  #title-about {
-    font-size: 2.8em;
-    font-weight: bolder;
-  }
-
-  #text1 {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-
-  #text2 {
-    font-size: 1.2em;
+  :root {
+    --bloc-about-dir: row;
+    --glob-about-h: 27em;
+    --about-gap: 0;
+    --about-txt-w: 39em;
+    --about-txt-align: none;
   }
 }
 
 @media (max-width: 1250px) {
-  .global-about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    margin-right: 5%;
-    margin-left: 5%; 
+  :root {
+    --bloc-about-dir: column;
+    --glob-about-h: 50em;
+    --about-gap: 1.5em;
+    --about-txt-w: 35em;
+    --about-txt-align: center;
   }
+}
 
-  .blocA-about {
-    width: 100%;
-    text-align: center;
-  }
+.global-about {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: var(--glob-about-h);
+}
 
-  .blocA-about img {
-    height: 320px;
-  }
+.bloc-about {
+  display: flex;
+  flex-direction: var(--bloc-about-dir);
+  width: 68em;
+  height: 34em;
+  align-items: center;
+  gap: 35px;
+}
 
-  .blocB-about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 1.5em;
-    width: 90%;
-    margin-right: 5%;
-    margin-left: 5%; 
-  }
-  
-  #title-about {
-    font-size: 1.5em;
-    font-weight: bolder;
-  }
-  
-  #text1 {
-    font-size: 1.2em;
-    font-weight: bold;
-    max-width: 26em;
-  }
-  
-  #text2 {
-    font-size: 1.2em;
-    max-width: 26em;
-  }
+.blocA-about {
+  width: 30em;
+  height: 32em;
+}
+
+.blocB-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: var(--about-txt-w);
+  height: 28em;
+  gap: var(--about-gap);
+  text-align: var(--about-txt-align);
+}
+
+#title-about {
+  font-size: 2.8em;
+  font-weight: bolder;
+}
+
+#text1 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#text2 {
+  font-size: 1.2em;
+}
+
+#img-about {
+  width: 29em;
+  height: 27em;
 }

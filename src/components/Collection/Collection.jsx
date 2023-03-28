@@ -1,6 +1,6 @@
+import { getRandomizedArray, getList, getTooltipList } from "../../utils/utils.js"
 import { v1 as uuidv1 } from "uuid"
 import "./Collection.css"
-import { getRandomizedArray, getList, getTooltipList } from "../../utils/utils.js"
 
 const list = await getList()
 let attributes = await getTooltipList()
@@ -35,7 +35,7 @@ export const Collection =() => {
   
       slide.push(
         <div key={id} className={nameClass}>
-          <img src={img} height="200" width="200" alt={`NFT_${i}`} />
+          <img src={img} height="200px" width="200px" alt={`NFT_${i}`} />
           <span className="tooltiptext">
             {getTooltipContent(rid)}
           </span>

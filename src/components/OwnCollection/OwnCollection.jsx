@@ -18,7 +18,6 @@ export const OwnCollection = () => {
             if (window.ethereum && window.ethereum.selectedAddress) {
                 const ownerAddress = window.ethereum.selectedAddress
                 const nfts = await alchemy.nft.getNftsForOwner(ownerAddress)
-                console.log(nfts.ownedNfts)
                 setNftsForOwner(nfts.ownedNfts)
             }
         }
@@ -35,12 +34,11 @@ export const OwnCollection = () => {
                 </div>
                 <div className="bloc-cards">
                     {nftsForOwner
-                        .filter((obj) => obj.contract.address === "0x5561c71E298DFE9fEd388e7e57042156Bb6C348F")
+                        .filter((obj) => obj.contract.address === import.meta.env.VITE_CONTRACT_ADRESS.toLowerCase())
                         .map((x) => {
-                            console.log(x);
                             x.tokenId ? tokenId = x.tokenId : tokenId = "undefined"
                             x.title ? NFTTitle = x.title : NFTTitle = "undefined"
-                            x.media[0].gateway ? imageUrl = x.media[0].gateway : imageUrl = "undefined"
+                            x.media[0] ? x.media[0].gateway ? imageUrl = x.media[0].gateway : imageUrl = "undefined" : imageUrl = "undefined"
                             const id = uuidv1();
 
                             return (
