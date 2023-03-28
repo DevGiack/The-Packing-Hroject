@@ -4,7 +4,6 @@ import { MintButton } from "../MintButton/MintButton"
 import { getCollection, getAlchemy } from "../../utils/utils.js"
 import { useState, useEffect } from "react"
 import "./Intro.css"
-
 let newList = []
 let newOwners = []
 const alchemy = getAlchemy()
@@ -36,7 +35,7 @@ export const Intro = () => {
     const [ownersCount, setOwnersCount] = useState(o);
 
     useEffect(() => {
-        const interval = setInterval(() => { setCount(count + 1) }, 3000);
+        const interval = setInterval(() => { setCount(count + 1) }, 5000);
         async function getContractData() {
             const newList = await getCollection();
             const newOwners = await alchemy.nft.getOwnersForContract(import.meta.env.VITE_CONTRACT_ADRESS);
@@ -47,7 +46,6 @@ export const Intro = () => {
         getContractData()
         return () => clearInterval(interval);
         }, [count]);
-
 
     return (
         <div className="global-intro">
