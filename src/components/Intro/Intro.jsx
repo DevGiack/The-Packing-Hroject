@@ -15,7 +15,6 @@ async function getMinted() {
     let m = 0
     newList = await getCollection();
     m = newList.length
-    console.log(newList)
     return m
 }
 let m = await getMinted();
@@ -36,7 +35,7 @@ export const Intro = () => {
     const [ownersCount, setOwnersCount] = useState(o);
 
     useEffect(() => {
-        const interval = setInterval(() => { setCount(count + 1) }, 20000);
+        const interval = setInterval(() => { setCount(count + 1) }, 5000);
         async function getContractData() {
             const newList = await getCollection();
             const newOwners = await alchemy.nft.getOwnersForContract(import.meta.env.VITE_CONTRACT_ADRESS);
