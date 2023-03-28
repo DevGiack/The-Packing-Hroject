@@ -56,11 +56,11 @@ export const Intro = () => {
                 <div className="boxs">
                     <div className="stat-box">
                         <span className="box-val">{owners_count}</span>
-                        <span className="box-text">Unique owners</span>
+                        <span className="box-text">Unique Owners</span>
                     </div>
                     <div className="stat-box">
                         <span className="box-val">{floor_price} MATIC</span>
-                        <span className="box-text">floor price</span>
+                        <span className="box-text">Floor Price</span>
                     </div>
                 </div>
             </div>

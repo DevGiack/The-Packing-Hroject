@@ -1,7 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react"
 import { getTraitColor } from "../utils/utils";
-import { Alchemy } from "alchemy-sdk"
+//import { Alchemy } from "alchemy-sdk"
+import { getAlchemy } from "../utils/utils.js"
 import { stats } from "../utils/stats"; 
 import { Link } from "react-router-dom";
 import DELOREAN from "../assets/images/404/Delorean.webp"
@@ -21,17 +22,18 @@ export const Details = () => {
         navigate("/*");
     }
 
-    const network = {
-        80001: "polygon-mumbai",
-        137: "polygon-mainnet",
-        1: "eth-mainnet",
-    }
+    // const network = {
+    //     80001: "polygon-mumbai",
+    //     137: "polygon-mainnet",
+    //     1: "eth-mainnet",
+    // }
 
-    const settings = {
-        apiKey: import.meta.env.VITE_ALCHEMY_API_KEY,
-        network: network["80001"],
-    }
-    const alchemy = new Alchemy(settings)
+    // const settings = {
+    //     apiKey: import.meta.env.VITE_ALCHEMY_API_KEY,
+    //     network: network["80001"],
+    // }
+    // const alchemy = new Alchemy(settings)
+    const alchemy = getAlchemy()
     
     const [nftsForOwner, setNftsForOwner] = useState([])
 
@@ -46,7 +48,8 @@ export const Details = () => {
         fetchNfts()
     }, [])
 
-    const currentNFT = nftsForOwner.find(nft => nft.tokenId === TokenId)
+    // const currentNFT = nftsForOwner.find(nft => nft.tokenId === TokenId)
+    const currentNFT = nftsForOwner.find(nft => nft.tokenId === TokenId && nft.contract.address === import.meta.env.VITE_CONTRACT_ADRESS.toLowerCase())
 
     if ((lecture > 5) && (currentNFT == undefined)) { display = false }
     if (currentNFT) { lecture = 0 }
