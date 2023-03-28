@@ -21,14 +21,14 @@ export const Intro = () => {
     const [ownersCount, setOwnersCount] = useState();
 
     useEffect(() => {
-    const interval = setInterval(async () => {
+        const interval = setInterval( async () => {
         const newList = await getCollection();
         const newOwners = await alchemy.nft.getOwnersForContract(import.meta.env.VITE_CONTRACT_ADRESS);
         setList(newList);
         setOwners(newOwners);
         setCount(count + 1);
-    }, 3000);
-    return () => clearInterval(interval);
+        }, 3000);
+        return () => clearInterval(interval);
     }, [count]);
 
     useEffect(() => {
