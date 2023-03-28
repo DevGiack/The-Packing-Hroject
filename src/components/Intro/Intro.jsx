@@ -2,24 +2,51 @@ import pack1 from "../../assets/images/PACK_1.webp"
 import { Link } from "react-router-dom"
 import { MintButton } from "../MintButton/MintButton"
 import { getCollection, getAlchemy } from "../../utils/utils.js"
+import { useState, useEffect } from "react"
 import "./Intro.css"
-
-const list = await getCollection()
-const alchemy = getAlchemy();
-const owners = await alchemy.nft.getOwnersForContract("0x5561c71E298DFE9fEd388e7e57042156Bb6C348F")
+let newList = []
+let newOwners = []
+const alchemy = getAlchemy()
 const floor_price = 8
 
-try {
-    floor_price = await alchemy.nft.getFloorPrice("0x5561c71E298DFE9fEd388e7e57042156Bb6C348F")
-  } catch (error) {
+let l = await getCollection();
 
-  }
+async function getMinted() {
+    let m = 0
+    newList = await getCollection();
+    m = newList.length
+    return m
+}
+let m = await getMinted();
+
+async function getOwners() {
+    let o = 0
+    newOwners = await alchemy.nft.getOwnersForContract(import.meta.env.VITE_CONTRACT_ADRESS);
+    o = newOwners.owners.length - 1
+    return o
+}
+let o = await getOwners();
 
 export const Intro = () => {
 
-    const minted = list.length
-    const owners_count = new Set(owners.owners).size;
-    
+    const [list, setList] = useState(l);
+    const [count, setCount] = useState(0);
+    const [minted, setMinted] = useState(m);
+    const [ownersCount, setOwnersCount] = useState(o);
+
+    useEffect(() => {
+        const interval = setInterval(() => { setCount(count + 1) }, 3000);
+        async function getContractData() {
+            const newList = await getCollection();
+            const newOwners = await alchemy.nft.getOwnersForContract(import.meta.env.VITE_CONTRACT_ADRESS);
+            setList(newList);
+            setMinted(list.length);
+            setOwnersCount(newOwners.owners.length - 1);
+        }
+        getContractData()
+        return () => clearInterval(interval);
+        }, [count]);
+
     return (
         <div className="global-intro">
             <div className="bloc1-intro">
@@ -39,25 +66,29 @@ export const Intro = () => {
                     </Link>
                 </div>
                 <div className="bloc1B-intro">
-                    <img id="pack1" alt="pack1_NFT" src={pack1} />
+                    <img id="pack1" alt="pack1_NFT" src={pack1} height="100%" width="100%" />
                 </div>
             </div>
             <div className="bloc2-intro">
-                <div className="stat-box">
-                    <span className="box-val">50</span>
-                    <span className="box-text">Total Items</span>
+                <div className="boxs">
+                    <div className="stat-box">
+                        <span className="box-val">50</span>
+                        <span className="box-text">Total Items</span>
+                    </div>
+                    <div className="stat-box">
+                        <span className="box-val">{minted}</span>
+                        <span className="box-text">Total Minted</span>
+                    </div>
                 </div>
-                <div className="stat-box">
-                    <span className="box-val">{minted}</span>
-                    <span className="box-text">Total Minted</span>
-                </div>
-                <div className="stat-box">
-                    <span className="box-val">{owners_count}</span>
-                    <span className="box-text">Unique owners</span>
-                </div>
-                <div className="stat-box">
-                    <span className="box-val">{floor_price} MATIC</span>
-                    <span className="box-text">floor price</span>
+                <div className="boxs">
+                    <div className="stat-box">
+                        <span className="box-val">{ownersCount}</span>
+                        <span className="box-text">Unique Owners</span>
+                    </div>
+                    <div className="stat-box">
+                        <span className="box-val">{floor_price} MATIC</span>
+                        <span className="box-text">Floor Price</span>
+                    </div>
                 </div>
             </div>
         </div>
