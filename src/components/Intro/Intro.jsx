@@ -4,41 +4,48 @@ import { MintButton } from "../MintButton/MintButton"
 import { getCollection, getAlchemy } from "../../utils/utils.js"
 import { useState, useEffect } from "react"
 import "./Intro.css"
+let newList = []
+let newOwners = []
+const alchemy = getAlchemy()
+const floor_price = 8
 
-let floor_price = 8;
-try {
-    floor_price = await alchemy.nft.getFloorPrice(import.meta.env.VITE_CONTRACT_ADRESS)
-  } catch (error) {
+let l = await getCollection();
+
+async function getMinted() {
+    let m = 0
+    newList = await getCollection();
+    m = newList.length
+    return m
 }
+let m = await getMinted();
+
+async function getOwners() {
+    let o = 0
+    newOwners = await alchemy.nft.getOwnersForContract(import.meta.env.VITE_CONTRACT_ADRESS);
+    o = newOwners.owners.length - 1
+    return o
+}
+let o = await getOwners();
 
 export const Intro = () => {
 
-    const alchemy = getAlchemy();
-    const [list, setList] = useState([]);
-    const [owners, setOwners] = useState({ owners: [] });
+    const [list, setList] = useState(l);
     const [count, setCount] = useState(0);
-    const [minted, setMinted] = useState();
-    const [ownersCount, setOwnersCount] = useState();
+    const [minted, setMinted] = useState(m);
+    const [ownersCount, setOwnersCount] = useState(o);
 
     useEffect(() => {
-    const interval = setInterval(async () => {
-        const newList = await getCollection();
-        const newOwners = await alchemy.nft.getOwnersForContract(import.meta.env.VITE_CONTRACT_ADRESS);
-        setList(newList);
-        setOwners(newOwners);
-        setCount(count + 1);
-    }, 3000);
-    return () => clearInterval(interval);
-    }, [count]);
-
-    useEffect(() => {
-        const updatedMinted = list.length;
-        const updatedOwnersCount = new Set(owners.owners).size -1;
-        setMinted(updatedMinted);
-        setOwnersCount(updatedOwnersCount);
-    }, [list, owners]);
-
-    if (ownersCount < 0) {setOwnersCount(0)} 
+        const interval = setInterval(() => { setCount(count + 1) }, 3000);
+        async function getContractData() {
+            const newList = await getCollection();
+            const newOwners = await alchemy.nft.getOwnersForContract(import.meta.env.VITE_CONTRACT_ADRESS);
+            setList(newList);
+            setMinted(list.length);
+            setOwnersCount(newOwners.owners.length - 1);
+        }
+        getContractData()
+        return () => clearInterval(interval);
+        }, [count]);
 
     return (
         <div className="global-intro">
