@@ -2,24 +2,44 @@ import pack1 from "../../assets/images/PACK_1.webp"
 import { Link } from "react-router-dom"
 import { MintButton } from "../MintButton/MintButton"
 import { getCollection, getAlchemy } from "../../utils/utils.js"
+import { useState, useEffect } from "react"
 import "./Intro.css"
 
-const list = await getCollection()
-const alchemy = getAlchemy();
-const owners = await alchemy.nft.getOwnersForContract(import.meta.env.VITE_CONTRACT_ADRESS)
 let floor_price = 8;
-
 try {
     floor_price = await alchemy.nft.getFloorPrice(import.meta.env.VITE_CONTRACT_ADRESS)
   } catch (error) {
-
-  }
+}
 
 export const Intro = () => {
 
-    const minted = list.length;
-    const owners_count = new Set(owners.owners).size -1;
-    
+    const alchemy = getAlchemy();
+    const [list, setList] = useState([]);
+    const [owners, setOwners] = useState({ owners: [] });
+    const [count, setCount] = useState(0);
+    const [minted, setMinted] = useState();
+    const [ownersCount, setOwnersCount] = useState();
+
+    useEffect(() => {
+    const interval = setInterval(async () => {
+        const newList = await getCollection();
+        const newOwners = await alchemy.nft.getOwnersForContract(import.meta.env.VITE_CONTRACT_ADRESS);
+        setList(newList);
+        setOwners(newOwners);
+        setCount(count + 1);
+    }, 3000);
+    return () => clearInterval(interval);
+    }, [count]);
+
+    useEffect(() => {
+        const updatedMinted = list.length;
+        const updatedOwnersCount = new Set(owners.owners).size -1;
+        setMinted(updatedMinted);
+        setOwnersCount(updatedOwnersCount);
+    }, [list, owners]);
+
+    if (ownersCount < 0) {setOwnersCount(0)} 
+
     return (
         <div className="global-intro">
             <div className="bloc1-intro">
@@ -55,7 +75,7 @@ export const Intro = () => {
                 </div>
                 <div className="boxs">
                     <div className="stat-box">
-                        <span className="box-val">{owners_count}</span>
+                        <span className="box-val">{ownersCount}</span>
                         <span className="box-text">Unique Owners</span>
                     </div>
                     <div className="stat-box">
