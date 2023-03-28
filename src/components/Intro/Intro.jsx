@@ -18,7 +18,7 @@ try {
 export const Intro = () => {
 
     const minted = list.length;
-    const owners_count = new Set(owners.owners).size;
+    const owners_count = new Set(owners.owners).size -1;
     
     return (
         <div className="global-intro">
